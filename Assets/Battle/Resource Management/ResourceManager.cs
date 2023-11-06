@@ -26,7 +26,7 @@ namespace TeamB_TD
                 private void Start()
                 {
                     _currentResource = _initialResource;
-                    OnResourceChanged(_currentResource);
+                    OnResourceChanged?.Invoke(_currentResource);
                 }
 
                 private void Update()
