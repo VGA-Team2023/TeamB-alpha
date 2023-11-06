@@ -33,7 +33,9 @@ namespace TeamB_TD
                         _stage = stage;
                         if (!InitializePath(spawnerCell.YPos, spawnerCell.XPos, goalCell.YPos, goalCell.XPos))
                         {
-                            throw new ArgumentException("経路が見つかりませんでした。");
+                            throw new ArgumentException($"経路が見つかりませんでした。\n" +
+                                $"StartPos X: {spawnerCell.XPos}, Y: {spawnerCell.YPos}, " +
+                                $"EndPos X: {goalCell.XPos}, Y: {goalCell.YPos}");
                         }
 
                         _positions.Clear();
@@ -48,7 +50,8 @@ namespace TeamB_TD
 
                     public void Update(Transform transform)
                     {
-                        transform.Translate(_moveDir.normalized * Time.deltaTime * _moveSpeed);
+                        var gameSpeed = GameSpeedController.CurretGameSpeed;
+                        transform.Translate(_moveDir.normalized * Time.deltaTime * _moveSpeed * gameSpeed);
 
                         // 左右の補正（行き過ぎた場合、目標地点に強制移動する。）
                         if (_moveDir.x >= 0f && transform.position.x > _currentTargetPosition.x ||

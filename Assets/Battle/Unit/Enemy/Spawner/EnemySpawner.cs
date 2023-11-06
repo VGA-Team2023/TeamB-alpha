@@ -41,7 +41,7 @@ namespace TeamB_TD
 
                         if (!_enemyPrefabContainer) return;
 
-                        _spawnTimer += Time.deltaTime;
+                        _spawnTimer += Time.deltaTime * GameSpeedController.CurretGameSpeed;
 
                         if (_spawnTimer >= _spawnData[_index].SpawnTime)
                         {

@@ -13,8 +13,6 @@ namespace TeamB_TD
 
             private BattleStatus _status = BattleStatus.Ready;
 
-            public event Action<int> OnCompletedEnemyCountChanged;
-
             public BattleStatus Status
             {
                 get => _status;
