@@ -68,6 +68,7 @@ namespace TeamB_TD
                             mouseOverlappingObject.TryGetComponent(out AllyUnitPlaceView placeView))
                         {
                             _dragItem = GameObject.Instantiate(placeView.AllyPrefab);
+                            _dragItem.enabled = false;
                         }
                     }
 
@@ -89,6 +90,7 @@ namespace TeamB_TD
                     private void Place(AllyController allyPrefab, IStageCell stageCell)
                     {
                         // stageCellにallyPrefabを配置する。
+                        allyPrefab.enabled = true;
                         var position = stageCell.WorldPosition + _placeOffset;
                         Instantiate(allyPrefab, position, Quaternion.identity);
                         _resourceManager.TryUseResource(allyPrefab.Cost);

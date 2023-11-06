@@ -29,6 +29,8 @@ namespace TeamB_TD
                 private int _xPos;
                 private StageCellStatus _status;
 
+                public float YDelta => _yDelta;
+                public float XDelta => _xDelta;
                 public StageCell Parent { get; set; } = null;
 
                 public int YPos => _yPos;

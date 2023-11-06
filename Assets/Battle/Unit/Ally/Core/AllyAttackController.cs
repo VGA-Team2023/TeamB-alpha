@@ -32,7 +32,8 @@ namespace TeamB_TD
                     {
                         if (_attackIntervalTimer < _attackInterval)
                         {
-                            _attackIntervalTimer += Time.deltaTime;
+                            var gameSpeed = GameSpeedController.CurretGameSpeed;
+                            _attackIntervalTimer += Time.deltaTime * gameSpeed;
                         }
 
                         if (IsAttackable)

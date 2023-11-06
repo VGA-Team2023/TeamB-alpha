@@ -19,7 +19,8 @@ namespace TeamB_TD
                     {
                         // 注意事項: Vector2Int型のコンストラクタは第一引数がx,第二引数がy座標を表現する。 
                         new SpawnerPositionData(new Vector2Int(0, 0), new Vector2Int(6, 0)), // スポナーの座標x0,y0、タワーの座標x3,y0。
-                        new SpawnerPositionData(new Vector2Int(0, 0), new Vector2Int(6, 0)),
+                        new SpawnerPositionData(new Vector2Int(0, 1), new Vector2Int(6, 1)),
+                        new SpawnerPositionData(new Vector2Int(0, 2), new Vector2Int(6, 2)),
                         new SpawnerPositionData(new Vector2Int(0, 2), new Vector2Int(15, 2)), // 2
                         new SpawnerPositionData(new Vector2Int(0, 3), new Vector2Int(15, 3)), // 3
                         new SpawnerPositionData(new Vector2Int(0, 4), new Vector2Int(15, 4)), // 4

@@ -34,6 +34,17 @@ namespace TeamB_TD
                             _stageData[y, x] = stageCell;
                         }
                     }
+
+                    float xOffset = (_stageData[0, width - 1].gameObject.transform.position.x - _stageData[0, 0].gameObject.transform.position.x) / 2f;
+                    float yOffset = (_stageData[height - 1, 0].gameObject.transform.position.y - _stageData[0, 0].gameObject.transform.position.y) / 2f;
+
+                    for (int y = 0; y < height; y++)
+                    {
+                        for (int x = 0; x < width; x++)
+                        {
+                            _stageData[y, x].gameObject.transform.position -= new Vector3(xOffset, yOffset, 0f);
+                        }
+                    }
                 }
 
                 public bool TryGetCell(out StageCell cell, int y, int x)

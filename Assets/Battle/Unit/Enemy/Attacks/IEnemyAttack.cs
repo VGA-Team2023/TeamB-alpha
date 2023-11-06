@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-namespace TeamB_TD
+﻿namespace TeamB_TD
 {
     namespace Battle
     {
@@ -8,9 +6,10 @@ namespace TeamB_TD
         {
             namespace Enemy
             {
-                public interface IEnemy : IUnit
+                public interface IEnemyAttack
                 {
-
+                    bool IsAnyObjectInTrigger();
+                    void Fire(float attackPower);
                 }
             }
         }

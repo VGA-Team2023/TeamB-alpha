@@ -15,44 +15,38 @@ namespace TeamB_TD
                     [SerializeField]
                     private string _name;
                     [SerializeField]
-                    private AllyStatus _status;
+                    private int _cost;
                     [SerializeField]
                     private AllyLifeController _lifeController;
                     [SerializeField]
                     private AllyAttackController _attackController;
 
                     public string Name => _name;
-                    public int Cost => _status.Cost;
-                    public AllyStatus Status => _status;
+                    public int Cost => _cost;
                     public Vector3 WorldPosition => transform.position;
+                    public AllyLifeController LifeController => _lifeController;
+                    public AllyAttackController AttackController => _attackController;
 
                     public event Action<IDamageable> OnDead;
+
+                    private void Start()
+                    {
+                        _lifeController.Initialize(this);
+                    }
 
                     private void Update()
                     {
                         _attackController.Update();
                     }
 
-                    private void OnEnable()
+                    private void OnDestroy()
                     {
-                        if (_lifeController != null)
-                            _lifeController.OnDead += Dead;
-                    }
-
-                    private void OnDisable()
-                    {
-                        if (_lifeController != null)
-                            _lifeController.OnDead -= Dead;
+                        OnDead?.Invoke(this);
                     }
 
                     public void Damge(float value)
                     {
                         _lifeController.Damge(value);
-                    }
-
-                    private void Dead()
-                    {
-                        OnDead(this);
                     }
                 }
             }

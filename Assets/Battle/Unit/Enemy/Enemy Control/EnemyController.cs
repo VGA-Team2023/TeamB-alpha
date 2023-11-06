@@ -10,7 +10,7 @@ namespace TeamB_TD
         {
             namespace Enemy
             {
-                public class EnemyController : MonoBehaviour, IUnit, IDamageable
+                public class EnemyController : MonoBehaviour, IDamageable
                 {
                     [SerializeField]
                     private string _name;
@@ -38,7 +38,6 @@ namespace TeamB_TD
 
                     public void Initialize(Stage stage, StageCell spawnerCell, StageCell goalCell)
                     {
-                        _attackController.Initialize(this);
                         _lifeController.Initialize(this);
                         _moveController.Initialize(this, stage, spawnerCell, goalCell);
                     }

@@ -31,7 +31,8 @@ namespace TeamB_TD
 
                 private void Update()
                 {
-                    AddResource(Time.deltaTime * _addResourceSpeed);
+                    var gameSpeed = GameSpeedController.CurretGameSpeed;
+                    AddResource(Time.deltaTime * _addResourceSpeed * gameSpeed);
                 }
 
                 public void AddResource(float resource)
