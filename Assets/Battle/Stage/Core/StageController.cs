@@ -28,7 +28,7 @@ namespace TeamB_TD
 
                 private void Awake()
                 {
-                    _stage.CreateStage(_stageBlueprint.GetStageData(0));
+                    _stage.CreateStage(_stageBlueprint.GetStageData(2));
                     foreach (var data in _spawnerData)
                     {
                         _spawnerBlueprint.AttachSpawnerToCell(_stage, data);
