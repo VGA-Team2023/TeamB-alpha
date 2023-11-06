@@ -15,6 +15,8 @@ namespace TeamB_TD
                 [SerializeField]
                 private Stage _stage;
                 [SerializeField]
+                private int _stageID;
+                [SerializeField]
                 private SpawnerBlueprint _spawnerBlueprint;
                 [SerializeField]
                 private SpawnerData[] _spawnerData;
@@ -28,7 +30,7 @@ namespace TeamB_TD
 
                 private void Awake()
                 {
-                    _stage.CreateStage(_stageBlueprint.GetStageData(0));
+                    _stage.CreateStage(_stageBlueprint.GetStageData(_stageID));
                     foreach (var data in _spawnerData)
                     {
                         _spawnerBlueprint.AttachSpawnerToCell(_stage, data);
