@@ -51,7 +51,7 @@ namespace TeamB_TD
 
                 public bool TryUseResource(float cost)
                 {
-                    if (_currentResource - cost < 0)
+                    if (_currentResource - cost >= 0)
                     {
                         _currentResource -= cost;
                         OnResourceChanged?.Invoke(_currentResource);

@@ -1,6 +1,5 @@
 ﻿using System;
 using TeamB_TD.Utility;
-using UnityEngine;
 
 namespace TeamB_TD
 {
@@ -13,9 +12,9 @@ namespace TeamB_TD
                 private int[][,] _stageBlueprints =
                 {
                         new int[,]{ // Stage0
-                        {3, 3, 3, 3, 3, 3, 3},
-                        {3, 3, 3, 3, 3, 3, 3},
-                        {3, 3, 3, 3, 3, 3, 3},
+                        {3, 1, 3, 1, 3, 1, 3},
+                        {3, 1, 3, 1, 3, 1, 3},
+                        {3, 1, 3, 1, 3, 1, 3},
                         },
                         new int[,]{ // Stage1
                         {2, 1, 1, 1, 1, 1},
