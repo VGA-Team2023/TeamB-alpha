@@ -1,4 +1,5 @@
-﻿using TeamB_TD.Battle.StageManagement;
+﻿using TeamB_TD.Battle.ResourceManagement;
+using TeamB_TD.Battle.StageManagement;
 using TeamB_TD.Utility;
 using UnityEngine;
 
@@ -13,6 +14,8 @@ namespace TeamB_TD
                 public class AllyUnitPlacer : MonoBehaviour
                 {
                     [SerializeField]
+                    private ResourceManager _resourceManager;
+                    [SerializeField]
                     private DragHandler _dragHandler;
                     [SerializeField]
                     private Vector3 _placeOffset;
@@ -20,6 +23,14 @@ namespace TeamB_TD
                     private readonly float _dragItemDistance = 10f;
 
                     private AllyController _dragItem; // ドラック中のオブジェクト
+
+                    private void Start()
+                    {
+                        if (_resourceManager == null)
+                        {
+                            Debug.LogWarning("ResourceManager is not assigned");
+                        }
+                    }
 
                     private void OnEnable()
                     {
@@ -62,14 +73,13 @@ namespace TeamB_TD
 
                     private void OnButtonReleased(GameObject mouseOverlappingObject)
                     {
-                        if (mouseOverlappingObject &&
-                            mouseOverlappingObject.TryGetComponent(out IStageCell stageCell) &&
-                            _dragItem)
+                        if (TryGetCell(mouseOverlappingObject, out IStageCell cell) &&
+                            IsPlacable(_dragItem, cell, _resourceManager))
                         {
-                            Place(_dragItem, stageCell);
+                            Place(_dragItem, cell);
                         }
 
-                        if (_dragItem)
+                        if (_dragItem != null)
                         {
                             GameObject.Destroy(_dragItem.gameObject);
                             _dragItem = null;
@@ -81,6 +91,23 @@ namespace TeamB_TD
                         // stageCellにallyPrefabを配置する。
                         var position = stageCell.WorldPosition + _placeOffset;
                         Instantiate(allyPrefab, position, Quaternion.identity);
+                        _resourceManager.TryUseResource(allyPrefab.Cost);
+                    }
+
+                    private bool TryGetCell(GameObject gameObject, out IStageCell cell)
+                    {
+                        cell = null;
+                        if (gameObject == null) return false;
+                        return gameObject.TryGetComponent(out cell);
+                    }
+
+                    private bool IsPlacable(AllyController prefab, IStageCell cell, ResourceManager resource)
+                    {
+                        if (!prefab) return false;
+                        if (!cell.Status.HasFlag(StageCellStatus.UnitPlacable)) return false;
+                        if (_resourceManager.CurrentResource - _dragItem.Cost < 0) return false;
+
+                        return true;
                     }
                 }
             }
