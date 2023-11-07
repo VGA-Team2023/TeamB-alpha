@@ -26,6 +26,7 @@ namespace TeamB_TD
                     // 攻撃インターバルが経過していたら攻撃可能を表現する。
                     public bool IsAttackable =>
                         _attackIntervalTimer >= _attackInterval &&
+                        _allyAttack != null &&
                         _allyAttack.IsAnyObjectInTrigger();
 
                     public void Update()
