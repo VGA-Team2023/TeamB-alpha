@@ -1,13 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-[CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/CreateEnemyParamAssets", order = 1)]
+[CreateAssetMenu(fileName = "EnemyParameter", menuName = "ScriptableObjects/CreateEnemyParameter", order = 1)]
 public class EnemyParamAsset : ScriptableObject
 {
-    [SerializeField] int _unitID;
-    [SerializeField] int _unitHP;
-    [SerializeField] float _unitAtkSpan;　//攻撃ごとの間隔
-    [SerializeField] float _unitAtkPeriodicTime; //１回の攻撃にかかる時間
+    [Header("敵ユニットID")] 
+    [SerializeField] int _id;
+    [Header("スポーン時の敵の体力")]
+    [SerializeField] int _maxlife;
+    [Header("敵の移動速度")]
+    [SerializeField] int _moveSpeed;
+    [Header("敵の攻撃間隔")]
+    [SerializeField] float _attackInterval;
+    [Header("敵の攻撃周期")]
+    [SerializeField] float _attackPeriodicTime; 
+    [Header("敵の移動方法")]
     [SerializeField] TeamB_TD.Enemy.MoveCategorize moveCategorize;    
 }
 
