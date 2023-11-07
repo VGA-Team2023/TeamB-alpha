@@ -110,6 +110,7 @@ MonoBehaviour:
   _lifeController:
     _maxLife: 10.3
     _currentLife: 0
+    _droppedResourceAmount: 1
   _moveController:
     _moveSpeed: 1
     _scanner: {fileID: -4029579060976327445}
