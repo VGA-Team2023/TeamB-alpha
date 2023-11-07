@@ -5,16 +5,37 @@ using System.Collections.Generic;
 public class EnemyParamAsset : ScriptableObject
 {
     [Header("敵ユニットID")] 
-    [SerializeField] int _id;
+    [SerializeField] private int _id;
     [Header("スポーン時の敵の体力")]
-    [SerializeField] int _maxlife;
+    [SerializeField] private int _maxLife;
     [Header("敵の移動速度")]
-    [SerializeField] int _moveSpeed;
+    [SerializeField] private float _moveSpeed;
     [Header("敵の攻撃間隔")]
-    [SerializeField] float _attackInterval;
+    [SerializeField] private float _attackInterval;
     [Header("敵の攻撃周期")]
-    [SerializeField] float _attackPeriodicTime; 
+    [SerializeField] private float _attackPeriodicTime; 
     [Header("敵の移動方法")]
-    [SerializeField] TeamB_TD.Enemy.MoveCategorize moveCategorize;    
+    [SerializeField] private TeamB_TD.Enemy.MoveCategorize moveCategorize;
+
+    public int ID
+    {
+        get { return _id; }
+    }
+    public int MaxHP
+    {
+        get { return _maxLife; }        
+    }    
+    public float MoveSpeed
+    {
+        get { return _moveSpeed; }
+    }
+    public float AttackInterval
+    {
+        get { return _attackInterval; }
+    }    
+    public float AttackPeriodicTime
+    { 
+        get {return _attackPeriodicTime ; }
+    }
 }
 

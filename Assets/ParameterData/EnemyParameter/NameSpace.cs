@@ -8,7 +8,7 @@ namespace TeamB_TD
         { 
             None,
             OnGround,
-            Floating,     
+            Floating,
         }    
     }
 }
