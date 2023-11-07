@@ -6,9 +6,8 @@ namespace TeamB_TD
 
     public class UnitParameter : ScriptableObject , IWeaponType
     {
-        [SerializeField] private WeaponType _weaponType;
+        [SerializeField, Header("近距離or遠距離")] private WeaponType _weaponType;
         [SerializeField, Header("ユニットID")] private int _id;
-        [SerializeField, Header("武器")] private string _weaponName;
         [SerializeField, Header("HP")] private float _maxLife;
         [SerializeField, Header("攻撃力")] private float _attackPower;
         [SerializeField, Header("最大敵対数")] private int _maxTargetCount;
@@ -18,7 +17,6 @@ namespace TeamB_TD
 
         public WeaponType WeaponType => _weaponType;
         public int ID => _id;
-        public string WeaponName => _weaponName;
         public float MaxLife => _maxLife;
         public float AttackPower => _attackPower;
         public float MaxTargetCount => _maxTargetCount;
