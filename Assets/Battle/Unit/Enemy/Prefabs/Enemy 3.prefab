@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3443492554357308191}
   - component: {fileID: 7506926052524002003}
   - component: {fileID: 624463411580926190}
+  - component: {fileID: -4029579060976327445}
   m_Layer: 7
   m_Name: Enemy 3
   m_TagString: Untagged
@@ -111,6 +112,7 @@ MonoBehaviour:
     _currentLife: 0
   _moveController:
     _moveSpeed: 1
+    _scanner: {fileID: -4029579060976327445}
   references:
     version: 2
     RefIds:
@@ -165,6 +167,28 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.21133333}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &-4029579060976327445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345300272676710601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d75ba47f8383c2409d8463490aafd55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _raycast2D:
+    _dir: {x: 1, y: 0}
+    _maxDistance: 1.5
+    _layerMask:
+      serializedVersion: 2
+      m_Bits: 64
+    _offset: {x: 0, y: 0}
+    _isDrawGizmo: 1
+    _hitColor: {r: 1, g: 0, b: 0, a: 1}
+    _noHitColor: {r: 0, g: 0, b: 1, a: 1}
 --- !u!1001 &1905263688496844877
 PrefabInstance:
   m_ObjectHideFlags: 0
