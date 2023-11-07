@@ -62,17 +62,18 @@ namespace TeamB_TD
                         }
                     }
 
-                    private void OnButtonPressed(GameObject mouseOverlappingObject)
+                    private void OnButtonPressed(GameObject mouseOverlappingObject) // ドラッグ開始（マウス左ボタン押下時）
                     {
                         if (mouseOverlappingObject &&
                             mouseOverlappingObject.TryGetComponent(out AllyUnitPlaceView placeView))
                         {
                             _dragItem = GameObject.Instantiate(placeView.AllyPrefab);
                             _dragItem.enabled = false;
+                            _dragItem.GetComponent<Collider2D>().enabled = false;
                         }
                     }
 
-                    private void OnButtonReleased(GameObject mouseOverlappingObject)
+                    private void OnButtonReleased(GameObject mouseOverlappingObject) // ドラッグ終了（マウス左ボタン解放時）
                     {
                         if (TryGetCell(mouseOverlappingObject, out IStageCell cell) &&
                             IsPlacable(_dragItem, cell, _resourceManager))
@@ -91,6 +92,7 @@ namespace TeamB_TD
                     {
                         // stageCellにallyPrefabを配置する。
                         allyPrefab.enabled = true;
+                        allyPrefab.GetComponent<Collider2D>().enabled = true;
                         var position = stageCell.WorldPosition + _placeOffset;
                         Instantiate(allyPrefab, position, Quaternion.identity);
                         _resourceManager.TryUseResource(allyPrefab.Cost);

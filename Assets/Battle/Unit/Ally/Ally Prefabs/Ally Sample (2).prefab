@@ -181,7 +181,7 @@ GameObject:
   - component: {fileID: 7450222239150374461}
   - component: {fileID: 1469487256600900819}
   - component: {fileID: 966350695703963374}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Attack Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}

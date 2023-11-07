@@ -18,6 +18,8 @@ namespace TeamB_TD
                 {
                     [SerializeField, Range(1f, 10f)]
                     private float _moveSpeed;
+                    [SerializeField]
+                    private ForwardObjectScanner _scanner;
 
                     private EnemyController _controller;
 
@@ -26,6 +28,8 @@ namespace TeamB_TD
 
                     private Stage _stage;
                     private Vector3 _moveDir; // 移動用ベクトル。
+
+                    public bool IsMovable => !_scanner.IsExistObject; // 進行方向にオブジェクトが存在する場合、移動できない。
 
                     public void Initialize(EnemyController controller, Stage stage, StageCell spawnerCell, StageCell goalCell)
                     {
@@ -50,6 +54,9 @@ namespace TeamB_TD
 
                     public void Update(Transform transform)
                     {
+                        _scanner.SetDir(_moveDir);
+                        if (!IsMovable) return;
+
                         var gameSpeed = GameSpeedController.CurretGameSpeed;
                         transform.Translate(_moveDir.normalized * Time.deltaTime * _moveSpeed * gameSpeed);
 
