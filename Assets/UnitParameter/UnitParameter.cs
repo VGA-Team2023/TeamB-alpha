@@ -4,8 +4,9 @@ namespace TeamB_TD
 {
     [CreateAssetMenu(fileName = "AllyUnitParameter", menuName = "ScriptableObjects/CreateAllyUnitParameter")]
 
-    public class UnitParameter : ScriptableObject
+    public class UnitParameter : ScriptableObject , IWeaponType
     {
+        [SerializeField] private WeaponType _weaponType;
         [SerializeField, Header("ユニットID")] private int _id;
         [SerializeField, Header("武器")] private string _weaponName;
         [SerializeField, Header("HP")] private float _maxLife;
@@ -15,6 +16,7 @@ namespace TeamB_TD
         [SerializeField, Header("攻撃範囲")] private float _attackRange;
         [SerializeField, Header("攻撃インターバル")] private float _attackInterval;
 
+        public WeaponType WeaponType => _weaponType;
         public int ID => _id;
         public string WeaponName => _weaponName;
         public float MaxLife => _maxLife;
