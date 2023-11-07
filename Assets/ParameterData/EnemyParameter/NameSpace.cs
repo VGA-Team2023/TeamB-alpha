@@ -6,11 +6,9 @@ namespace TeamB_TD
     {
         public enum MoveCategorize
         { 
+            none,
             onGround,
-            floating,
-            none
-        
-        
+            floating,     
         }    
     }
 }
