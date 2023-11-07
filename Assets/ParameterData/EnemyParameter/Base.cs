@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections.Generic;
 
 [CreateAssetMenu(fileName = "EnemyParameter", menuName = "ScriptableObjects/CreateEnemyParameter", order = 1)]
 public class EnemyParamAsset : ScriptableObject
@@ -17,25 +16,10 @@ public class EnemyParamAsset : ScriptableObject
     [Header("敵の移動方法")]
     [SerializeField] private TeamB_TD.Enemy.MoveCategorize moveCategorize;
 
-    public int ID
-    {
-        get { return _id; }
-    }
-    public int MaxHP
-    {
-        get { return _maxLife; }        
-    }    
-    public float MoveSpeed
-    {
-        get { return _moveSpeed; }
-    }
-    public float AttackInterval
-    {
-        get { return _attackInterval; }
-    }    
-    public float AttackPeriodicTime
-    { 
-        get {return _attackPeriodicTime ; }
-    }
+    public int ID => _id;
+    public int MaxHP => _maxLife;
+    public float MoveSpeed => _moveSpeed;
+    public float AttackInterval => _attackInterval;
+    public float AttackPeriodicTime => _attackPeriodicTime;
 }
 
