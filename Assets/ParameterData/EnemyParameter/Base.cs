@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections.Generic;
 
 [CreateAssetMenu(fileName = "EnemyParameter", menuName = "ScriptableObjects/CreateEnemyParameter", order = 1)]
 public class EnemyParamAsset : ScriptableObject
