@@ -22,7 +22,7 @@ namespace TeamB_TD
 
                 private void ApplyResourceView(float changedResource)
                 {
-                    _resourceView.text = $"Resource: {changedResource.ToString("00.00")} / {_resourceManager.MaxResource.ToString(".")}";
+                    _resourceView.text = $"マナ : {changedResource.ToString("00.00")} / {_resourceManager.MaxResource.ToString(".")}";
                 }
             }
         }

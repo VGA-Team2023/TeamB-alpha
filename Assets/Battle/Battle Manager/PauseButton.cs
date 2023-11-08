@@ -11,10 +11,13 @@ namespace TeamB_TD
             private Button _button;
             [SerializeField]
             private Text _text;
+            [SerializeField]
+            private Image _pausePanel;
 
             private void Start()
             {
                 _button.onClick.AddListener(OnButtonClicked);
+                SetActiveController(GameSpeedController.IsPaused);
                 ApplyText();
             }
 
@@ -28,7 +31,7 @@ namespace TeamB_TD
                 {
                     Pause();
                 }
-
+                SetActiveController(GameSpeedController.IsPaused);
                 ApplyText();
             }
 
@@ -52,6 +55,11 @@ namespace TeamB_TD
                 {
                     _text.text = "▶";
                 }
+            }
+
+            private void SetActiveController(bool activeFrag)
+            {
+                _pausePanel?.gameObject.SetActive(activeFrag);
             }
         }
     }
