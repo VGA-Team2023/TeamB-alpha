@@ -13,25 +13,28 @@ namespace TeamB_TD
                 [Serializable]
                 public class AllyAttackController
                 {
-                    [SerializeField, Range(0.1f, 100f)]
-                    private float _attackPower;
-                    [SerializeField, Range(0.1f, 8f)]
-                    private float _attackInterval;
                     [SerializeReference, SubclassSelector]
                     private IAllyAttack _allyAttack;
+
+                    private AllyController _controller;
 
                     private float _attackIntervalTimer = 0f;
 
                     // トリガー内にオブジェクトが存在し、
                     // 攻撃インターバルが経過していたら攻撃可能を表現する。
                     public bool IsAttackable =>
-                        _attackIntervalTimer >= _attackInterval &&
+                        _attackIntervalTimer >= _controller.Param.AttackInterval &&
                         _allyAttack != null &&
                         _allyAttack.IsAnyObjectInTrigger();
 
+                    public void Initialize(AllyController controller)
+                    {
+                        _controller = controller;
+                    }
+
                     public void Update()
                     {
-                        if (_attackIntervalTimer < _attackInterval)
+                        if (_attackIntervalTimer < _controller.Param.AttackInterval)
                         {
                             var gameSpeed = GameSpeedController.CurretGameSpeed;
                             _attackIntervalTimer += Time.deltaTime * gameSpeed;
@@ -39,7 +42,7 @@ namespace TeamB_TD
 
                         if (IsAttackable)
                         {
-                            _allyAttack.Fire(_attackPower);
+                            _allyAttack.Fire(_controller.Param.AttackPower);
                             _attackIntervalTimer = 0f;
                         }
                     }

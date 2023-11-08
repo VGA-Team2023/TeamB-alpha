@@ -13,16 +13,16 @@ namespace TeamB_TD
                 public class AllyController : MonoBehaviour, IDamageable
                 {
                     [SerializeField]
-                    private string _name;
+                    private UnitParameter _param = default;
                     [SerializeField]
-                    private int _cost;
+                    private string _name;
                     [SerializeField]
                     private AllyLifeController _lifeController;
                     [SerializeField]
                     private AllyAttackController _attackController;
 
+                    public UnitParameter Param => _param;
                     public string Name => _name;
-                    public int Cost => _cost;
                     public Vector3 WorldPosition => transform.position;
                     public AllyLifeController LifeController => _lifeController;
                     public AllyAttackController AttackController => _attackController;
@@ -32,6 +32,7 @@ namespace TeamB_TD
                     private void Start()
                     {
                         _lifeController.Initialize(this);
+                        _attackController.Initialize(this);
                     }
 
                     private void Update()
