@@ -16,7 +16,7 @@ namespace TeamB_TD
 
             private int _currentLife = 0;
 
-            public int HP => _currentLife;
+            public int Life => _currentLife;
 
             public Action<int> OnLifeChanged; //ライフ変化時に発火するイベント
             public Action OnDead;　//死亡時に発火するイベント
