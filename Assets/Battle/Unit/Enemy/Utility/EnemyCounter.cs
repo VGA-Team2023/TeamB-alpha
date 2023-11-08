@@ -19,11 +19,11 @@ namespace TeamB_TD
                     [SerializeField]
                     private StageController _stageController;
 
-                    private int _enemyCount = 0; // 敵の全体数。
+                    private int _totalEnemyCount = 0; // 敵の全体数。
                     private int _deadEnemyCount = 0; // 死んだ敵の数。
                     private int _towerInvasionCount = 0; // タワーに侵入した敵の数。
 
-                    public int EnemyCount => _enemyCount;
+                    public int TotalEnemyCount => _totalEnemyCount;
                     public int DeadEnemyCount => _deadEnemyCount;
                     public int TowerInvasionCount => _towerInvasionCount;
                     /// <summary> 行動完了した敵の数を表現する値。 </summary>
@@ -40,7 +40,7 @@ namespace TeamB_TD
 
                     private void Start()
                     {
-                        _enemyCount = GetEnemyCount(_stageController.enemySpawners);
+                        _totalEnemyCount = GetEnemyCount(_stageController.enemySpawners);
                     }
 
                     public int GetEnemyCount(IEnumerable<EnemySpawner> enemySpawners)

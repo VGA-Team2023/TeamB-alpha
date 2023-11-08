@@ -24,7 +24,7 @@ namespace TeamB_TD
                     private void Start()
                     {
                         var enemyCounter = EnemyCounter.Current;
-                        ApplyEnemyCount(enemyCounter.EnemyCount);
+                        ApplyEnemyCount(enemyCounter.TotalEnemyCount);
                         ApplyDeadEnemyCount(enemyCounter.DeadEnemyCount);
                         ApplyTowerInvasionCount(enemyCounter.TowerInvasionCount);
                         ApplyCompletedEnemyCount(enemyCounter.CompletedEnemyCount);
