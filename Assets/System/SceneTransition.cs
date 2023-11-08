@@ -1,8 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
-using Glib.InspectorExtension;
 
 namespace TeamB_TD
 {
@@ -12,8 +9,6 @@ namespace TeamB_TD
         {
             [Header("次のシーンに移るまでの時間")]
             [SerializeField] private float _delayTime = 0f;
-            [Header("移り先のシーンの名前")]
-            [SerializeField, SceneName] private string _sceneName = default;
 
             public static SceneTransition instance;
             public void Awake()
@@ -29,24 +24,12 @@ namespace TeamB_TD
                 }
 
             }
-            //public void SceneTrans()
-            //{
-            //    SceneManager.LoadScene(_sceneName);
-            //}
-
-            public IEnumerator SceneTrans()
+            public void SceneTrans(string sceneName)
             {
-                yield return new WaitForSeconds(_delayTime);
-                SceneManager.LoadScene(_sceneName);
+                SceneManager.LoadScene(sceneName);
             }
         }
-
-
-
-
     }
-
-
 }
 
 
