@@ -54,11 +54,9 @@ namespace TeamB_TD
                     {
                         if (_dragItem)
                         {
-                            var mousePos = Input.mousePosition;
-                            mousePos.z = _dragItemDistance;
-                            Vector3 worldPos = Camera.main.ScreenToWorldPoint(mousePos);
+                            Vector3 mouseWorldPos = GetMouseWorldPosition();
 
-                            _dragItem.transform.position = worldPos;
+                            _dragItem.transform.position = mouseWorldPos;
                         }
                     }
 
@@ -70,6 +68,9 @@ namespace TeamB_TD
                             _dragItem = GameObject.Instantiate(placeView.AllyPrefab);
                             _dragItem.enabled = false;
                             _dragItem.GetComponent<Collider2D>().enabled = false;
+
+                            Vector3 mouseWorldPos = GetMouseWorldPosition();
+                            _dragItem.transform.position = mouseWorldPos;
                         }
                     }
 
@@ -112,6 +113,13 @@ namespace TeamB_TD
                         if (_resourceManager.CurrentResource - _dragItem.Cost < 0) return false;
 
                         return true;
+                    }
+
+                    private Vector3 GetMouseWorldPosition()
+                    {
+                        var mousePos = Input.mousePosition;
+                        mousePos.z = _dragItemDistance;
+                        return Camera.main.ScreenToWorldPoint(mousePos);
                     }
                 }
             }
