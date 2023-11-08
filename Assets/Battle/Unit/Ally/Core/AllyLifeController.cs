@@ -13,13 +13,10 @@ namespace TeamB_TD
                 public class AllyLifeController
                 {
                     [SerializeField]
-                    private float _maxLife;
-                    [SerializeField]
                     private float _currentLife;
 
                     private AllyController _controller;
 
-                    public float MaxLife => _maxLife;
                     public float CurrentLife => _currentLife;
 
                     public event Action OnDead;
@@ -28,14 +25,14 @@ namespace TeamB_TD
                     public void Initialize(AllyController controller)
                     {
                         _controller = controller;
-                        _currentLife = _maxLife;
+                        _currentLife = _controller.Param.MaxLife;
                     }
 
                     public void Heal(float value)
                     {
                         var old = _currentLife;
                         _currentLife += value;
-                        if (_currentLife > _maxLife) _currentLife = MaxLife;
+                        if (_currentLife > _controller.Param.MaxLife) _currentLife = _controller.Param.MaxLife;
                         if (_currentLife < 0) _currentLife = 0;
 
                         if (old != _currentLife)
@@ -54,7 +51,7 @@ namespace TeamB_TD
                     {
                         var old = _currentLife;
                         _currentLife -= value;
-                        if (_currentLife > _maxLife) _currentLife = MaxLife;
+                        if (_currentLife > _controller.Param.MaxLife) _currentLife = _controller.Param.MaxLife;
                         if (_currentLife < 0) _currentLife = 0;
 
                         if (old != _currentLife)

@@ -100,14 +100,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77c9061081cb18d489a43c7d7abfb847, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _param: {fileID: 11400000, guid: 387708d40c6fa5c4d84a27ae801408eb, type: 2}
   _name: sample 3
   _cost: 0
   _lifeController:
-    _maxLife: 100
     _currentLife: 0
   _attackController:
-    _attackPower: 15
-    _attackInterval: 2
     _allyAttack:
       rid: -2
   references:
