@@ -13,7 +13,7 @@ namespace TeamB_TD
                 public class AllyController : MonoBehaviour, IDamageable
                 {
                     [SerializeField]
-                    private UnitParameter _param = default;
+                    private AllyParameter _param = default;
                     [SerializeField]
                     private string _name;
                     [SerializeField]
@@ -21,7 +21,7 @@ namespace TeamB_TD
                     [SerializeField]
                     private AllyAttackController _attackController;
 
-                    public UnitParameter Param => _param;
+                    public AllyParameter Param => _param;
                     public string Name => _name;
                     public Vector3 WorldPosition => transform.position;
                     public AllyLifeController LifeController => _lifeController;
