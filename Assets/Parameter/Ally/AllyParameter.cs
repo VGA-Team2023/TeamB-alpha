@@ -4,7 +4,7 @@ namespace TeamB_TD
 {
     [CreateAssetMenu(fileName = "AllyUnitParameter", menuName = "ScriptableObjects/CreateAllyUnitParameter")]
 
-    public class AllyParameter : ScriptableObject , IWeaponType
+    public class AllyParameter : ScriptableObject, IWeaponType
     {
         [SerializeField, Header("近距離or遠距離")] private WeaponType _weaponType;
         [SerializeField, Header("ユニットID")] private int _id;
@@ -23,5 +23,16 @@ namespace TeamB_TD
         public float Cost => _cost;
         public float AttackRange => _attackRange;
         public float AttackInterval => _attackInterval;
+
+        [SerializeField]
+        private GameObject _allyPrefab; // 対応する味方ユニットのプレハブ。
+
+        private void OnValidate()
+        {
+            if (_allyPrefab == null) return;
+            var trigger = _allyPrefab.GetComponentInChildren<Battle.Unit.ColliderTriggerHandler2D>();
+            if (trigger == null) return;
+            trigger.transform.localScale = new Vector3(_attackRange, _attackRange, 1f);
+        }
     }
 }

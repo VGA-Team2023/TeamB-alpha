@@ -18,5 +18,6 @@ MonoBehaviour:
   _attackPower: 30
   _maxTargetCount: 2
   _cost: 6
-  _attackRange: 3
+  _attackRange: 6
   _attackInterval: 1
+  _allyPrefab: {fileID: 4698916241472948459, guid: 5dacf957a1191a147a084ce106942135, type: 3}
