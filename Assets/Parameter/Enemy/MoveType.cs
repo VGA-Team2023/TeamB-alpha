@@ -4,12 +4,12 @@ namespace TeamB_TD
 {
     namespace Enemy
     {
-        public enum MoveCategorize
-        { 
+        public enum MoveType
+        {
             None,
             OnGround,
             Floating,
-        }    
+        }
     }
 }
 

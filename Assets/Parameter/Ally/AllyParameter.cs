@@ -4,7 +4,7 @@ namespace TeamB_TD
 {
     [CreateAssetMenu(fileName = "AllyUnitParameter", menuName = "ScriptableObjects/CreateAllyUnitParameter")]
 
-    public class UnitParameter : ScriptableObject , IWeaponType
+    public class AllyParameter : ScriptableObject , IWeaponType
     {
         [SerializeField, Header("近距離or遠距離")] private WeaponType _weaponType;
         [SerializeField, Header("ユニットID")] private int _id;
