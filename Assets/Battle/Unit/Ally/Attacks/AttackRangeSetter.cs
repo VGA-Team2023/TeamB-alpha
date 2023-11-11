@@ -18,7 +18,7 @@ namespace TeamB_TD
 
                     private void Start()
                     {
-                        _transform.localScale = new Vector3(_parameter.AttackRange * 2f, _parameter.AttackRange * 2f, 1f);
+                        _transform.localScale = new Vector3(_parameter.AttackRange, _parameter.AttackRange, 1f);
                     }
                 }
             }
