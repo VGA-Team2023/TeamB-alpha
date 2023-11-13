@@ -16,8 +16,6 @@ namespace TeamB_TD
                 [Serializable]
                 public class EnemyMove
                 {
-                    [SerializeField, Range(1f, 10f)]
-                    private float _moveSpeed;
                     [SerializeField]
                     private ForwardObjectScanner _scanner;
 
@@ -58,7 +56,7 @@ namespace TeamB_TD
                         if (!IsMovable) return;
 
                         var gameSpeed = GameSpeedController.CurretGameSpeed;
-                        transform.Translate(_moveDir.normalized * Time.deltaTime * _moveSpeed * gameSpeed);
+                        transform.Translate(_moveDir.normalized * Time.deltaTime * _controller.Param.MoveSpeed * gameSpeed);
 
                         // 左右の補正（行き過ぎた場合、目標地点に強制移動する。）
                         if (_moveDir.x >= 0f && transform.position.x > _currentTargetPosition.x ||

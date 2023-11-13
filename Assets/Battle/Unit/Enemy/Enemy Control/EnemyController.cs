@@ -13,6 +13,8 @@ namespace TeamB_TD
                 public class EnemyController : MonoBehaviour, IDamageable
                 {
                     [SerializeField]
+                    private EnemyParameter _param;
+                    [SerializeField]
                     private string _name;
                     [SerializeField]
                     private EnemyAttackController _attackController;
@@ -21,6 +23,7 @@ namespace TeamB_TD
                     [SerializeField]
                     private EnemyMove _moveController;
 
+                    public EnemyParameter Param => _param;
                     public string Name => _name;
                     public EnemyAttackController AttackController => _attackController;
                     public EnemyLifeController LifeController => _lifeController;
@@ -38,6 +41,7 @@ namespace TeamB_TD
 
                     public void Initialize(Stage stage, StageCell spawnerCell, StageCell goalCell)
                     {
+                        _attackController.Initialize(this);
                         _lifeController.Initialize(this);
                         _moveController.Initialize(this, stage, spawnerCell, goalCell);
                     }

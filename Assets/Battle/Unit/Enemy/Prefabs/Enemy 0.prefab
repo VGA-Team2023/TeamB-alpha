@@ -102,18 +102,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7670a1297e83a24d895991f99c888ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _param: {fileID: 11400000, guid: 833765327ec43f747961b4eed3e15e5f, type: 2}
   _name: 
   _attackController:
-    _attackPower: 6
-    _attackInterval: 1.6
     _attack:
       rid: 1259260914126028800
   _lifeController:
-    _maxLife: 78.3
     _currentLife: 0
     _droppedResourceAmount: 1
   _moveController:
-    _moveSpeed: 1
     _scanner: {fileID: -4098808946492156445}
   references:
     version: 2

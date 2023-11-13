@@ -9,6 +9,8 @@ namespace TeamB_TD
         [SerializeField] private int _id;
         [Header("スポーン時の敵の体力")]
         [SerializeField] private int _maxLife;
+        [Header("敵の攻撃力")]
+        [SerializeField] private float _attackPower;
         [Header("敵の移動速度")]
         [SerializeField] private float _moveSpeed;
         [Header("敵の攻撃間隔")]
@@ -20,6 +22,7 @@ namespace TeamB_TD
 
         public int ID => _id;
         public int MaxHP => _maxLife;
+        public float AttackPower => _attackPower;
         public float MoveSpeed => _moveSpeed;
         public float AttackInterval => _attackInterval;
         public float AttackPeriodicTime => _attackPeriodicTime;
