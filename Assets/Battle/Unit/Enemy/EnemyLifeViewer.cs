@@ -27,7 +27,7 @@ namespace TeamB_TD
                         }
 
                         _slider.minValue = 0f;
-                        _slider.maxValue = LifeController.MaxLife;
+                        _slider.maxValue = _enemyController.Param.MaxHP;
                         _slider.value = LifeController.CurrentLife;
                     }
 

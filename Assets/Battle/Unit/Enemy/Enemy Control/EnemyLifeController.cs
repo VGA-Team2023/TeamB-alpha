@@ -13,8 +13,6 @@ namespace TeamB_TD
                 [Serializable]
                 public class EnemyLifeController
                 {
-                    [SerializeField, Range(1f, 100f)]
-                    private float _maxLife;
                     [SerializeField]
                     private float _currentLife;
                     [SerializeField, Range(0.1f, 50f)]
@@ -22,7 +20,6 @@ namespace TeamB_TD
 
                     private EnemyController _controller;
 
-                    public float MaxLife => _maxLife;
                     public float CurrentLife => _currentLife;
 
                     public event Action<float> OnLifeChanged;
@@ -31,7 +28,7 @@ namespace TeamB_TD
                     public void Initialize(EnemyController enemyController)
                     {
                         _controller = enemyController;
-                        _currentLife = _maxLife;
+                        _currentLife = _controller.Param.MaxHP;
                     }
 
                     public void Damage(float value)
