@@ -20,4 +20,4 @@ MonoBehaviour:
   _cost: 3
   _attackRange: 2
   _attackInterval: 0.5
-  _allyPrefab: {fileID: 0}
+  _allyPrefab: {fileID: 6772538301748197209, guid: 766835ec18ba0f040bd842b23fc5a3c4, type: 3}

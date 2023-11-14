@@ -98,8 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d729e181f2e8e514d8848fe571caf73b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _yDelta: 0.8
-  _xDelta: 1
+  _yDelta: 1
+  _xDelta: 2
   _multiplePossibleColor: {r: 0, g: 1, b: 0, a: 1}
   _movableColor: {r: 1, g: 1, b: 1, a: 1}
   _placableColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}

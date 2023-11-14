@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fd1b414f81b40e45a8cac7197dffcf3, type: 3}
   m_Name: AllyUnit_4
   m_EditorClassIdentifier: 
-  _weaponType: 1
+  _weaponType: 2
   _id: 4
   _maxLife: 70
   _attackPower: 20
@@ -20,4 +20,4 @@ MonoBehaviour:
   _cost: 7
   _attackRange: 2
   _attackInterval: 1.5
-  _allyPrefab: {fileID: 0}
+  _allyPrefab: {fileID: 4481329190134031740, guid: 73d650f66e719cb4f9af4c3092ee9bd7, type: 3}
