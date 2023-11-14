@@ -23,8 +23,8 @@ namespace TeamB_TD
                     public void Initialize(AllyController allyPrefab)
                     {
                         _allyPrefab = allyPrefab;
-                        _nameText.text = "Name: " + allyPrefab.Name;
-                        _costText.text = "Cost: " + allyPrefab.Param.Cost;
+                        //_nameText.text = "Name: " + allyPrefab.Name;
+                        _costText.text = /*"Cost: " + */$"{allyPrefab.Param.Cost}";
                     }
                 }
             }

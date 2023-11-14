@@ -21,7 +21,7 @@ namespace TeamB_TD
                     {
                         foreach (var allyPrefab in _allyContainer.AllyPrefabs)
                         {
-                            var view = GameObject.Instantiate(_viewPrefab, _viewParent);
+                            var view = Instantiate(_viewPrefab, _viewParent);
                             view.Initialize(allyPrefab);
                         }
                     }
