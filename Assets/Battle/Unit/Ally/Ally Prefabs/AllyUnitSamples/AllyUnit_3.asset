@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fd1b414f81b40e45a8cac7197dffcf3, type: 3}
+  m_Name: AllyUnit_3
+  m_EditorClassIdentifier: 
+  _weaponType: 1
+  _id: 3
+  _maxLife: 40
+  _attackPower: 20
+  _maxTargetCount: 1
+  _cost: 3
+  _attackRange: 2
+  _attackInterval: 0.5
+  _allyPrefab: {fileID: 0}
