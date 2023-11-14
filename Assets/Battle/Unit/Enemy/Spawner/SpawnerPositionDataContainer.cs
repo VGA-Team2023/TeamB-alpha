@@ -29,6 +29,9 @@ namespace TeamB_TD
                         new SpawnerPositionData(new Vector2Int(0, 5), new Vector2Int(15, 5)), // 6
                         new SpawnerPositionData(new Vector2Int(0, 6), new Vector2Int(15, 6)), // 7
                         new SpawnerPositionData(new Vector2Int(0, 7), new Vector2Int(15, 7)), // 8
+                        new SpawnerPositionData(new Vector2Int(0, 1), new Vector2Int(8, 1)), // 9
+                        new SpawnerPositionData(new Vector2Int(0, 2), new Vector2Int(8, 2)), // 10
+                        new SpawnerPositionData(new Vector2Int(0, 3), new Vector2Int(8, 3)), // 11
                     };
 
                     public SpawnerPositionData GetSpawnerPositionData(int id)
