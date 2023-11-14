@@ -119,7 +119,7 @@ MonoBehaviour:
       type: {class: EnemySingleAttack, ns: TeamB_TD.Battle.Unit.Enemy, asm: Assembly-CSharp}
       data:
         _colliderTriggerHandler:
-          _colliderTriggerHandler: {fileID: 0}
+          _colliderTriggerHandler: {fileID: 3197006297835871505}
 --- !u!114 &7632917063754721893
 MonoBehaviour:
   m_ObjectHideFlags: 0
