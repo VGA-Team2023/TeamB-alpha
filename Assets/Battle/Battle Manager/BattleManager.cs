@@ -31,6 +31,11 @@ namespace TeamB_TD
                 _current = this;
             }
 
+            private void Start()
+            {
+                AudioManager.Instance.BGM.Play("BGM", "BGM_001_battle");
+            }
+
             private void GameClear()
             {
                 Status = BattleStatus.GameClear;
