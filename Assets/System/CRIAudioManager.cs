@@ -1,4 +1,6 @@
-﻿using CriWare;
+// 日本語対応
+
+using CriWare;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -6,22 +8,22 @@ using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
 
-public class AudioManager
+public class CriAudioManager
 {
     /// <summary>インスタンス</summary>
-    private static AudioManager _instance = null;
+    private static CriAudioManager _instance = null;
 
     /// <summary>インスタンス</summary>
-    public static AudioManager Instance
+    public static CriAudioManager Instance
     {
         get
         {
-            _instance ??= new AudioManager();
+            _instance ??= new CriAudioManager();
             return _instance;
         }
     }
 
-    private AudioManager()
+    private CriAudioManager()
     {
         _masterVolume = new Volume();
         _bgm = new CriSingleChannel(_masterVolume);

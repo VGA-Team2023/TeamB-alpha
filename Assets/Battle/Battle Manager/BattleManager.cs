@@ -33,7 +33,7 @@ namespace TeamB_TD
 
             private void Start()
             {
-                AudioManager.Instance.BGM.Play("BGM", "BGM_001_battle");
+                CriAudioManager.Instance.BGM.Play("BGM", "BGM_001_battle");
             }
 
             private void GameClear()
