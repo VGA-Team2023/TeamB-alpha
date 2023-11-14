@@ -50,7 +50,7 @@ namespace TeamB_TD
 
             private void ApplyTowerLife(int life)
             {
-                _towerLifeText.text = /*$"塔：{life}"*/"塔：Value";
+                _towerLifeText.text = $"塔：{life}";
             }
         }
     }
