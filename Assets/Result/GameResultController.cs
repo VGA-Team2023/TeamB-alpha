@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using TeamB_TD.Battle.Unit.Enemy;
 using TeamB_TD.Tower;
+using TeamB_TD.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameResultController : MonoBehaviour
 {
@@ -23,6 +25,8 @@ public class GameResultController : MonoBehaviour
 
     public void DisableResultPanel() 
     {
-        this .gameObject.SetActive(false); 
+        this .gameObject.SetActive(false);
+        //TODO:リザルト⇄バトルのサイクルをα用で作成したのでリファクタする
+        SceneTransition.instance.SceneTrans("Stage 1");
     }
 }
