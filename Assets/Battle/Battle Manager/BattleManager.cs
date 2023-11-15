@@ -13,7 +13,7 @@ namespace TeamB_TD
             private static BattleManager _current;
             public static BattleManager Current => _current;
 
-            [SerializeField] private GameResultController _result = null;
+            [SerializeField] private Result.GameResultController _result = null;
 
             private BattleStatus _status = BattleStatus.Ready;
 
@@ -42,7 +42,7 @@ namespace TeamB_TD
             }
 
             //TODO:α用の突貫工事リザルト表示なのでリファクタする。
-            /*private bool _isGameFinish = false;
+            private bool _isGameFinish = false;
 
             private void Update()
             {
@@ -52,7 +52,7 @@ namespace TeamB_TD
                     _result.ResultScoreSet();
                     _isGameFinish = true;
                 }
-            }*/
+            }
 
             private void GameClear()
             {
