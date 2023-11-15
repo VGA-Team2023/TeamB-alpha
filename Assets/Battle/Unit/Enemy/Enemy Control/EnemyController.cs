@@ -59,6 +59,7 @@ namespace TeamB_TD
 
                     public void Damge(float value)
                     {
+                        SoundManager.Instance.CriAtomPlay(CueSheet.SE, "SE_003_battleUnit4");
                         _lifeController.Damage(value);
                     }
                 }

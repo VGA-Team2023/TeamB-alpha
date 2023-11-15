@@ -37,7 +37,8 @@ namespace TeamB_TD
 
             private void Start()
             {
-                CriAudioManager.Instance.BGM.Play("BGM", "BGM_001_battle");
+                //CriAudioManager.Instance.BGM.Play("BGM", "BGM_001_battle", 0.8f);
+                SoundManager.Instance.CriAtomBGMPlay("BGM_001_battle");
             }
 
             //TODO:α用の突貫工事リザルト表示なのでリファクタする。
