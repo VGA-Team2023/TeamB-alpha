@@ -6,27 +6,34 @@ using TeamB_TD.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameResultController : MonoBehaviour
+namespace TeamB_TD
 {
-    [SerializeField] GameResultViewer _gameResultViewer;
-    [SerializeField] TowerController _towerController;
-
-    public void ResultScoreSet()
+    namespace Result
     {
-        EnableResultPanel();
-        _gameResultViewer.DeadEnemyCountSet(EnemyCounter.Current.DeadEnemyCount);
-        _gameResultViewer.TowerHPSet(_towerController.Life);
-    }
+        public class GameResultController : MonoBehaviour
+        {
+            [SerializeField] GameResultViewer _gameResultViewer;
+            [SerializeField] TowerController _towerController;
 
-    public void EnableResultPanel()
-    {
-        this.gameObject.SetActive(true);
-    }
+            public void ResultScoreSet()
+            {
+                EnableResultPanel();
+                _gameResultViewer.DeadEnemyCountSet(EnemyCounter.Current.DeadEnemyCount);
+                _gameResultViewer.TowerHPSet(_towerController.Life);
+            }
 
-    public void DisableResultPanel() 
-    {
-        this .gameObject.SetActive(false);
-        //TODO:リザルト⇄バトルのサイクルをα用で作成したのでリファクタする
-        SceneTransition.instance.SceneTrans("Stage 1");
+
+            public void EnableResultPanel()
+            {
+                this.gameObject.SetActive(true);
+            }
+
+            public void DisableResultPanel()
+            {
+                this.gameObject.SetActive(false);
+            }
+        }
     }
 }
+
+
