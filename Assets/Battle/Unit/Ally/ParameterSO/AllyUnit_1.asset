@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weaponType: 1
   _id: 1
-  _maxLife: 50
+  _maxLife: 100
   _attackPower: 30
   _maxTargetCount: 2
   _cost: 6
-  _attackRange: 2
+  _attackRange: 3.3
   _attackInterval: 1.5
   _allyPrefab: {fileID: 5690702820118472730, guid: 9101ab5ec9718c3439dc68ab9bae6328, type: 3}

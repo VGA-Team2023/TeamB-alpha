@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Net;
+using TeamB_TD.Battle.Unit.Enemy;
 using UnityEngine;
 
 namespace TeamB_TD
@@ -10,6 +12,8 @@ namespace TeamB_TD
         {
             private static BattleManager _current;
             public static BattleManager Current => _current;
+
+            [SerializeField] private GameResultController _result = null;
 
             private BattleStatus _status = BattleStatus.Ready;
 
@@ -34,6 +38,18 @@ namespace TeamB_TD
             private void Start()
             {
                 CriAudioManager.Instance.BGM.Play("BGM", "BGM_001_battle");
+            }
+
+            private bool _isGameFinish = false;
+
+            private void Update()
+            {
+                if (EnemyCounter.Current.DeadEnemyCount >= EnemyCounter.Current.TotalEnemyCount && !_isGameFinish)
+                {
+                    GameClear();
+                    _result.ResultScoreSet();
+                    _isGameFinish = true;
+                }
             }
 
             private void GameClear()

@@ -1,4 +1,5 @@
 ﻿using TeamB_TD.Battle.Unit.Enemy;
+using TeamB_TD.Tower;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,28 +20,26 @@ namespace TeamB_TD
             private void OnEnable()
             {
                 var enemyCounter = EnemyCounter.Current;
+                if (enemyCounter) enemyCounter.OnDeadEnemyCountChanged += ApplyDeadEnemyCount;
 
-                if (enemyCounter)
-                {
-                    enemyCounter.OnDeadEnemyCountChanged += ApplyDeadEnemyCount;
-                }
+                var tower = TowerController.Instance;
+                if (tower) tower.OnLifeChanged += ApplyTowerLife;
             }
 
             private void Start()
             {
                 _totalEnemyCount = EnemyCounter.Current.TotalEnemyCount;
                 ApplyDeadEnemyCount(EnemyCounter.Current.DeadEnemyCount);
-                ApplyTowerLife(-1);
+                ApplyTowerLife(TowerController.Instance.Life);
             }
 
             private void OnDisable()
             {
                 var enemyCounter = EnemyCounter.Current;
+                if (enemyCounter) enemyCounter.OnDeadEnemyCountChanged -= ApplyDeadEnemyCount;
 
-                if (enemyCounter)
-                {
-                    enemyCounter.OnDeadEnemyCountChanged -= ApplyDeadEnemyCount;
-                }
+                var tower = TowerController.Instance;
+                if (tower) tower.OnLifeChanged -= ApplyTowerLife;
             }
 
             private void ApplyDeadEnemyCount(int count)
