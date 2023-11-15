@@ -12,8 +12,8 @@ public class GameResultController : MonoBehaviour
     public void ResultScoreSet()
     {
         EnableResultPanel();
-        //_gameResultViewer.DeadEnemyCountSet(EnemyCounter.Current.DeadEnemyCount);
-        //_gameResultViewer.TowerHPSet(_towerController.Life);
+        _gameResultViewer.DeadEnemyCountSet(EnemyCounter.Current.DeadEnemyCount);
+        _gameResultViewer.TowerHPSet(_towerController.Life);
     }
 
     public void EnableResultPanel()
