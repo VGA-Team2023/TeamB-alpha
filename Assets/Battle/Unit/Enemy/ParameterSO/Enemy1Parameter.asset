@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 1
   _maxLife: 50
-  _attackPower: 0
+  _attackPower: 2
   _moveSpeed: 0.7
-  _attackInterval: 1
+  _attackInterval: 2
   _attackPeriodicTime: 1
   moveCategorize: 1

@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using TeamB_TD.Battle.Unit.Enemy;
 using TeamB_TD.Tower;
+using TeamB_TD.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace TeamB_TD
 {
@@ -19,6 +21,7 @@ namespace TeamB_TD
                 _gameResultViewer.DeadEnemyCountSet(EnemyCounter.Current.DeadEnemyCount);
                 _gameResultViewer.TowerHPSet(_towerController.Life);
             }
+
 
             public void EnableResultPanel()
             {

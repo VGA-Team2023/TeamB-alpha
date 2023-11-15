@@ -37,20 +37,22 @@ namespace TeamB_TD
 
             private void Start()
             {
-                CriAudioManager.Instance.BGM.Play("BGM", "BGM_001_battle");
+                //CriAudioManager.Instance.BGM.Play("BGM", "BGM_001_battle", 0.8f);
+                SoundManager.Instance.CriAtomBGMPlay("BGM_001_battle");
             }
 
-            private bool _isGameFinish = false;
+            //TODO:α用の突貫工事リザルト表示なのでリファクタする。
+            /*private bool _isGameFinish = false;
 
             private void Update()
             {
-                if (EnemyCounter.Current.DeadEnemyCount >= EnemyCounter.Current.TotalEnemyCount && !_isGameFinish)
+                if (EnemyCounter.Current.CompletedEnemyCount >= EnemyCounter.Current.TotalEnemyCount && !_isGameFinish)
                 {
                     GameClear();
                     _result.ResultScoreSet();
                     _isGameFinish = true;
                 }
-            }
+            }*/
 
             private void GameClear()
             {
