@@ -1,5 +1,5 @@
 ﻿using TeamB_TD.Battle.Unit.Enemy;
-using TeamB_TD.Tower;
+using TeamB_TD.Battle.Tower;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,7 +13,11 @@ namespace TeamB_TD
             [SerializeField]
             private Text _enemyCountText = null;
             [SerializeField]
+            private string _enemyUiText = "敵";
+            [SerializeField]
             private Text _towerLifeText = null;
+            [SerializeField]
+            private string _towerHealthText = "塔";
 
             private int _totalEnemyCount = -1;
 
@@ -44,12 +48,12 @@ namespace TeamB_TD
 
             private void ApplyDeadEnemyCount(int count)
             {
-                _enemyCountText.text = $"敵：{count} / {_totalEnemyCount}";
+                _enemyCountText.text = $"{_enemyUiText}：{count} / {_totalEnemyCount}";
             }
 
             private void ApplyTowerLife(int life)
             {
-                _towerLifeText.text = $"塔：{life}";
+                _towerLifeText.text = $"{_towerHealthText}：{life}";
             }
         }
     }
