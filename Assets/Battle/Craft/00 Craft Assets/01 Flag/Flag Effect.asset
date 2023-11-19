@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 126442244cf43ff42bc60194a8450b38, type: 3}
+  m_Name: Flag Effect
+  m_EditorClassIdentifier: 
+  _flagParams:
+  - {fileID: 11400000, guid: 3534f53da40d8fa42afde2bc8643bf23, type: 2}
+  - {fileID: 11400000, guid: 69f8a2e98d14fa649944987990c527c5, type: 2}
+  - {fileID: 11400000, guid: cee424b5ae68b4a4c804e33bb2128e03, type: 2}
