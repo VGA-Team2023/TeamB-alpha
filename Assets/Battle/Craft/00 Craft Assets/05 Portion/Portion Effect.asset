@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e2e7357fa435504dbe906ace87af628, type: 3}
+  m_Name: Portion Effect
+  m_EditorClassIdentifier: 
+  _portionParams:
+  - {fileID: 11400000, guid: 1c079c9f222ca394c8b16cc7d63c7076, type: 2}
+  - {fileID: 11400000, guid: 335ad73b4c7736d40a093ea179cb2a37, type: 2}
+  - {fileID: 11400000, guid: 6bbb46ee15125084ba24f846a2f52c83, type: 2}
