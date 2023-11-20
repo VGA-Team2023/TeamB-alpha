@@ -13,16 +13,19 @@ namespace TeamB_TD
             [SerializeField]
             private Transform _uiVFXParent;
 
+            [SerializeField]
+            private bool _useDamageVFX = true;
+            [SerializeField]
+            private DamageVFX _damageVFXPrefab;
+
             private void Awake()
             {
                 _current = this;
             }
 
-            [SerializeField]
-            private DamageVFX _damageVFXPrefab;
-
             public void RequestDamageVFX(float damageValue, Vector2 position)
             {
+                if (!_useDamageVFX) return;
                 var instance = Instantiate(_damageVFXPrefab, position, Quaternion.identity, _uiVFXParent);
                 instance.Initialize(damageValue);
             }
