@@ -76,6 +76,9 @@ namespace TeamB_TD
                     public void Damge(float value)
                     {
                         _lifeController.Damge(value);
+
+                        var screenPos = Camera.main.WorldToScreenPoint(transform.position);
+                        VFXManager.Current.RequestDamageVFX(value, screenPos);
                     }
                 }
             }
