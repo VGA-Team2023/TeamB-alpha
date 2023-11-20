@@ -1,4 +1,5 @@
-﻿using TeamB_TD.Battle.ResourceManagement;
+﻿using System;
+using TeamB_TD.Battle.ResourceManagement;
 using TeamB_TD.Battle.StageManagement;
 using TeamB_TD.Utility;
 using UnityEngine;
@@ -89,14 +90,17 @@ namespace TeamB_TD
                         }
                     }
 
+                    public event Action<AllyController> OnPlacedAlly;
+
                     private void Place(AllyController allyPrefab, IStageCell stageCell)
                     {
                         // stageCellにallyPrefabを配置する。
                         allyPrefab.enabled = true;
                         allyPrefab.GetComponent<Collider2D>().enabled = true;
                         var position = stageCell.WorldPosition + _placeOffset;
-                        Instantiate(allyPrefab, position, Quaternion.identity);
+                        var instance = Instantiate(allyPrefab, position, Quaternion.identity);
                         _resourceManager.TryUseResource(allyPrefab.Param.Cost);
+                        OnPlacedAlly?.Invoke(instance);
                     }
 
                     private bool TryGetCell(GameObject gameObject, out IStageCell cell)
