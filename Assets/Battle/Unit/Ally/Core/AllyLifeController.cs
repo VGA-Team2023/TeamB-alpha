@@ -25,14 +25,14 @@ namespace TeamB_TD
                     public void Initialize(AllyController controller)
                     {
                         _controller = controller;
-                        _currentLife = _controller.Param.MaxLife;
+                        _currentLife = _controller.TotalParam.MaxLife;
                     }
 
                     public void Heal(float value)
                     {
                         var old = _currentLife;
                         _currentLife += value;
-                        if (_currentLife > _controller.Param.MaxLife) _currentLife = _controller.Param.MaxLife;
+                        if (_currentLife > _controller.TotalParam.MaxLife) _currentLife = _controller.TotalParam.MaxLife;
                         if (_currentLife < 0) _currentLife = 0;
 
                         if (old != _currentLife)
@@ -51,7 +51,7 @@ namespace TeamB_TD
                     {
                         var old = _currentLife;
                         _currentLife -= value;
-                        if (_currentLife > _controller.Param.MaxLife) _currentLife = _controller.Param.MaxLife;
+                        if (_currentLife > _controller.TotalParam.MaxLife) _currentLife = _controller.TotalParam.MaxLife;
                         if (_currentLife < 0) _currentLife = 0;
 
                         if (old != _currentLife)

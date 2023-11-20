@@ -24,7 +24,7 @@ namespace TeamB_TD
                     {
                         _allyPrefab = allyPrefab;
                         //_nameText.text = "Name: " + allyPrefab.Name;
-                        _costText.text = /*"Cost: " + */$"{allyPrefab.Param.Cost}";
+                        _costText.text = /*"Cost: " + */$"{allyPrefab.ConstantParams.Cost}";
                     }
                 }
             }

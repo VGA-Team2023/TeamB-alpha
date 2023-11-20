@@ -99,7 +99,7 @@ namespace TeamB_TD
                         allyPrefab.GetComponent<Collider2D>().enabled = true;
                         var position = stageCell.WorldPosition + _placeOffset;
                         var instance = Instantiate(allyPrefab, position, Quaternion.identity);
-                        _resourceManager.TryUseResource(allyPrefab.Param.Cost);
+                        _resourceManager.TryUseResource(allyPrefab.ConstantParams.Cost);
                         OnPlacedAlly?.Invoke(instance);
                     }
 
@@ -114,7 +114,7 @@ namespace TeamB_TD
                     {
                         if (!prefab) return false;
                         if (!cell.Status.HasFlag(StageCellStatus.UnitPlacable)) return false;
-                        if (_resourceManager.CurrentResource - _dragItem.Param.Cost < 0) return false;
+                        if (_resourceManager.CurrentResource - _dragItem.ConstantParams.Cost < 0) return false;
 
                         return true;
                     }

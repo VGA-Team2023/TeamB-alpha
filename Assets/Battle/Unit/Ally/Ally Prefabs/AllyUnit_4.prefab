@@ -184,6 +184,7 @@ GameObject:
   - component: {fileID: 8488858468707676979}
   - component: {fileID: 4060911339381851421}
   - component: {fileID: 7086405247790331640}
+  - component: {fileID: -2208864612785357384}
   m_Layer: 6
   m_Name: AllyUnit_4
   m_TagString: Untagged
@@ -307,7 +308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77c9061081cb18d489a43c7d7abfb847, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _param: {fileID: 11400000, guid: af8aa86611a4d2a49aab3a7611974b63, type: 2}
+  _constantParam: {fileID: 11400000, guid: af8aa86611a4d2a49aab3a7611974b63, type: 2}
   _name: Unit4
   _lifeController:
     _currentLife: 0
@@ -336,6 +337,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _slider: {fileID: 7159356215434251493}
   _allyController: {fileID: 4060911339381851421}
+--- !u!114 &-2208864612785357384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4481329190134031740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b00d884a804e36e4fb8ee28bbdce693f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _craftType: 3
 --- !u!1001 &1687047711328524042
 PrefabInstance:
   m_ObjectHideFlags: 0

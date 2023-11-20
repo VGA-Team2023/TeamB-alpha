@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fd1b414f81b40e45a8cac7197dffcf3, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ac2aab50bae6fe42b5a1a4defeec156, type: 3}
   m_Name: AllyUnit_4
   m_EditorClassIdentifier: 
   _weaponType: 2
