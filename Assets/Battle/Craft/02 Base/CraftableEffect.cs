@@ -15,7 +15,7 @@ namespace TeamB_TD
                 public abstract CraftableParameter[] Parameters { get; }
                 public virtual void RequestEffect(AllyController user, int level, CancellationToken token = default)
                 {
-                    Debug.Log(user.gameObject.name);
+                    // Debug.Log(user.gameObject.name);
                 }
             }
         }

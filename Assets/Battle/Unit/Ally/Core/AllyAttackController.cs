@@ -108,7 +108,7 @@ namespace TeamB_TD
 
                         private float _timer = 0f;
 
-                        private float AttackPower => Controller.AllyController.Param.AttackPower;
+                        private float AttackPower => Controller.AllyController.TotalParam.AttackPower;
 
                         public override void Enter()
                         {
@@ -143,7 +143,7 @@ namespace TeamB_TD
 
                         private float _timer = 0f;
 
-                        private float AttackInterval => AttackController.AllyController.Param.AttackInterval;
+                        private float AttackInterval => AttackController.AllyController.TotalParam.AttackInterval;
 
                         public override void Enter()
                         {

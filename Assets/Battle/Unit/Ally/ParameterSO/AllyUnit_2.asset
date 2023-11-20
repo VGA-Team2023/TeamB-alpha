@@ -9,15 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fd1b414f81b40e45a8cac7197dffcf3, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ac2aab50bae6fe42b5a1a4defeec156, type: 3}
   m_Name: AllyUnit_2
   m_EditorClassIdentifier: 
   _weaponType: 2
   _id: 2
   _maxLife: 40
   _attackPower: 30
-  _maxTargetCount: 0
+  _maxTargetCount: 1
   _cost: 10
   _attackRange: 3
   _attackInterval: 0.8
-  _allyPrefab: {fileID: 6643947450627859224, guid: d83438fce28b1bb43a6d5032a573ef94, type: 3}
+  _allyPrefab: {fileID: 0}

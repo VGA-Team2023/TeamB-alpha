@@ -61,12 +61,28 @@ namespace TeamB_TD
 
                 private void StartEffect(FlagParam param)
                 {
-                    Debug.Log("start flag");
+                    if (!PlacedAllyContainer.Current)
+                    {
+                        Debug.Log($"PlacedAllyContainer.Current is None");
+                        return;
+                    }
+                    foreach (var ally in PlacedAllyContainer.Current.PlacedAllies)
+                    {
+                        ally.MultiplierParams.Add(AllyBattleParameter.CreateOne(attackPower: param.PowerupAmount));
+                    }
                 }
 
                 private void EndEffect(FlagParam param)
                 {
-                    Debug.Log("end flag");
+                    if (!PlacedAllyContainer.Current)
+                    {
+                        Debug.Log($"PlacedAllyContainer.Current is None");
+                        return;
+                    }
+                    foreach (var ally in PlacedAllyContainer.Current.PlacedAllies)
+                    {
+                        ally.MultiplierParams.Remove(AllyBattleParameter.CreateOne(attackPower: param.PowerupAmount));
+                    }
                 }
             }
         }
