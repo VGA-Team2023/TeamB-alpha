@@ -27,6 +27,7 @@ namespace TeamB_TD
                     public AllyLifeController LifeController => _lifeController;
                     public AllyAttackController AttackController => _attackController;
 
+                    public event Action<AllyController> OnDeadAlly;
                     public event Action<IDamageable> OnDead;
 
                     private void Start()
@@ -43,6 +44,7 @@ namespace TeamB_TD
                     private void OnDestroy()
                     {
                         OnDead?.Invoke(this);
+                        OnDeadAlly?.Invoke(this);
                     }
 
                     public void Damge(float value)
