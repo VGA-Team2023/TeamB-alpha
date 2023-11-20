@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using TeamB_TD.Battle.Unit.Ally;
 using UnityEngine;
 
 namespace TeamB_TD
@@ -41,10 +42,11 @@ namespace TeamB_TD
                     CreateMenu(_cannonMenuPrefab, CraftType.Cannon);
                 }
 
-                public void ShowMenu(CraftType craftType, Vector2 position)
+                public void ShowMenu(AllyController ally, CraftType craftType, Vector2 position)
                 {
                     var menu = _craftMenuDic[craftType];
                     menu.RectTransform.position = position;
+                    menu.OnShowMenu(ally);
                     menu.gameObject.SetActive(true);
                 }
 

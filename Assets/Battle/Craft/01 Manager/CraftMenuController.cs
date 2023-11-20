@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System;
+using TeamB_TD.Battle.Unit.Ally;
 
 namespace TeamB_TD
 {
@@ -40,25 +41,24 @@ namespace TeamB_TD
                         if (IsMouseOverlappingMenu) return;
 
                         if (_lastShowedType != CraftType.Invalid)
-                        {
                             _manager.HideMenu(_lastShowedType);
-                        }
 
-                        var craftable = GetMouseOverlappingCraftable();
-                        _lastShowedType = craftable;
-                        if (craftable == CraftType.Invalid) return;
+                        if (!TryGetMouseOverlappingCraftable(out Craftable craftable)) return;
+                        _lastShowedType = craftable.CraftType;
 
-                        _manager.ShowMenu(craftable, MousePosition);
+                        if (craftable.CraftType == CraftType.Invalid) return;
+                        if (!craftable.TryGetComponent(out AllyController ally)) return;
+
+                        _manager.ShowMenu(ally, craftable.CraftType, MousePosition);
                     }
                 }
 
-                private CraftType GetMouseOverlappingCraftable()
+                private bool TryGetMouseOverlappingCraftable(out Craftable result)
                 {
-                    if (!MouseUtility.GetMouseOverlappingCollider2D(out RaycastHit2D hit, _layerMask)) return CraftType.Invalid;
+                    result = null;
+                    if (!MouseUtility.GetMouseOverlappingCollider2D(out RaycastHit2D hit, _layerMask)) return false;
 
-                    if (!hit.collider.TryGetComponent(out Craftable craftable)) return CraftType.Invalid;
-
-                    return craftable.CraftType;
+                    return hit.collider.TryGetComponent(out result);
                 }
             }
         }

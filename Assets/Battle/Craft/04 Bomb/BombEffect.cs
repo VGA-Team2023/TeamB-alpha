@@ -22,8 +22,9 @@ namespace TeamB_TD
 
                 public override CraftType CraftType => CraftType.Bomb;
 
-                public override void RequestEffect(AllyType user, int level, CancellationToken token = default)
+                public override void RequestEffect(AllyController user, int level, CancellationToken token = default)
                 {
+                    base.RequestEffect(user, level, token);
                     var index = level - 1;
                     var param = _bombParams[index];
                     PlayEffect(param, token);

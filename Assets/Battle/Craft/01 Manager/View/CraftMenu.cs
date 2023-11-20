@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using Cysharp.Threading.Tasks;
+using TeamB_TD.Battle.Unit.Ally;
 
 namespace TeamB_TD
 {
@@ -23,13 +24,20 @@ namespace TeamB_TD
                     CreateView(effect);
                 }
 
+                public void OnShowMenu(AllyController ally)
+                {
+                    _ally = ally;
+                }
+
+                private AllyController _ally;
+
                 private void CreateView(CraftableEffect effect)
                 {
                     for (int i = 0; i < effect.Parameters.Length; i++)
                     {
                         var level = i + 1;
                         var view = GameObject.Instantiate(_prefab, transform);
-                        view.Initialize(effect.name, level, () => effect.RequestEffect(effect.CraftType.ToAllyType(), level, this.GetCancellationTokenOnDestroy()));
+                        view.Initialize(effect.name, level, () => effect.RequestEffect(_ally, level, this.GetCancellationTokenOnDestroy()));
                     }
                 }
             }

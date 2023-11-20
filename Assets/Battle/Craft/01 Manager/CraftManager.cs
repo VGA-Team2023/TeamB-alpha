@@ -42,12 +42,6 @@ namespace TeamB_TD
                     _effects.Add(CraftType.Portion, _portionEffect);
                     _effects.Add(CraftType.Cannon, _cannonEffect);
                 }
-
-                public void RequestCraft(int level, CraftType type)
-                {
-                    var effect = _effects[type];
-                    effect.RequestEffect(type.ToAllyType(), level);
-                }
             }
         }
     }
