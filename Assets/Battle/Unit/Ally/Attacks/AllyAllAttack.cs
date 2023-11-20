@@ -14,6 +14,8 @@ namespace TeamB_TD
                     [SerializeField]
                     private MultiObjectsInTriggerFinder2D _multiObjectInTriggerFinder;
 
+                    public float AttackAnimationTime => 1.5f;
+
                     public bool IsAnyObjectInTrigger()
                     {
                         var enemies = _multiObjectInTriggerFinder.GetAllObjectsInTrigger<EnemyController>();
