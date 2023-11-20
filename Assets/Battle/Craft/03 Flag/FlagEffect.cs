@@ -16,9 +16,10 @@ namespace TeamB_TD
                 [SerializeField]
                 private FlagParam[] _flagParams;
 
+                private CancellationTokenSource _effectCancellationTokenSource;
+
                 public FlagParam[] FlagParams => _flagParams;
                 public override CraftableParameter[] Parameters => _flagParams;
-
                 public override CraftType CraftType => CraftType.Flag;
 
                 public override void RequestEffect(AllyController user, int level, CancellationToken token = default)
@@ -26,7 +27,13 @@ namespace TeamB_TD
                     base.RequestEffect(user, level, token);
                     var index = level - 1;
                     var param = _flagParams[index];
-                    PlayEffect(param, token);
+
+                    _effectCancellationTokenSource?.Cancel();
+                    _effectCancellationTokenSource = new CancellationTokenSource();
+
+                    var linkedTokenSource = CancellationTokenSource.CreateLinkedTokenSource(_effectCancellationTokenSource.Token, token);
+
+                    PlayEffect(param, linkedTokenSource.Token);
                 }
 
                 private async void PlayEffect(FlagParam param, CancellationToken token)
@@ -45,7 +52,7 @@ namespace TeamB_TD
                         catch (OperationCanceledException)
                         {
                             Debug.Log("Canceled");
-                            return;
+                            break;
                         }
                     }
 

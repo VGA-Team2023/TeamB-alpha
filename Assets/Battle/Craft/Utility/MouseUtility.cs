@@ -31,7 +31,7 @@ namespace TeamB_TD
                 public static bool GetMouseOverlappingCollider2D(out RaycastHit2D hit, LayerMask layerMask)
                 {
                     Vector2 mousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10f));
-                    hit = Physics2D.Raycast(mousePosition, Vector2.zero);
+                    hit = Physics2D.Raycast(mousePosition, Vector2.zero, Mathf.Infinity, layerMask);
 
                     return hit.collider != null;
                 }

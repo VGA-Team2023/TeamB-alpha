@@ -6,6 +6,7 @@ namespace TeamB_TD
     {
         public interface IAllyAttack
         {
+            float AttackAnimationTime { get; }
             bool IsAnyObjectInTrigger();
             void Fire(float attackPower);
         }
