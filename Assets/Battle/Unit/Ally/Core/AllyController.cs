@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Glib.InspectorExtension;
 using UnityEngine;
 
@@ -13,7 +14,7 @@ namespace TeamB_TD
                 public class AllyController : MonoBehaviour, IDamageable
                 {
                     [SerializeField]
-                    private AllyParameter _param = default;
+                    private AllyConstantParameter _constantParam = default;
                     [SerializeField]
                     private string _name;
                     [SerializeField]
@@ -21,17 +22,42 @@ namespace TeamB_TD
                     [SerializeField]
                     private AllyAttackController _attackController;
 
-                    public AllyParameter Param => _param;
+                    private AllyBattleParameter _baseParam;
+                    private List<AllyBattleParameter> _addParams = new List<AllyBattleParameter>(); // バフ、デバフ用、足し算。
+                    private List<AllyBattleParameter> _multiplierParams = new List<AllyBattleParameter>(); // バフ、デバフ用、掛け算。
+
+                    public AllyConstantParameter ConstantParams => _constantParam;
                     public string Name => _name;
                     public Vector3 WorldPosition => transform.position;
                     public AllyLifeController LifeController => _lifeController;
                     public AllyAttackController AttackController => _attackController;
+                    public List<AllyBattleParameter> AddParams => _addParams;
+                    public List<AllyBattleParameter> MultiplierParams => _multiplierParams;
 
                     public event Action<AllyController> OnDeadAlly;
                     public event Action<IDamageable> OnDead;
 
+
+                    public AllyBattleParameter TotalParam
+                    {
+                        get
+                        {
+                            AllyBattleParameter result = _baseParam;
+                            for (int i = 0; i < _addParams.Count; i++)
+                            {
+                                result += _addParams[i];
+                            }
+                            for (int i = 0; i < _multiplierParams.Count; i++)
+                            {
+                                result *= _multiplierParams[i];
+                            }
+                            return result;
+                        }
+                    }
+
                     private void Start()
                     {
+                        _baseParam = _constantParam.ToAllyBattleParameter();
                         _lifeController.Initialize(this);
                         _attackController.Initialize(this);
                     }
@@ -50,6 +76,9 @@ namespace TeamB_TD
                     public void Damge(float value)
                     {
                         _lifeController.Damge(value);
+
+                        var screenPos = Camera.main.WorldToScreenPoint(transform.position);
+                        VFXManager.Current.RequestDamageVFX(value, screenPos);
                     }
                 }
             }

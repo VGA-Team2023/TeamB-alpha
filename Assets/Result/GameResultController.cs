@@ -1,10 +1,8 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using TeamB_TD.Battle.Unit.Enemy;
 using TeamB_TD.Tower;
 using TeamB_TD.UI;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace TeamB_TD
 {
@@ -15,22 +13,15 @@ namespace TeamB_TD
             [SerializeField] GameResultViewer _gameResultViewer;
             [SerializeField] TowerController _towerController;
 
-            public void ResultScoreSet()
+            public void GameClearResultSet()
             {
-                EnableResultPanel();
-                _gameResultViewer.DeadEnemyCountSet(EnemyCounter.Current.DeadEnemyCount);
                 _gameResultViewer.TowerHPSet(_towerController.Life);
+                _gameResultViewer.GameClearPanelChangeActive(true);
             }
 
-
-            public void EnableResultPanel()
+            public void GameOverResultSet()
             {
-                this.gameObject.SetActive(true);
-            }
-
-            public void DisableResultPanel()
-            {
-                this.gameObject.SetActive(false);
+                _gameResultViewer.GameOverPanelChangeActive(true);
             }
         }
     }

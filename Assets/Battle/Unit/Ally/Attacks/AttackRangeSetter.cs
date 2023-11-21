@@ -14,7 +14,7 @@ namespace TeamB_TD
                     [SerializeField]
                     private Transform _transform;
                     [SerializeField]
-                    private AllyParameter _parameter;
+                    private AllyConstantParameter _parameter;
 
                     private void Start()
                     {

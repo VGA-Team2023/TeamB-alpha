@@ -61,6 +61,9 @@ namespace TeamB_TD
                     {
                         SoundManager.Instance.CriAtomPlay(CueSheet.SE, "SE_003_battleUnit4");
                         _lifeController.Damage(value);
+
+                        var screenPos = Camera.main.WorldToScreenPoint(transform.position);
+                        VFXManager.Current.RequestDamageVFX(value, screenPos);
                     }
                 }
             }

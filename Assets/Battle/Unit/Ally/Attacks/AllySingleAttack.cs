@@ -14,6 +14,8 @@ namespace TeamB_TD
                     [SerializeField]
                     private SingleObjectInTriggerFinder2D _colliderTriggerHandler;
 
+                    public float AttackAnimationTime => 0.2f;
+
                     public bool IsAnyObjectInTrigger()
                     {
                         var enemy = _colliderTriggerHandler.GetFirstEnteredObject<EnemyController>();

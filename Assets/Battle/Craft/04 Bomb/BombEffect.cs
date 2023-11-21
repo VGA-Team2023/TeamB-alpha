@@ -16,6 +16,8 @@ namespace TeamB_TD
                 [SerializeField]
                 private BombParam[] _bombParams;
 
+                private CancellationTokenSource _effectCancellationTokenSource;
+
                 public BombParam[] BombParams => _bombParams;
 
                 public override CraftableParameter[] Parameters => _bombParams;
@@ -27,12 +29,18 @@ namespace TeamB_TD
                     base.RequestEffect(user, level, token);
                     var index = level - 1;
                     var param = _bombParams[index];
-                    PlayEffect(param, token);
+
+                    _effectCancellationTokenSource?.Cancel();
+                    _effectCancellationTokenSource = new CancellationTokenSource();
+
+                    var linkedTokenSource = CancellationTokenSource.CreateLinkedTokenSource(_effectCancellationTokenSource.Token, token);
+
+                    PlayEffect(user, param, linkedTokenSource.Token);
                 }
 
-                private async void PlayEffect(BombParam param, CancellationToken token)
+                private async void PlayEffect(AllyController user, BombParam param, CancellationToken token)
                 {
-                    StartEffect(param);
+                    StartEffect(user, param);
 
                     float timer = 0f;
 
@@ -40,27 +48,40 @@ namespace TeamB_TD
                     {
                         try
                         {
-                            timer += Time.deltaTime; // TODO: GameSpeed掛ける
+                            timer += Time.deltaTime * GameSpeedController.CurretGameSpeed;
                             await UniTask.Yield(token);
                         }
                         catch (OperationCanceledException)
                         {
                             Debug.Log("Canceled");
-                            return;
+                            break;
                         }
                     }
 
-                    EndEffect(param);
+                    EndEffect(user, param);
                 }
 
-                private void StartEffect(BombParam param)
+                private IAllyAttack _originalAttackStyle; // 元々の攻撃方法。
+
+                private void StartEffect(AllyController user, BombParam param)
                 {
-                    Debug.Log("start bomb");
+                    // BombAttackの取得。
+                    if (!user.TryGetComponent(out AttackStyleSingleSelecter selecter)) return;
+                    if (selecter.Select is not BombAttack) return;
+
+                    // 元々の攻撃方法を保存する。
+                    var currentAttackStyle = user.AttackController.CurrentAttackStyle;
+                    if (currentAttackStyle is not BombAttack)
+                        _originalAttackStyle = currentAttackStyle;
+
+                    // 攻撃方法の変更。
+                    user.AttackController.ChangeAttackStyle(selecter.Select);
+
                 }
 
-                private void EndEffect(BombParam param)
+                private void EndEffect(AllyController user, BombParam param)
                 {
-                    Debug.Log("end bomb");
+                    user.AttackController.ChangeAttackStyle(_originalAttackStyle);
                 }
             }
         }
