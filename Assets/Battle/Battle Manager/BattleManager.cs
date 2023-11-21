@@ -44,15 +44,15 @@ namespace TeamB_TD
             //TODO:α用の突貫工事リザルト表示なのでリファクタする。
             private bool _isGameFinish = false;
 
-            private void Update()
-            {
-                if (EnemyCounter.Current.CompletedEnemyCount >= EnemyCounter.Current.TotalEnemyCount && !_isGameFinish)
-                {
-                    GameClear();
-                    _result.ResultScoreSet();
-                    _isGameFinish = true;
-                }
-            }
+            //private void Update()
+            //{
+            //    if (EnemyCounter.Current.CompletedEnemyCount >= EnemyCounter.Current.TotalEnemyCount && !_isGameFinish)
+            //    {
+            //        GameClear();
+            //        _result.ResultScoreSet();
+            //        _isGameFinish = true;
+            //    }
+            //}
 
             private void GameClear()
             {
