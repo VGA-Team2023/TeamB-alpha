@@ -24,9 +24,12 @@ namespace TeamB_TD
         public float Cost => _cost;
         public float AttackRange => _attackRange;
         public float AttackInterval => _attackInterval;
+        public Sprite AllySprite => _allySprite;
 
         [SerializeField]
         private GameObject _allyPrefab; // 対応する味方ユニットのプレハブ。
+        [SerializeField]
+        private Sprite _allySprite; // 対応する味方ユニットのイメージ
 
         private void OnValidate()
         {

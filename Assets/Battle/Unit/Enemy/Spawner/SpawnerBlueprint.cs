@@ -33,14 +33,14 @@ namespace TeamB_TD
                             throw new ArgumentOutOfRangeException(nameof(spawnerPos));
 
                         var gorlPos = positionData.GoalPosition;
-                        if (!stage.TryGetCell(out StageCell gorlCell, gorlPos.y, gorlPos.x))
+                        if (!stage.TryGetCell(out StageCell goalCell, gorlPos.y, gorlPos.x))
                             throw new ArgumentOutOfRangeException(nameof(gorlPos));
 
                         var spawnEnemyDataID = spawnerData.SpawnEnemyDataID;
                         var enemySpawnData = _spawnEnemyDataContainer.GetSpawnData(spawnEnemyDataID);
-
+                        var towerComponent = goalCell.gameObject.AddComponent<TowerDamageListener>();
                         var spawnerComponent = spawnerCell.gameObject.AddComponent<EnemySpawner>();
-                        spawnerComponent.Initialize(_enemyPrefabContainer, stage, spawnerCell, gorlCell, enemySpawnData);
+                        spawnerComponent.Initialize(_enemyPrefabContainer, stage, spawnerCell, goalCell, enemySpawnData);
                         _currents.Add(spawnerComponent);
                     }
                 }
