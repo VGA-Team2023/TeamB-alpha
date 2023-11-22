@@ -21,3 +21,4 @@ MonoBehaviour:
   _attackRange: 3.5
   _attackInterval: 2
   _allyPrefab: {fileID: 6772538301748197209, guid: 766835ec18ba0f040bd842b23fc5a3c4, type: 3}
+  _allySprite: {fileID: 9213395392603747095, guid: 0d45340c723651c4fbd17a7ffd4c3fcf, type: 3}
