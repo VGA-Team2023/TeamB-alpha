@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using TeamB_TD.Battle.Unit.Enemy;
-using TeamB_TD.Tower;
+using TeamB_TD.Battle.Tower;
 using TeamB_TD.UI;
 using UnityEngine;
 
