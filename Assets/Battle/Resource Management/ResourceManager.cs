@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System;
+using System.Collections;
 
 namespace TeamB_TD
 {
@@ -15,9 +16,14 @@ namespace TeamB_TD
                 private float _initialResource = 0f;
                 [SerializeField, Range(0.5f, 10f)]
                 private float _addResourceSpeed = 1f;
-
                 private float _currentResource = 0f;
 
+                [Tooltip("リソースクールタイム用の変数、一定値超えたら0に戻す")]
+                private float _forResourceCoolTimeNum = 0f;
+                [SerializeField]
+                private float _chargeCoolTime;
+                private bool _chargeStart = true;
+                
                 public float MaxResource => _maxResource;
                 public float CurrentResource => _currentResource;
 
@@ -32,13 +38,18 @@ namespace TeamB_TD
                 private void Update()
                 {
                     var gameSpeed = GameSpeedController.CurretGameSpeed;
-                    AddResource(Time.deltaTime * _addResourceSpeed * gameSpeed);
+                    if (_chargeStart)
+                    {
+                        AddResource(Time.deltaTime * _addResourceSpeed * gameSpeed);
+                        ResourceChargeMonitor();
+                    }
                 }
 
                 public void AddResource(float resource)
                 {
                     var old = _currentResource;
                     _currentResource += resource;
+
                     if (_currentResource > _maxResource)
                     {
                         _currentResource = _maxResource;
@@ -59,6 +70,26 @@ namespace TeamB_TD
                         return true;
                     }
                     return false;
+                }
+
+                private void ResourceChargeMonitor()
+                {
+                    var gamespeed = GameSpeedController.CurretGameSpeed;
+                    _forResourceCoolTimeNum += Time.deltaTime * _addResourceSpeed * gamespeed;
+                    if(_forResourceCoolTimeNum >= 1f)
+                    {
+                        _forResourceCoolTimeNum = 0f;
+                        StartCoroutine(ChargeCoolTime());
+                    }
+                }
+
+                private IEnumerator ChargeCoolTime()
+                {
+                    _chargeStart = false;
+                    Debug.Log("チャージ停止");
+                    yield return new WaitForSeconds(_chargeCoolTime);
+                    _chargeStart = true;
+                    Debug.Log("チャージ開始");
                 }
             }
         }
