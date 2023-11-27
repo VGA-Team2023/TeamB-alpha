@@ -20,5 +20,6 @@ MonoBehaviour:
   _cost: 7
   _attackRange: 3
   _attackInterval: 4
+  _revivalInterval: 0
   _allyPrefab: {fileID: 4481329190134031740, guid: 73d650f66e719cb4f9af4c3092ee9bd7, type: 3}
-  _allySprite: {fileID: 8830535212418667873, guid: 0d45340c723651c4fbd17a7ffd4c3fcf, type: 3}
+  _allySprite: {fileID: 21300000, guid: 3c78bd7be5e51ba4f96b1216edf0fbf2, type: 3}

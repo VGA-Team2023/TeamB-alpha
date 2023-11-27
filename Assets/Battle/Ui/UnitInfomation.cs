@@ -67,7 +67,7 @@ namespace TeamB_TD
 
                 private void UpdateAllyInfomation(GameObject allyGo)
                 {
-                    if (allyGo == null) { Debug.LogWarning("Ally is not found"); return; }
+                    if (allyGo == null) { return; }
                     if (!allyGo.TryGetComponent(out AllyUnitPlaceView allyView)) { return; }
 
                     _isShowInfo = true;
