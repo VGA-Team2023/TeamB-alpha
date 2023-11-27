@@ -28,6 +28,7 @@ namespace TeamB_TD
         public float RevivalInterval => _revivalInterval;
         public Sprite AllySprite => _allySprite;
 
+        [Header("====================")]
         [SerializeField]
         private GameObject _allyPrefab; // 対応する味方ユニットのプレハブ。
         [SerializeField]
