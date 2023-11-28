@@ -59,12 +59,14 @@ namespace TeamB_TD
 
                             _dragItem.transform.position = mouseWorldPos;
                         }
+                        AllyPlaceableManager.Instance.CalcRevivingTime();
                     }
 
                     private void OnButtonPressed(GameObject mouseOverlappingObject) // ドラッグ開始（マウス左ボタン押下時）
                     {
                         if (mouseOverlappingObject &&
-                            mouseOverlappingObject.TryGetComponent(out AllyUnitPlaceView placeView))
+                            mouseOverlappingObject.TryGetComponent(out AllyUnitPlaceView placeView) &&
+                            AllyPlaceableManager.Instance.IsAllyPlaceable(placeView.AllyPrefab))
                         {
                             _dragItem = GameObject.Instantiate(placeView.AllyPrefab);
                             _dragItem.enabled = false;
@@ -78,14 +80,15 @@ namespace TeamB_TD
                     private void OnButtonReleased(GameObject mouseOverlappingObject) // ドラッグ終了（マウス左ボタン解放時）
                     {
                         if (TryGetCell(mouseOverlappingObject, out IStageCell cell) &&
-                            IsPlacable(_dragItem, cell, _resourceManager))
+                            IsPlacable(_dragItem, cell, _resourceManager) &&
+                            AllyPlaceableManager.Instance.IsAllyPlaceable(_dragItem))
                         {
                             Place(_dragItem, cell);
                         }
 
                         if (_dragItem != null)
                         {
-                            GameObject.Destroy(_dragItem.gameObject);
+                            Destroy(_dragItem.gameObject);
                             _dragItem = null;
                         }
                     }
@@ -99,6 +102,8 @@ namespace TeamB_TD
                         allyPrefab.GetComponent<Collider2D>().enabled = true;
                         var position = stageCell.WorldPosition + _placeOffset;
                         var instance = Instantiate(allyPrefab, position, Quaternion.identity);
+                        AllyPlaceableManager.Instance.PlaceAlly(instance);
+                        instance.OnDeadAlly += AllyPlaceableManager.Instance.OnDeadAlly;
                         _resourceManager.TryUseResource(allyPrefab.ConstantParams.Cost);
                         OnPlacedAlly?.Invoke(instance);
                     }

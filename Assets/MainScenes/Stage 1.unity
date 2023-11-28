@@ -1294,6 +1294,10 @@ PrefabInstance:
       propertyPath: _dragHandler
       value: 
       objectReference: {fileID: 211105741}
+    - target: {fileID: 2330524091035269473, guid: 5157264e4b4d2ab4bbb5367fddcdb37b, type: 3}
+      propertyPath: _isPausedGameSpeed
+      value: 0.3333333
+      objectReference: {fileID: 0}
     - target: {fileID: 5730983439793440146, guid: 5157264e4b4d2ab4bbb5367fddcdb37b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

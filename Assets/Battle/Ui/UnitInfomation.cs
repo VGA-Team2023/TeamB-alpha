@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using TeamB_TD.Battle.Unit.Ally;
 using TeamB_TD.Utility;
 using UnityEngine;
@@ -14,22 +15,21 @@ namespace TeamB_TD
         {
             public class UnitInfomation : MonoBehaviour, IPointerClickHandler
             {
-                [SerializeField]
+                [SerializeField, Header("ドラッグハンドラー")]
                 private DragHandler _dragHandler = null;
-                [SerializeField]
+                [SerializeField, Header("ユニットのパラメータを表示するテキスト")]
                 private Text _allyParameterText = null;
-                [SerializeField]
+                [SerializeField, Header("ユニットの立ち絵を表示するイメージ")]
                 private Image _allyImage = null;
-                [SerializeField]
+                [SerializeField, Header("パラメータ表示時のゲームスピード")]
                 private float _isPausedGameSpeed = 1f / 3f;
 
                 private bool _isShowInfo = false;
                 private Image _myPanel = null;
                 private Color _defaultColor = Color.white;
-                ///// <summary>前回のアクティブ・非アクティブを記録する</summary>
-                //private bool _isActive = true;
                 /// <summary>前回のゲームスピードを記録する</summary>
                 private float _saveGameSpeed = 0f;
+                private List<GameObject> _childrenList = new List<GameObject>();
 
                 private void OnEnable()
                 {
@@ -44,6 +44,10 @@ namespace TeamB_TD
                     if (_allyParameterText == null) { Debug.LogError("AllyParameterText is not found"); }
                     if (TryGetComponent(out Image image)) { _myPanel = image; }
 
+                    for(int i = 0; i < transform.childCount; i++)
+                    {
+                        _childrenList.Add(transform.GetChild(i).gameObject);
+                    }
                     _saveGameSpeed = GameSpeedController.CurrentSpeed;
                     StartCoroutine(ChangeActivateAsync());
                 }
@@ -63,7 +67,7 @@ namespace TeamB_TD
 
                 private void UpdateAllyInfomation(GameObject allyGo)
                 {
-                    if (allyGo == null) { Debug.LogWarning("Ally is not found"); return; }
+                    if (allyGo == null) { return; }
                     if (!allyGo.TryGetComponent(out AllyUnitPlaceView allyView)) { return; }
 
                     _isShowInfo = true;
@@ -109,9 +113,9 @@ namespace TeamB_TD
                         GameSpeedController.ChangeGameSpeed(_saveGameSpeed);
                     }
 
-                    for (int i = 0; i < transform.childCount; i++)
+                    foreach (var item in _childrenList)
                     {
-                        transform.GetChild(i).gameObject.SetActive(isActive);
+                        item.SetActive(isActive);
                     }
                 }
             }

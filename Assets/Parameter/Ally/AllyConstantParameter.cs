@@ -15,6 +15,7 @@ namespace TeamB_TD
         [SerializeField, Header("コスト")] private int _cost;
         [SerializeField, Header("攻撃範囲")] private float _attackRange;
         [SerializeField, Header("攻撃インターバル")] private float _attackInterval;
+        [SerializeField, Header("再配置可能インターバル")] private float _revivalInterval;
 
         public WeaponType WeaponType => _weaponType;
         public int ID => _id;
@@ -24,8 +25,10 @@ namespace TeamB_TD
         public float Cost => _cost;
         public float AttackRange => _attackRange;
         public float AttackInterval => _attackInterval;
+        public float RevivalInterval => _revivalInterval;
         public Sprite AllySprite => _allySprite;
 
+        [Header("====================")]
         [SerializeField]
         private GameObject _allyPrefab; // 対応する味方ユニットのプレハブ。
         [SerializeField]
