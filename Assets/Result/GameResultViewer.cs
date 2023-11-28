@@ -1,9 +1,9 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
-using UnityEngine.UIElements;
+using DG.Tweening;
+using Unity.VisualScripting;
 
 namespace TeamB_TD
 {
@@ -15,6 +15,8 @@ namespace TeamB_TD
             [SerializeField] private GameObject _gameoverPanel;
             [SerializeField] private GameObject _gameclearPanel;
             [SerializeField] private GameObject _scorePanel;
+            [SerializeField] private GameObject _scoreChildPanel;
+            [SerializeField] private Image _charaImage;
 
             public void TowerHPSet(int value)
             {
@@ -34,6 +36,14 @@ namespace TeamB_TD
             public void ScorePanelChangeActive(bool value)
             {
                 _scorePanel.SetActive(value);
+            }
+
+            public IEnumerator ScorePanelSet()
+            {
+                _scoreChildPanel.SetActive(true);
+                _scoreChildPanel.transform.DOScale(new Vector3(0.5f, 0.6f, 1), 1f);
+                yield return new WaitForSeconds(1f);
+                _charaImage.gameObject.GetComponent<RectTransform>().DOAnchorPos(new Vector2(-285f, 0), 0.5f);
             }
         }
     }
