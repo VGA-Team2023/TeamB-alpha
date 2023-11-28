@@ -15,13 +15,13 @@ namespace TeamB_TD
                     public static AllyPlaceableManager Instance { get; private set; } = null;
                     public Dictionary<int, (float Erapse, PlaceableStatus Placeable)> WaitForReviving => _waitForReviving;
 
-                    [SerializeField]
-                    private AllyPrefabContainer _allyPrefabs = null;
+                    private AllyPrefabContainer _allyContainer = null;
+                    private Dictionary<int, AllyUnitPlaceView> _allyPlaceViewHolder = new Dictionary<int, AllyUnitPlaceView>();
 
                     /// <summary>ユニットが亡くなった時、再設置可能になるまでの時間を計測する</summary>
                     private Dictionary<int, (float Erapse, PlaceableStatus Placeable)> _waitForReviving
                         = new Dictionary<int, (float, PlaceableStatus)>();
-                    private Dictionary<int, float> _allysRevivalInterval = new Dictionary<int, float>();
+                    /// <summary>復活待ちのユニット</summary>
                     private Queue<int> _waitingQueue = new Queue<int>();
 
                     private void Awake()
@@ -31,14 +31,14 @@ namespace TeamB_TD
 
                     private void Start()
                     {
-                        if (_allyPrefabs == null) Debug.LogWarning("AllyPrefabContainer is not assigned");
+                        if (_allyContainer == null) Debug.LogWarning("AllyPrefabContainer is not found");
                         else
                         {
-                            foreach (var ally in _allyPrefabs.AllyPrefabs)
+                            foreach (var ally in _allyContainer.AllyPrefabs)
                             {
                                 if (_waitForReviving.ContainsKey(ally.ConstantParams.ID)) continue;
-                                _waitForReviving.Add(ally.ConstantParams.ID, (0.0f, PlaceableStatus.Placeable));
-                                _allysRevivalInterval.Add(ally.ConstantParams.ID, ally.ConstantParams.RevivalInterval);
+                                var allyParam = ally.ConstantParams;
+                                _waitForReviving.Add(allyParam.ID, (0.0f, PlaceableStatus.Placeable));
                             }
                         }
                     }
@@ -48,9 +48,9 @@ namespace TeamB_TD
                         return _waitForReviving[ally.ConstantParams.ID].Placeable == PlaceableStatus.Placeable;
                     }
 
-                    public void PlaceAlly(int allyId)
+                    public void PlaceAlly(AllyController ally)
                     {
-                        ChangeStatus(allyId, PlaceableStatus.HasPlaced);
+                        ChangeStatus(ally.ConstantParams.ID, PlaceableStatus.HasPlaced);
                     }
 
                     public void OnDeadAlly(AllyController ally)
@@ -61,6 +61,7 @@ namespace TeamB_TD
                         ally.OnDeadAlly -= OnDeadAlly;
                     }
 
+                    /// <summary>ユニットが復活するまでの時間を計測する</summary>
                     public void CalcRevivingTime()
                     {
                         if (_waitingQueue.Count == 0) return;
@@ -71,16 +72,32 @@ namespace TeamB_TD
                             _waitForReviving[n] =
                                 (_waitForReviving[n].Erapse + Time.deltaTime * GameSpeedController.CurretGameSpeed,
                                 PlaceableStatus.Reviving);
+                            float allyRevivalInterval = _allyPlaceViewHolder[n].AllyPrefab.ConstantParams.RevivalInterval;
+                            _allyPlaceViewHolder[n].ToggleRevivalUiActivate(true);
+                            _allyPlaceViewHolder[n].UpdateRevivingText(allyRevivalInterval - _waitForReviving[n].Erapse);
 
-                            if (_waitForReviving[n].Erapse < _allysRevivalInterval[n]) { _waitingQueue.Enqueue(n); continue; }
+                            if (_waitForReviving[n].Erapse < allyRevivalInterval) { _waitingQueue.Enqueue(n); continue; }
 
                             ChangeStatus(n, PlaceableStatus.Placeable);
+                            _allyPlaceViewHolder[n].ToggleRevivalUiActivate(false);
                         }
                     }
 
+                    /// <summary>ユニットの現在の状態を更新する</summary>
+                    /// <param name="allyId">状態を更新するユニットのID</param>
+                    /// <param name="status">どの状態に更新するか</param>
                     public void ChangeStatus(int allyId, PlaceableStatus status)
                     {
                         _waitForReviving[allyId] = (0.0f, status);
+                    }
+
+                    public void SetAllyContainer(AllyPrefabContainer container) => _allyContainer = container;
+
+                    public void AddPlaceViewHolder(int allyId, AllyUnitPlaceView allyView)
+                    {
+                        if (_allyPlaceViewHolder.ContainsKey(allyId)) return;
+
+                        _allyPlaceViewHolder.Add(allyId, allyView);
                     }
                 }
             }

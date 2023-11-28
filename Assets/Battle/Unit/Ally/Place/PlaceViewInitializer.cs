@@ -19,10 +19,13 @@ namespace TeamB_TD
 
                     private void Awake()
                     {
+                        AllyPlaceableManager.Instance.SetAllyContainer(_allyContainer);
+
                         foreach (var allyPrefab in _allyContainer.AllyPrefabs)
                         {
                             var view = Instantiate(_viewPrefab, _viewParent);
                             view.Initialize(allyPrefab);
+                            AllyPlaceableManager.Instance.AddPlaceViewHolder(allyPrefab.ConstantParams.ID, view);
                         }
                     }
                 }
