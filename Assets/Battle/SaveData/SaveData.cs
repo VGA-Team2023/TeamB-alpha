@@ -1,6 +1,6 @@
 ﻿namespace TeamB_TD
 {
-    namespace StageSelect
+    namespace SaveData
     {
         [System.Serializable]
         public class SaveData
