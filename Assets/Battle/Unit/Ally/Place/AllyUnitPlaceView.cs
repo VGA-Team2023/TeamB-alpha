@@ -23,6 +23,8 @@ namespace TeamB_TD
                     private AllyController _allyPrefab;
 
                     public AllyController AllyPrefab => _allyPrefab;
+                    public Image RevivingImage => _revivingImage;
+                    public Text RevivingText => _revivingText;
 
                     public void Initialize(AllyController allyPrefab)
                     {
@@ -31,15 +33,11 @@ namespace TeamB_TD
                         ToggleRevivalUiActivate(false);
                     }
 
-                    private bool _isActive = true;
-
                     public void ToggleRevivalUiActivate(bool isActive)
                     {
-                        if (_isActive == isActive) return;
-
                         _revivingImage.gameObject.SetActive(isActive);
                         _revivingText.gameObject.SetActive(isActive);
-                        _isActive = isActive;
+
                     }
 
                     /// <summary>ユニットが再配置出来るまでの間、表示する時間を更新する</summary>

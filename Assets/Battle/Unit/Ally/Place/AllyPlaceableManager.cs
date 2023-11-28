@@ -51,6 +51,7 @@ namespace TeamB_TD
                     public void PlaceAlly(AllyController ally)
                     {
                         ChangeStatus(ally.ConstantParams.ID, PlaceableStatus.HasPlaced);
+                        _allyPlaceViewHolder[ally.ConstantParams.ID].RevivingImage.gameObject.SetActive(true);
                     }
 
                     public void OnDeadAlly(AllyController ally)
@@ -73,7 +74,7 @@ namespace TeamB_TD
                                 (_waitForReviving[n].Erapse + Time.deltaTime * GameSpeedController.CurretGameSpeed,
                                 PlaceableStatus.Reviving);
                             float allyRevivalInterval = _allyPlaceViewHolder[n].AllyPrefab.ConstantParams.RevivalInterval;
-                            _allyPlaceViewHolder[n].ToggleRevivalUiActivate(true);
+                            _allyPlaceViewHolder[n].RevivingText.gameObject.SetActive(true);
                             _allyPlaceViewHolder[n].UpdateRevivingText(allyRevivalInterval - _waitForReviving[n].Erapse);
 
                             if (_waitForReviving[n].Erapse < allyRevivalInterval) { _waitingQueue.Enqueue(n); continue; }
