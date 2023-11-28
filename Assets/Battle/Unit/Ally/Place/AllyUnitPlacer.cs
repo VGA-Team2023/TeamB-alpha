@@ -65,10 +65,9 @@ namespace TeamB_TD
                     private void OnButtonPressed(GameObject mouseOverlappingObject) // ドラッグ開始（マウス左ボタン押下時）
                     {
                         if (mouseOverlappingObject &&
-                            mouseOverlappingObject.TryGetComponent(out AllyUnitPlaceView placeView))
+                            mouseOverlappingObject.TryGetComponent(out AllyUnitPlaceView placeView) &&
+                            AllyPlaceableManager.Instance.IsAllyPlaceable(placeView.AllyPrefab))
                         {
-                            if (!AllyPlaceableManager.Instance.IsAllyPlaceable(placeView.AllyPrefab)) return;
-
                             _dragItem = GameObject.Instantiate(placeView.AllyPrefab);
                             _dragItem.enabled = false;
                             _dragItem.GetComponent<Collider2D>().enabled = false;
@@ -103,7 +102,7 @@ namespace TeamB_TD
                         allyPrefab.GetComponent<Collider2D>().enabled = true;
                         var position = stageCell.WorldPosition + _placeOffset;
                         var instance = Instantiate(allyPrefab, position, Quaternion.identity);
-                        AllyPlaceableManager.Instance.PlaceAlly(instance.ConstantParams.ID);
+                        AllyPlaceableManager.Instance.PlaceAlly(instance);
                         instance.OnDeadAlly += AllyPlaceableManager.Instance.OnDeadAlly;
                         _resourceManager.TryUseResource(allyPrefab.ConstantParams.Cost);
                         OnPlacedAlly?.Invoke(instance);
