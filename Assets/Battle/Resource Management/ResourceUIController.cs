@@ -26,13 +26,15 @@ namespace TeamB_TD
 
                 private void ApplyResourceView(float changedResource)
                 {
-                    _resourceView.text = $"マナ : {changedResource.ToString("00.00")} / {_resourceManager.MaxResource.ToString(".")}";
+                    _resourceView.text = $"マナ : {((int)changedResource).ToString()} / {_resourceManager.MaxResource.ToString(".")}";
                 }
                 
                 private void ApplyResourceSlider(float changedResource)
                 {
                     float decimalPoint = changedResource % 1;
-                    _resourceSlider.value = decimalPoint;
+                    if (decimalPoint <= 0.05) _resourceSlider.value = 0;
+                    else _resourceSlider.value = decimalPoint;
+
                 }
             }
         }
