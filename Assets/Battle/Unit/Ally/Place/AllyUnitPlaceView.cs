@@ -31,6 +31,11 @@ namespace TeamB_TD
                         _allyPrefab = allyPrefab;
                         _costText.text = $"{allyPrefab.ConstantParams.Cost}";
                         ToggleRevivalUiActivate(false);
+
+                        if (TryGetComponent(out Image myImage))
+                        {
+                            myImage.sprite = _allyPrefab.ConstantParams.AllySprite;
+                        }
                     }
 
                     public void ToggleRevivalUiActivate(bool isActive)
