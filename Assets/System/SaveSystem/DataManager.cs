@@ -27,7 +27,7 @@ namespace TeamB_TD
             }
             private void Awake()
             {
-                _filepath = Application.dataPath + "/SaveData/" + _fileName;
+                _filepath = Application.streamingAssetsPath + "/SaveData/" + _fileName;
 
                 if (!File.Exists(_filepath))
                 {
