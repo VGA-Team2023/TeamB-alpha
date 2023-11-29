@@ -33,7 +33,7 @@ public class TowerDamageListener : MonoBehaviour
             var enemy = _enemyList[i];
             if (enemy == null) continue;
             if (_completed.Contains(enemy)) continue;
-            if (Vector3.Distance(enemy.transform.position, transform.position) > 0.1f) continue;
+            if (Vector3.Distance(enemy.transform.position, transform.position) > 1f) continue;
 
             TowerController.Instance.Damage();
             _enemyList.RemoveAt(i);
