@@ -1862,7 +1862,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 895993177229295899, guid: 9d68288220998ce4d85ae93c4d0e6c1b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Stage 1 Beta
+      value: Stage 1
       objectReference: {fileID: 0}
     - target: {fileID: 895993177229295899, guid: 9d68288220998ce4d85ae93c4d0e6c1b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
@@ -2261,6 +2261,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0deddbd3a0b08c2469a5cee31e519a14, type: 3}
+--- !u!114 &1199267968 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8514763190251402600, guid: 0deddbd3a0b08c2469a5cee31e519a14, type: 3}
+  m_PrefabInstance: {fileID: 1199267967}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab99e2eaa21789c4d861cda19152adf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1213497413
 GameObject:
   m_ObjectHideFlags: 0
@@ -2765,6 +2776,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6283556058869514183, guid: 533281331ac3a2947a3bcb06d50bfe02, type: 3}
+      propertyPath: _battleManager
+      value: 
+      objectReference: {fileID: 1199267968}
     - target: {fileID: 6283556058869514183, guid: 533281331ac3a2947a3bcb06d50bfe02, type: 3}
       propertyPath: _chargeCoolTime
       value: 0.5

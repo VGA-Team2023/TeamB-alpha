@@ -17,7 +17,7 @@ namespace TeamB_TD
                     [SerializeField]
                     private Transform _viewParent;
 
-                    private void Awake()
+                    private void Start()
                     {
                         AllyPlaceableManager.Instance.SetAllyContainer(_allyContainer);
 
