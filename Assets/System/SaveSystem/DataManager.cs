@@ -55,8 +55,9 @@ namespace TeamB_TD
             {
                 //Save(_pData);
             }
+
             // 以下デバッグ用
-            /*
+            // TODO:機能整い次第削除
             public void OverWrite(int stagenum) //特定のステージのクリア状況を変更する
             {
                 StreamReader rd = new StreamReader(_filepath);
@@ -88,7 +89,6 @@ namespace TeamB_TD
                 wr.WriteLine(_json);
                 wr.Close();
             }
-            
             public void Clearzero()
             {
                 int num = 0;
@@ -125,8 +125,6 @@ namespace TeamB_TD
                 wr.WriteLine(_json);
                 wr.Close();
             }
-            */
-
         }
     }
 }
