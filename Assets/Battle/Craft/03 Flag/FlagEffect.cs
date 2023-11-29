@@ -1,5 +1,6 @@
 ﻿using Cysharp.Threading.Tasks;
 using System;
+using System.Collections.Generic;
 using System.Threading;
 using TeamB_TD.Battle.Unit.Ally;
 using UnityEngine;
@@ -59,6 +60,8 @@ namespace TeamB_TD
                     EndEffect(param);
                 }
 
+                public HashSet<FlagBuffVFX> _vfxContainer = new();
+
                 private void StartEffect(FlagParam param)
                 {
                     if (!PlacedAllyContainer.Current)
@@ -69,6 +72,10 @@ namespace TeamB_TD
                     foreach (var ally in PlacedAllyContainer.Current.PlacedAllies)
                     {
                         ally.MultiplierParams.Add(AllyBattleParameter.CreateOne(attackPower: param.PowerupAmount));
+                        var buffVFX = VFXManager.Current.RequestFlagBuffVFX(param.EffectDuration, ally.WorldPosition);
+
+                        ally.OnDeadAlly += _ => buffVFX.StopRequest();
+                        _vfxContainer.Add(buffVFX);
                     }
                 }
 
@@ -83,6 +90,12 @@ namespace TeamB_TD
                     {
                         ally.MultiplierParams.Remove(AllyBattleParameter.CreateOne(attackPower: param.PowerupAmount));
                     }
+                    foreach (var vfx in _vfxContainer)
+                    {
+                        if (vfx)
+                            vfx.StopRequest();
+                    }
+                    _vfxContainer.Clear();
                 }
             }
         }
