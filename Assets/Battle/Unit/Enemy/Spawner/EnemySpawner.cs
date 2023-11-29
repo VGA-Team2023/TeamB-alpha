@@ -53,7 +53,8 @@ namespace TeamB_TD
                                 return;
                             }
                             Spawn(enemyPrefab);
-                            SoundManager.Instance.CriAtomPlay(CueSheet.SE, "SE_004_enemy1");
+                            
+                            CriAudioManager.Instance.BGM.Play("SE", "SE_004_enemy1");
                             _index++;
                         }
                     }
