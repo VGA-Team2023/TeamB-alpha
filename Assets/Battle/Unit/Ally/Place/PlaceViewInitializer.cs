@@ -19,8 +19,6 @@ namespace TeamB_TD
 
                     private void Start()
                     {
-                        AllyPlaceableManager.Instance.SetAllyContainer(_allyContainer);
-
                         foreach (var allyPrefab in _allyContainer.AllyPrefabs)
                         {
                             var view = Instantiate(_viewPrefab, _viewParent);
