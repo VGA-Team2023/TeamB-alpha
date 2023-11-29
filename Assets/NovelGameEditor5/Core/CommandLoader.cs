@@ -1,6 +1,7 @@
-// 日本語対応
+﻿// 日本語対応
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Text.RegularExpressions;
 using UnityEditor;
 
@@ -15,7 +16,7 @@ namespace TeamB_TD
                 string commandName = commandData[0];
                 string[] commandArgs = commandData[1..];
 
-                var types = TypeCache.GetTypesDerivedFrom<ICommand>();
+                var types = GetTypesDerivedFrom<ICommand>();
 
                 foreach (var type in types)
                 {
@@ -62,6 +63,11 @@ namespace TeamB_TD
                 }
 
                 return commands;
+            }
+
+            private static IEnumerable<Type> GetTypesDerivedFrom<T>()
+            {
+                return Assembly.GetAssembly(typeof(T)).GetTypes();
             }
         }
     }
