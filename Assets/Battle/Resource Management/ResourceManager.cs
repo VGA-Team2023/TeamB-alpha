@@ -10,6 +10,8 @@ namespace TeamB_TD
         {
             public class ResourceManager : MonoBehaviour
             {
+                [SerializeField]
+                private BattleManager _battleManager;
                 [SerializeField, Range(10f, 1000f)]
                 private float _maxResource = 100f;
                 [SerializeField, Range(10f, 1000f)]
@@ -38,7 +40,8 @@ namespace TeamB_TD
                 private void Update()
                 {
                     var gameSpeed = GameSpeedController.CurretGameSpeed;
-                    if (_chargeStart)
+                    if (_chargeStart && _battleManager.Status != BattleManager.BattleStatus.GameOver
+                                     && _battleManager.Status != BattleManager.BattleStatus.GameClear)
                     {
                         AddResource(Time.deltaTime * _addResourceSpeed * gameSpeed);
                         ResourceChargeMonitor();
@@ -74,11 +77,12 @@ namespace TeamB_TD
 
                 private void ResourceChargeMonitor()
                 {
-                    var gamespeed = GameSpeedController.CurretGameSpeed;
-                    _forResourceCoolTimeNum += Time.deltaTime * _addResourceSpeed * gamespeed;
+                    var gameSpeed = GameSpeedController.CurretGameSpeed;
+                    _forResourceCoolTimeNum += Time.deltaTime * _addResourceSpeed * gameSpeed;
                     if(_forResourceCoolTimeNum >= 1f)
                     {
                         _forResourceCoolTimeNum = 0f;
+                        _currentResource -= _currentResource % 1;
                         StartCoroutine(ChargeCoolTime());
                     }
                 }
@@ -86,10 +90,8 @@ namespace TeamB_TD
                 private IEnumerator ChargeCoolTime()
                 {
                     _chargeStart = false;
-                    Debug.Log("チャージ停止");
                     yield return new WaitForSeconds(_chargeCoolTime);
                     _chargeStart = true;
-                    Debug.Log("チャージ開始");
                 }
             }
         }
