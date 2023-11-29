@@ -5,6 +5,18 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: Assets/NovelGameEditor5/Template Scene.unity
+    guid: f027cd3145fd30847b7413561edf04f5
+  - enabled: 0
+    path: Assets/NovelGameEditor5/SampleScene1.unity
+    guid: 932725914f0bbc247875ccf23c5f765c
+  - enabled: 0
+    path: Assets/NovelGameEditor5/SampleScene2.unity
+    guid: 74dd191beddce934c8406d1d9c60c708
+  - enabled: 0
+    path: Assets/NovelGameEditor5/SampleScene3.unity
+    guid: 360515e4bd40f074ba52211c0326e7f8
   - enabled: 1
     path: Assets/OutGame/Title/TitleScene.unity
     guid: 06c695a173044cc418733659ed246bfb
@@ -13,9 +25,6 @@ EditorBuildSettings:
     guid: 0ae72ad411e891448ad8ee8d73f1b729
   - enabled: 1
     path: Assets/MainScenes/Stage 1.unity
-    guid: d7b11a07707f82a458df329941585c09
-  - enabled: 1
-    path: Assets/MainScenes/Stage 1 Beta.unity
     guid: 098abcad56b09c847bb5197778795230
   - enabled: 1
     path: Assets/MainScenes/Stage 2.unity
