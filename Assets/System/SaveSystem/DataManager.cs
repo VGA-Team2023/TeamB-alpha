@@ -8,8 +8,22 @@ namespace TeamB_TD
 {
     namespace SaveData
     {
-        public class DataManager : MonoBehaviour
+        public class DataManager
         {
+            static private DataManager _instance = new DataManager();
+
+            static public DataManager Instance
+            {
+                get
+                {
+                    if (_instance == null)
+                    {
+                        _instance = new DataManager();
+                    }
+                    return _instance;
+                }
+            }
+
             [HideInInspector] public SaveData _pData;
             string _filepath;
             public static string _fileName = "SaveData.json";
@@ -25,7 +39,7 @@ namespace TeamB_TD
             {
                 return _json;
             }
-            private void Awake()
+            public void Initialize()
             {
                 _filepath = Application.streamingAssetsPath + "/SaveData/" + _fileName;
 
@@ -36,14 +50,14 @@ namespace TeamB_TD
                 }
                 _pData = Load(_filepath);
             }
-            void Save(SaveData data)
+            public void Save(SaveData data)
             {
                 _json = JsonUtility.ToJson(data);
                 StreamWriter wr = new StreamWriter(_filepath, false);
                 wr.WriteLine(_json);
                 wr.Close();
             }
-            SaveData Load(string path)
+            public SaveData Load(string path)
             {
                 StreamReader rd = new StreamReader(path);
                 _json = rd.ReadToEnd();
@@ -51,9 +65,21 @@ namespace TeamB_TD
 
                 return JsonUtility.FromJson<SaveData>(_json);
             }
-            private void OnDestroy()
+            public void Reset()
             {
-                //Save(_pData);
+                StreamReader rd = new StreamReader(_filepath);
+                _json = rd.ReadToEnd();
+                rd.Close();
+                SaveData memory = JsonUtility.FromJson<SaveData>(_json);
+                for (int i = 0; i < memory._isClear.Length; i++)
+                {
+                    memory._isClear[i] = false;
+                }
+                _json = JsonUtility.ToJson(memory);
+                StreamWriter wr = new StreamWriter(_filepath, false);
+                Debug.Log(_json);
+                wr.WriteLine(_json);
+                wr.Close();
             }
 
             // 以下デバッグ用
@@ -108,22 +134,6 @@ namespace TeamB_TD
             {
                 int num = 3;
                 OverWrite(num);
-            }
-            public void Reset()
-            {
-                StreamReader rd = new StreamReader(_filepath);
-                _json = rd.ReadToEnd();
-                rd.Close();
-                SaveData memory = JsonUtility.FromJson<SaveData>(_json);
-                for (int i = 0; i < memory._isClear.Length; i++)
-                {
-                    memory._isClear[i] = false;
-                }
-                _json = JsonUtility.ToJson(memory);
-                StreamWriter wr = new StreamWriter(_filepath, false);
-                Debug.Log(_json);
-                wr.WriteLine(_json);
-                wr.Close();
             }
         }
     }
