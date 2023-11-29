@@ -24,7 +24,7 @@ namespace TeamB_TD
                 }
             }
 
-            [HideInInspector] public SaveData _pData;
+            [HideInInspector] private SaveData _pData;
             string _filepath;
             public static string _fileName = "SaveData.json";
             public static string _json;
