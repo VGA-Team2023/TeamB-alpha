@@ -15,6 +15,7 @@ namespace TeamB_TD
                     public static AllyPlaceableManager Instance { get; private set; } = null;
                     public Dictionary<int, (float Erapse, PlaceableStatus Placeable)> WaitForReviving => _waitForReviving;
 
+                    [SerializeField]
                     private AllyPrefabContainer _allyContainer = null;
                     private Dictionary<int, AllyUnitPlaceView> _allyPlaceViewHolder = new Dictionary<int, AllyUnitPlaceView>();
 
@@ -91,8 +92,6 @@ namespace TeamB_TD
                     {
                         _waitForReviving[allyId] = (0.0f, status);
                     }
-
-                    public void SetAllyContainer(AllyPrefabContainer container) => _allyContainer = container;
 
                     public void AddPlaceViewHolder(int allyId, AllyUnitPlaceView allyView)
                     {
