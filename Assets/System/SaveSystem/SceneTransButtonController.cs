@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 using TeamB_TD.UI;
+using Glib.InspectorExtension;
 
 namespace TeamB_TD
 { 
@@ -8,7 +9,8 @@ namespace TeamB_TD
     {
         public class SceneTransButtonController : MonoBehaviour, IPointerClickHandler
         {
-            [SerializeField] SceneName _nextScene;
+            [SerializeField, SceneName] 
+            private string _nextScene;
 
             bool _isActive = true;
             public bool Active { set { _isActive = value; } }
@@ -17,22 +19,13 @@ namespace TeamB_TD
             {
                 if (_isActive)
                 {
-                    SceneTransition.instance.SceneTrans(_nextScene.ToString());
+                    SceneTransition.instance.SceneTrans(_nextScene);
                 }
             }
             public void BeUntouchable()
             {
                 this.transform.GetChild(1).gameObject.SetActive(true);
             }
-        }
-        public enum SceneName
-        {
-            TitleScene,
-            StageSelect,
-            Tutrial,
-            Stage1,
-            Stage2,
-            Stage3,
         }
     }
 }
