@@ -16,11 +16,13 @@ namespace TeamB_TD
             [SerializeField] GameClearAnimation _gameClearAnimation;
             //[SerializeField] TowerController _towerController;
 
+            public GameResultViewer GameResultViewer => _gameResultViewer;
+
             //test用
-            private void Start()
-            {
-                StartCoroutine(GameClearResultSet());
-            }
+            //private void Start()
+            //{
+            //    StartCoroutine(GameClearResultSet());
+            //}
 
             public IEnumerator GameClearResultSet()
             {
@@ -36,6 +38,11 @@ namespace TeamB_TD
             public void GameOverResultSet()
             {
                 _gameResultViewer.GameOverPanelChangeActive(true);
+            }
+
+            public void TransitionButton(string sceneName)
+            {
+                SceneTransition.instance.SceneTrans(sceneName);
             }
         }
     }

@@ -20,6 +20,7 @@ public class GameClearAnimation : MonoBehaviour
             //_text.text
             yield return new WaitForSeconds(_gameclearDelaytime);
         }
+        yield return new WaitForSeconds(1f);
     }
 
     public IEnumerator StarImageAnimationStart()
