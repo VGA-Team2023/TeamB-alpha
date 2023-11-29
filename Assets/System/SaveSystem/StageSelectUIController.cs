@@ -13,7 +13,7 @@ namespace TeamB_TD
 
             private void Start()
             {
-                _path = Application.dataPath + "/SaveData/" + DataManager.GetPDataFileName();
+                _path = Application.streamingAssetsPath + "/SaveData/" + DataManager.GetPDataFileName();
                 StreamReader rd = new StreamReader(_path);
                 //string json = rd.ReadToEnd();
                 string json = DataManager.GetPDataJson();
