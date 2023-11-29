@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net;
+using TeamB_TD.Battle.Tower;
 using TeamB_TD.Battle.Unit.Enemy;
 using UnityEngine;
 
@@ -43,15 +44,21 @@ namespace TeamB_TD
             //TODO:α用の突貫工事リザルト表示なのでリファクタする。
             private bool _isGameFinish = false;
 
-            //private void Update()
-            //{
-            //    if (EnemyCounter.Current.CompletedEnemyCount >= EnemyCounter.Current.TotalEnemyCount && !_isGameFinish)
-            //    {
-            //        GameClear();
-            //        _result.ResultScoreSet();
-            //        _isGameFinish = true;
-            //    }
-            //}
+            private void Update()
+            {
+                if (EnemyCounter.Current.CompletedEnemyCount >= EnemyCounter.Current.TotalEnemyCount && !_isGameFinish)
+                {
+                    StartCoroutine(_result.GameClearResultSet());
+                    GameClear();
+                    _isGameFinish = true;
+                }
+
+                else if(TowerController.Instance.Life <= 0)
+                {
+                    _result.GameOverResultSet();
+                    _isGameFinish = true;
+                }
+            }
 
             private void GameClear()
             {
