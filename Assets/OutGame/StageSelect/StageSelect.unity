@@ -1268,7 +1268,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6193404630159636774, guid: 5ff9248bab74b2f4ebdbb7f8f4a58fc0, type: 3}
       propertyPath: _nextScene
-      value: Stage 1 Beta
+      value: Stage 1
       objectReference: {fileID: 0}
     - target: {fileID: 6695400851224256235, guid: 5ff9248bab74b2f4ebdbb7f8f4a58fc0, type: 3}
       propertyPath: m_AnchorMax.x
