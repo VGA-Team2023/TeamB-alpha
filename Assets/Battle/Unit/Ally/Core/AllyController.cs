@@ -25,6 +25,7 @@ namespace TeamB_TD
                     private AllyBattleParameter _baseParam;
                     private List<AllyBattleParameter> _addParams = new List<AllyBattleParameter>(); // バフ、デバフ用、足し算。
                     private List<AllyBattleParameter> _multiplierParams = new List<AllyBattleParameter>(); // バフ、デバフ用、掛け算。
+                    private SpriteRenderer _myRenderer = null;
 
                     public AllyConstantParameter ConstantParams => _constantParam;
                     public string Name => _name;
@@ -33,6 +34,7 @@ namespace TeamB_TD
                     public AllyAttackController AttackController => _attackController;
                     public List<AllyBattleParameter> AddParams => _addParams;
                     public List<AllyBattleParameter> MultiplierParams => _multiplierParams;
+                    public SpriteRenderer Renderer => _myRenderer;
 
                     public event Action<AllyController> OnDeadAlly;
                     public event Action<IDamageable> OnDead;
@@ -53,6 +55,11 @@ namespace TeamB_TD
                             }
                             return result;
                         }
+                    }
+
+                    private void Awake()
+                    {
+                        _myRenderer = GetComponent<SpriteRenderer>();
                     }
 
                     private void Start()
