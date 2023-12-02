@@ -44,4 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a20cd2955fed84348a0256b74c0d955d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _uiVFXParent: {fileID: 0}
+  _useDamageVFX: 1
   _damageVFXPrefab: {fileID: 4869635775615837552, guid: 40b51b67e2298e4468b89eee3d640bca, type: 3}
+  _flagBuffVFXPrefab: {fileID: 6392255402850702297, guid: d3dfaaf0d0a7cdb41b36cae256818971, type: 3}
+  _bombVFXPrefab: {fileID: 5163043692304754492, guid: 7de58cd462de895438cf118852b49fb4, type: 3}

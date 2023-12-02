@@ -3264,10 +3264,6 @@ PrefabInstance:
       propertyPath: _uiVFXParent
       value: 
       objectReference: {fileID: 467845884}
-    - target: {fileID: 6828743326902839573, guid: 74ea418e7a39c7047b5534e587120395, type: 3}
-      propertyPath: _flagBuffVFXPrefab
-      value: 
-      objectReference: {fileID: 6392255402850702297, guid: d3dfaaf0d0a7cdb41b36cae256818971, type: 3}
     - target: {fileID: 8995139555377051116, guid: 74ea418e7a39c7047b5534e587120395, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
