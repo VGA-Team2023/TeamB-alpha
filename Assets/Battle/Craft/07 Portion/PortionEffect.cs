@@ -30,7 +30,17 @@ namespace TeamB_TD
 
                 private void PlayEffect(PortionParam param)
                 {
-                    Debug.Log(param.ToString());
+                    HealAllies(param.HealAmount);
+                }
+
+                private void HealAllies(float value)
+                {
+                    var allies = PlacedAllyContainer.Current.PlacedAllies;
+
+                    foreach (var ally in allies)
+                    {
+                        ally.LifeController.Heal(value);
+                    }
                 }
             }
         }

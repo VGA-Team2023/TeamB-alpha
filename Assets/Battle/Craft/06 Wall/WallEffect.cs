@@ -31,6 +31,9 @@ namespace TeamB_TD
                 private void PlayEffect(WallParam param)
                 {
                     Debug.Log(param.ToString());
+                    // TODO: 指定の位置に壁を召喚する。
+                    // 指定の位置とは使用者の1マス前方とする。
+                    // 前方の定義: 使用者の左右上下のマスの中で最もスポナーが近いマス。
                 }
             }
         }
