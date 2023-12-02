@@ -47,5 +47,6 @@ MonoBehaviour:
   _uiVFXParent: {fileID: 0}
   _useDamageVFX: 1
   _damageVFXPrefab: {fileID: 4869635775615837552, guid: 40b51b67e2298e4468b89eee3d640bca, type: 3}
+  _healVFXPrefab: {fileID: 9213631154165619788, guid: 4ec49523cf5161e41a02318075340210, type: 3}
   _flagBuffVFXPrefab: {fileID: 6392255402850702297, guid: d3dfaaf0d0a7cdb41b36cae256818971, type: 3}
   _bombVFXPrefab: {fileID: 5163043692304754492, guid: 7de58cd462de895438cf118852b49fb4, type: 3}

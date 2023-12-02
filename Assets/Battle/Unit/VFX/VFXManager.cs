@@ -20,6 +20,9 @@ namespace TeamB_TD
             private DamageVFX _damageVFXPrefab;
 
             [SerializeField]
+            private HealVFX _healVFXPrefab;
+
+            [SerializeField]
             private FlagBuffVFX _flagBuffVFXPrefab;
 
             [SerializeField]
@@ -54,6 +57,17 @@ namespace TeamB_TD
                     return;
                 }
                 var instance = Instantiate(_damageVFXPrefab, position, Quaternion.identity, _uiVFXParent);
+                instance.Initialize(damageValue);
+            }
+
+            public void RequestHealVFX(float damageValue, Vector2 position)
+            {
+                if (!_healVFXPrefab)
+                {
+                    Debug.Log("_healVFXPrefab is Missing");
+                    return;
+                }
+                var instance = Instantiate(_healVFXPrefab, position, Quaternion.identity, _uiVFXParent);
                 instance.Initialize(damageValue);
             }
 

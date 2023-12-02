@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 namespace TeamB_TD
 {
@@ -34,6 +35,9 @@ namespace TeamB_TD
                         _currentLife += value;
                         if (_currentLife > _controller.TotalParam.MaxLife) _currentLife = _controller.TotalParam.MaxLife;
                         if (_currentLife < 0) _currentLife = 0;
+
+                        var screenPos = Camera.main.WorldToScreenPoint(_controller.transform.position);
+                        VFXManager.Current.RequestHealVFX(value, screenPos);
 
                         if (old != _currentLife)
                         {
