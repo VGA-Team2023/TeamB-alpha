@@ -82,7 +82,7 @@ namespace TeamB_TD
 
                 private void EndEffect(AllyController user, BombParam param)
                 {
-                    Debug.Log("end");
+                    // Debug.Log("end");
                     user.AttackController.ChangeAttackStyle(_originalAttackStyle);
                 }
             }
