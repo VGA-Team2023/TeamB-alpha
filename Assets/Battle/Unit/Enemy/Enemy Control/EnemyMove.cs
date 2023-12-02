@@ -104,7 +104,7 @@ namespace TeamB_TD
                             }
                             catch (OperationCanceledException)
                             {
-                                Debug.Log("Canceled");
+                                // Debug.Log("Canceled");
                                 return;
                             }
                         }
