@@ -11,8 +11,11 @@ namespace TeamB_TD
             {
                 [SerializeField]
                 private float _effectDuration = 20f;
+                [SerializeField]
+                private float _powerupAmount = 30f; // 攻撃力上昇量(単位: ％)
 
                 public float EffectorDuration => _effectDuration;
+                public float PowerupAmount => _powerupAmount;
 
                 public override string ToString()
                 {
