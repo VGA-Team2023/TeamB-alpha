@@ -22,6 +22,9 @@ namespace TeamB_TD
             [SerializeField]
             private FlagBuffVFX _flagBuffVFXPrefab;
 
+            [SerializeField]
+            private GameObject _bombVFXPrefab;
+
             private void Awake()
             {
                 _current = this;
@@ -52,6 +55,16 @@ namespace TeamB_TD
                 }
                 var instance = Instantiate(_damageVFXPrefab, position, Quaternion.identity, _uiVFXParent);
                 instance.Initialize(damageValue);
+            }
+
+            public void RequestBombVFX(Vector2 position)
+            {
+                if (!_bombVFXPrefab)
+                {
+                    Debug.Log("_bombVFXPrefab is Missing");
+                    return;
+                }
+                var instance = Instantiate(_bombVFXPrefab, position, Quaternion.identity);
             }
         }
     }
