@@ -29,6 +29,7 @@ namespace TeamB_TD
                     var index = level - 1;
                     var param = _flagParams[index];
 
+                    StopVFX();
                     _effectCancellationTokenSource?.Cancel();
                     _effectCancellationTokenSource = new CancellationTokenSource();
 
@@ -47,12 +48,12 @@ namespace TeamB_TD
                     {
                         try
                         {
-                            timer += Time.deltaTime; // TODO: GameSpeed掛ける
+                            timer += Time.deltaTime * GameSpeedController.CurretGameSpeed;
                             await UniTask.Yield(token);
                         }
                         catch (OperationCanceledException)
                         {
-                            Debug.Log("Canceled");
+                            // Debug.Log("Canceled");
                             break;
                         }
                     }
@@ -90,6 +91,10 @@ namespace TeamB_TD
                     {
                         ally.MultiplierParams.Remove(AllyBattleParameter.CreateOne(attackPower: param.PowerupAmount));
                     }
+                }
+
+                private void StopVFX()
+                {
                     foreach (var vfx in _vfxContainer)
                     {
                         if (vfx)
