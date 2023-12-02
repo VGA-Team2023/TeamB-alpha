@@ -53,8 +53,8 @@ namespace TeamB_TD
                         }
                         catch (OperationCanceledException)
                         {
-                            Debug.Log("Canceled");
-                            break;
+                            // Debug.Log("Canceled");
+                            return;
                         }
                     }
 
@@ -67,7 +67,8 @@ namespace TeamB_TD
                 {
                     // BombAttackの取得。
                     if (!user.TryGetComponent(out AttackStyleSingleSelecter selecter)) return;
-                    if (selecter.Select is not BombAttack) return;
+                    var bombAttack = selecter.Select as BombAttack;
+                    if (bombAttack == null) return;
 
                     // 元々の攻撃方法を保存する。
                     var currentAttackStyle = user.AttackController.CurrentAttackStyle;
@@ -75,12 +76,13 @@ namespace TeamB_TD
                         _originalAttackStyle = currentAttackStyle;
 
                     // 攻撃方法の変更。
-                    user.AttackController.ChangeAttackStyle(selecter.Select);
-
+                    user.AttackController.ChangeAttackStyle(bombAttack);
+                    bombAttack.SetMultiplication(param.PowerupAmount);
                 }
 
                 private void EndEffect(AllyController user, BombParam param)
                 {
+                    Debug.Log("end");
                     user.AttackController.ChangeAttackStyle(_originalAttackStyle);
                 }
             }
