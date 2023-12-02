@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Cannon Param 1
   m_EditorClassIdentifier: 
   _name: 
-  _effectDuration: 1.5
+  _effectDuration: 10
+  _powerupAmount: 1.5

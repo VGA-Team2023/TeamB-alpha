@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2162883985589684283}
   - component: {fileID: 8820887678959310929}
   - component: {fileID: -1142358586125449724}
+  - component: {fileID: 7138599158400197568}
   m_Layer: 6
   m_Name: AllyUnit_6
   m_TagString: Untagged
@@ -179,6 +180,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _craftType: 5
+--- !u!114 &7138599158400197568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 866886101247738602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b972c3c9ab0e594884eca51123a0212, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _select:
+    rid: 8990090906284326912
+  references:
+    version: 2
+    RefIds:
+    - rid: 8990090906284326912
+      type: {class: CannnonAttack, ns: TeamB_TD.Battle.Unit.Ally, asm: Assembly-CSharp}
+      data:
+        _userTransform: {fileID: 2302665753002330168}
+        _fireTargetGetter:
+          _colliderTriggerHandler: {fileID: 357311478732836342}
+        _bulletPrefab: {fileID: 6555410700230121893, guid: cb6140e66d1e615438829a50ffb4a1a0, type: 3}
 --- !u!1 &7529261536821008671
 GameObject:
   m_ObjectHideFlags: 0
