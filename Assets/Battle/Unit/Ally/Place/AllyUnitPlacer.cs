@@ -58,7 +58,6 @@ namespace TeamB_TD
                             Vector3 mouseWorldPos = GetMouseWorldPosition();
                             _dragItem.transform.position = mouseWorldPos;
                             _dragItem.Renderer.sortingOrder = (int)(-mouseWorldPos.y * 5f + 100f);
-                            Debug.Log($"{_dragItem.Name}:{_dragItem.Renderer.sortingOrder}");
                         }
                         AllyPlaceableManager.Instance.CalcRevivingTime();
                     }
