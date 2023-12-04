@@ -38,6 +38,8 @@ namespace TeamB_TD
 
                         var spawnEnemyDataID = spawnerData.SpawnEnemyDataID;
                         var enemySpawnData = _spawnEnemyDataContainer.GetSpawnData(spawnEnemyDataID);
+                        if (enemySpawnData == null) return;
+
                         var towerComponent = goalCell.gameObject.AddComponent<TowerDamageListener>();
                         var spawnerComponent = spawnerCell.gameObject.AddComponent<EnemySpawner>();
                         spawnerComponent.Initialize(_enemyPrefabContainer, stage, spawnerCell, goalCell, enemySpawnData);
