@@ -14,14 +14,14 @@ namespace TeamB_TD
                 {
                     private EnemyPrefabContainer _enemyPrefabContainer;
                     private Stage _stage; // 経路探索用
-                    private StageCell _spawnerCell; // スポナーを配置するセル。
-                    private StageCell _goalCell; // 目的地。敵はここに向かって移動する。
+                    private IStageCell _spawnerCell; // スポナーを配置するセル。
+                    private IStageCell _goalCell; // 目的地。敵はここに向かって移動する。
                     private SpawnEnemyData[] _spawnData; // 敵の生成に関する情報。
 
                     public int EnemyCount => _spawnData != null ? _spawnData.Length : 0;
 
                     public void Initialize(EnemyPrefabContainer enemyPrefabContainer,
-                        Stage stage, StageCell spawnerCell, StageCell goalCell, SpawnEnemyData[] spawnData)
+                        Stage stage, IStageCell spawnerCell, IStageCell goalCell, SpawnEnemyData[] spawnData)
                     {
                         _enemyPrefabContainer = enemyPrefabContainer;
                         _stage = stage;

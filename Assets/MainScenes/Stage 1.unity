@@ -963,10 +963,6 @@ PrefabInstance:
       propertyPath: _stageController
       value: 
       objectReference: {fileID: 212755796}
-    - target: {fileID: 8081782766960883634, guid: 4a49846264be7994cae4d64d46c82c3b, type: 3}
-      propertyPath: m_Name
-      value: Enemy Spawner Controller
-      objectReference: {fileID: 0}
     - target: {fileID: 8164517264913303936, guid: 4a49846264be7994cae4d64d46c82c3b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

@@ -62,15 +62,16 @@ namespace TeamB_TD
                             "シート5",
                             "シート6",
                             "シート7",
-                            "シート8",
                         };
 
                         var cts = new CancellationTokenSource();
                         UniTask<List<string[]>>[] tasks = new UniTask<List<string[]>>[sheetNames.Length];
 
+
                         TimeOutCancel(cts);
                         for (int i = 0; i < sheetNames.Length; i++)
                         {
+                            var result = await GoogleSheetsLoader.LoadGoogleSheetsAsync(sheetID, sheetNames[i], 1, cts.Token);
                             tasks[i] = GoogleSheetsLoader.LoadGoogleSheetsAsync(sheetID, sheetNames[i], 1, cts.Token);
                         }
 

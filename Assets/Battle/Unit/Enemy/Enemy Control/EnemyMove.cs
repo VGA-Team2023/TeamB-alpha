@@ -21,7 +21,7 @@ namespace TeamB_TD
 
                     private EnemyController _controller;
 
-                    private List<StageCell> _path = new List<StageCell>();
+                    private List<IStageCell> _path = new List<IStageCell>();
                     private List<Vector2> _positions = new List<Vector2>(); // 経路用座標。
 
                     private Stage _stage;
@@ -29,7 +29,7 @@ namespace TeamB_TD
 
                     public bool IsMovable => !_scanner.IsExistObject; // 進行方向にオブジェクトが存在する場合、移動できない。
 
-                    public void Initialize(EnemyController controller, Stage stage, StageCell spawnerCell, StageCell goalCell)
+                    public void Initialize(EnemyController controller, Stage stage, IStageCell spawnerCell, IStageCell goalCell)
                     {
                         _controller = controller;
                         _stage = stage;
@@ -43,7 +43,7 @@ namespace TeamB_TD
                         _positions.Clear();
                         foreach (var cell in _path)
                         {
-                            _positions.Add(cell.transform.position);
+                            _positions.Add(cell.GameObject.transform.position);
                         }
 
                         controller.transform.position = _positions[0];
@@ -164,14 +164,14 @@ namespace TeamB_TD
                         }
 
                         cost[startY, startX] = 0;
-                        List<StageCell> openSet = new List<StageCell>();
+                        List<IStageCell> openSet = new List<IStageCell>();
 
-                        StageCell startCell = _stage.StageData[startY, startX];
+                        IStageCell startCell = _stage.StageData[startY, startX];
                         openSet.Add(startCell);
 
                         while (openSet.Count > 0)
                         {
-                            StageCell currentCell = openSet[0];
+                            IStageCell currentCell = openSet[0];
                             openSet.RemoveAt(0);
 
                             if (currentCell.YPos == goalY && currentCell.XPos == goalX)
@@ -205,9 +205,9 @@ namespace TeamB_TD
                         return false;
                     }
 
-                    private List<StageCell> GetNeighbors(StageCell cell)
+                    private List<IStageCell> GetNeighbors(IStageCell cell)
                     {
-                        List<StageCell> neighbors = new List<StageCell>();
+                        List<IStageCell> neighbors = new List<IStageCell>();
 
                         int[] dy = { -1, 1, 0, 0 };
                         int[] dx = { 0, 0, -1, 1 };
@@ -231,16 +231,16 @@ namespace TeamB_TD
                         return y >= 0 && y < _stage.StageData.GetLength(0) && x >= 0 && x < _stage.StageData.GetLength(1);
                     }
 
-                    private int Heuristic(StageCell cell, int goalY, int goalX)
+                    private int Heuristic(IStageCell cell, int goalY, int goalX)
                     {
                         // マンハッタン距離を使用
                         return Mathf.Abs(cell.YPos - goalY) + Mathf.Abs(cell.XPos - goalX);
                     }
 
-                    private void BuildPath(StageCell startCell, StageCell goalCell)
+                    private void BuildPath(IStageCell startCell, IStageCell goalCell)
                     {
                         _path.Clear();
-                        StageCell current = goalCell;
+                        IStageCell current = goalCell;
                         while (current != startCell)
                         {
                             _path.Insert(0, current);
