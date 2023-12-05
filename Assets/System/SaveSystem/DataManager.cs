@@ -24,7 +24,7 @@ namespace TeamB_TD
                 }
             }
 
-            [HideInInspector] private SaveData _pData;
+            private SaveData _pData;
             string _filepath;
             public static string _fileName = "SaveData.json";
             public static string _json;
@@ -41,6 +41,7 @@ namespace TeamB_TD
             }
             public void Initialize()
             {
+                _pData = new SaveData();    
                 _filepath = Application.streamingAssetsPath + "/SaveData/" + _fileName;
 
                 if (!File.Exists(_filepath))
@@ -55,6 +56,7 @@ namespace TeamB_TD
                 _json = JsonUtility.ToJson(data);
                 StreamWriter wr = new StreamWriter(_filepath, false);
                 wr.WriteLine(_json);
+                wr.Flush();
                 wr.Close();
             }
             public SaveData Load(string path)
