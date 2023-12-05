@@ -5,7 +5,7 @@ namespace TeamB_TD
 {
     namespace OutGame
     {
-        public class DecideListener : MonoBehaviour
+        public class DecideListener: MonoBehaviour
         {
             [HideInInspector] public SaveData.SaveData _pData;
 

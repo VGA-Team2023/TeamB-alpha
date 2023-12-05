@@ -10,7 +10,7 @@ namespace TeamB_TD
 {
     namespace OutGame
     {
-        public class TextManager : MonoBehaviour
+        public class TextManager: MonoBehaviour
         {
             [SerializeField] DecideListener _dl;
             [SerializeField] TextMeshProUGUI _catchPhraseText;
@@ -35,9 +35,9 @@ namespace TeamB_TD
 
             void Update()
             {
-                _currentNum = _dl.GetNumber;                
-                _catchPhraseText.text = _csvDatas[_currentNum][1];
-                _charNameText.text = _csvDatas[_currentNum][2];
+                _currentNum = _dl.GetNumber;
+                _charNameText.text = _csvDatas[_currentNum][1];
+                _catchPhraseText.text = _csvDatas[_currentNum][2];                
                 _backBornText.text = _csvDatas[_currentNum][3];                
             }
         }
