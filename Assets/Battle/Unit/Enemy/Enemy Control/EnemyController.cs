@@ -39,7 +39,7 @@ namespace TeamB_TD
                         remove => _lifeController.OnLifeChanged -= value;
                     }
 
-                    public void Initialize(Stage stage, StageCell spawnerCell, StageCell goalCell)
+                    public void Initialize(Stage stage, IStageCell spawnerCell, IStageCell goalCell)
                     {
                         _attackController.Initialize(this);
                         _lifeController.Initialize(this);

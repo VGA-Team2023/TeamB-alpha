@@ -1,4 +1,4 @@
-// 日本語対応
+﻿// 日本語対応
 using Cysharp.Threading.Tasks;
 using System.Text;
 using System.Threading;

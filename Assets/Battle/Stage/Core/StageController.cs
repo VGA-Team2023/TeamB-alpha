@@ -12,6 +12,9 @@ namespace TeamB_TD
             [DefaultExecutionOrder(-100)]
             public class StageController : MonoBehaviour
             {
+                private static StageController _current;
+                public static StageController Current => _current;
+
                 [SerializeField]
                 private Stage _stage;
                 [SerializeField]
@@ -30,12 +33,24 @@ namespace TeamB_TD
 
                 private void Awake()
                 {
+                    _current = this;
+
                     _stage.CreateStage(_stageBlueprint.GetStageData(_stageID));
                     foreach (var data in _spawnerData)
                     {
                         _spawnerBlueprint.AttachSpawnerToCell(_stage, data);
                     }
                     OnCreatedSpawners?.Invoke(_spawnerBlueprint.Spawners);
+                }
+
+                private void OnDestroy()
+                {
+                    _current = null;
+                }
+
+                public int GetNearestSpawnerCellLength(IStageCell startNode)
+                {
+                    return _stage.GetNearestSpawnerCellLength(startNode);
                 }
             }
         }

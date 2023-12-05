@@ -42,9 +42,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 59911462853717819}
+  - component: {fileID: 8719330124623322150}
   - component: {fileID: 5174644294872667902}
   m_Layer: 0
-  m_Name: Enemy Spawner Blueprint
+  m_Name: Enemy Spawner Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -65,6 +66,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8164517264913303936}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8719330124623322150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8081782766960883634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71ca399750316ee4baa40e4d6393dc33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5174644294872667902
 MonoBehaviour:
   m_ObjectHideFlags: 0

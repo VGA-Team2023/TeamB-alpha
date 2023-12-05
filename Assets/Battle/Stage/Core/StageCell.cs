@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace TeamB_TD
 {
@@ -31,12 +32,15 @@ namespace TeamB_TD
 
                 public float YDelta => _yDelta;
                 public float XDelta => _xDelta;
-                public StageCell Parent { get; set; } = null;
 
                 public int YPos => _yPos;
                 public int XPos => _xPos;
                 public StageCellStatus Status => _status;
                 public Vector3 WorldPosition => transform.position;
+
+                public GameObject GameObject => gameObject;
+
+                public IStageCell Parent { get; set; }
 
                 public void Initialize(int cellStatus, int yPos, int xPos)
                 {
@@ -64,6 +68,37 @@ namespace TeamB_TD
                     {
                         spriteRenderer.color = _cantDoAnything;
                     }
+                }
+
+
+                private void OnMouseDown()
+                {
+                    StageController stageController = StageController.Current;
+
+                    int minLength = int.MaxValue;
+                    IStageCell nearestSpawnerCell = null;
+                    if (stageController.Stage.TryGetCell(out IStageCell top, this.YPos + 1, this.XPos))
+                    {
+                        var len = stageController.GetNearestSpawnerCellLength(top);
+                        if (len != -1 && minLength > len) { minLength = len; nearestSpawnerCell = top; }
+                    }
+                    if (stageController.Stage.TryGetCell(out IStageCell bottom, this.YPos - 1, this.XPos))
+                    {
+                        var len = stageController.GetNearestSpawnerCellLength(bottom);
+                        if (len != -1 && minLength > len) { minLength = len; nearestSpawnerCell = bottom; }
+                    }
+                    if (stageController.Stage.TryGetCell(out IStageCell right, this.YPos, this.XPos + 1))
+                    {
+                        var len = stageController.GetNearestSpawnerCellLength(right);
+                        if (len != -1 && minLength > len) { minLength = len; nearestSpawnerCell = right; }
+                    }
+                    if (stageController.Stage.TryGetCell(out IStageCell left, this.YPos, this.XPos - 1))
+                    {
+                        var len = stageController.GetNearestSpawnerCellLength(left);
+                        if (len != -1 && minLength > len) { minLength = len; nearestSpawnerCell = left; }
+                    }
+
+                    Debug.Log(nearestSpawnerCell.GameObject.name);
                 }
             }
         }
