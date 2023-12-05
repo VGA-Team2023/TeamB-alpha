@@ -7,9 +7,9 @@
 
     public enum WeaponType
     {
-        None,
-        Melee,
-        Range
+        None = 0,
+        Range = 2,
+        Melee = 3,
     }
 }
 

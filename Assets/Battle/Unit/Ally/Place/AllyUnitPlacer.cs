@@ -120,8 +120,9 @@ namespace TeamB_TD
                     private bool IsPlacable(AllyController prefab, IStageCell cell, ResourceManager resource)
                     {
                         if (!prefab) return false;
-                        if (!cell.Status.HasFlag(StageCellStatus.UnitPlacable)) return false;
-                        if (_resourceManager.CurrentResource - _dragItem.ConstantParams.Cost < 0) return false;
+                        if (!cell.Status.HasFlag(StageCellStatus.UnitPlaceable)) return false;
+                        if (resource.CurrentResource - _dragItem.ConstantParams.Cost < 0) return false;
+                        if ((cell as StageCell).WeaponType != prefab.ConstantParams.WeaponType) return false;
 
                         return true;
                     }
