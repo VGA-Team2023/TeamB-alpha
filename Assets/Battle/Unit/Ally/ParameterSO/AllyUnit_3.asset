@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ac2aab50bae6fe42b5a1a4defeec156, type: 3}
   m_Name: AllyUnit_3
   m_EditorClassIdentifier: 
-  _weaponType: 1
+  _weaponType: 3
   _id: 3
   _maxLife: 30
   _attackPower: 5
