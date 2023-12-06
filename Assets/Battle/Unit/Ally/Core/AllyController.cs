@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using Glib.InspectorExtension;
 using UnityEngine;
 
 namespace TeamB_TD
@@ -25,7 +24,8 @@ namespace TeamB_TD
                     private AllyBattleParameter _baseParam;
                     private List<AllyBattleParameter> _addParams = new List<AllyBattleParameter>(); // バフ、デバフ用、足し算。
                     private List<AllyBattleParameter> _multiplierParams = new List<AllyBattleParameter>(); // バフ、デバフ用、掛け算。
-                    private SpriteRenderer _myRenderer = null;
+                    private SpriteRenderer[] _myRenderers = null;
+                    private int[] _myRenderersOrder = null;
 
                     public AllyConstantParameter ConstantParams => _constantParam;
                     public string Name => _name;
@@ -34,7 +34,8 @@ namespace TeamB_TD
                     public AllyAttackController AttackController => _attackController;
                     public List<AllyBattleParameter> AddParams => _addParams;
                     public List<AllyBattleParameter> MultiplierParams => _multiplierParams;
-                    public SpriteRenderer Renderer => _myRenderer;
+                    public SpriteRenderer[] Renderers => _myRenderers;
+                    public int[] RenderersOrder => _myRenderersOrder;
 
                     public event Action<AllyController> OnDeadAlly;
                     public event Action<IDamageable> OnDead;
@@ -59,7 +60,13 @@ namespace TeamB_TD
 
                     private void Awake()
                     {
-                        _myRenderer = GetComponent<SpriteRenderer>();
+                        _myRenderers = GetComponentsInChildren<SpriteRenderer>();
+                        _myRenderersOrder = new int[_myRenderers.Length];
+
+                        for (int i = 0; i < _myRenderers.Length; i++)
+                        {
+                            _myRenderersOrder[i] = _myRenderers[i].sortingOrder;
+                        }
                     }
 
                     private void Start()
@@ -86,6 +93,22 @@ namespace TeamB_TD
 
                         var screenPos = Camera.main.WorldToScreenPoint(transform.position);
                         VFXManager.Current.RequestDamageVFX(value, screenPos);
+                    }
+
+                    public void UpdateOrderInLayer(int order)
+                    {
+                        for (int i = 0; i < _myRenderersOrder.Length; i++)
+                        {
+                            _myRenderers[i].sortingOrder = _myRenderersOrder[i] + order;
+                        }
+                    }
+
+                    public void UpdateOrderInLayer(int[] orders)
+                    {
+                        for (int i = 0; i < orders.Length; i++)
+                        {
+                            _myRenderers[i].sortingOrder = _myRenderersOrder[i] + orders[i];
+                        }
                     }
                 }
             }
