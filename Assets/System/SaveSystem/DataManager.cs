@@ -49,7 +49,7 @@ namespace TeamB_TD
                     Debug.Log(_filepath);
                     Save(_pData);
                 }
-                _pData = Load(_filepath);
+                _pData = Load();
             }
             public void Save(SaveData data)
             {
@@ -59,11 +59,19 @@ namespace TeamB_TD
                 wr.WriteLine(_json);
                 wr.Flush();
                 wr.Close();
-                _pData = Load(_filepath);
+                _pData = Load();
             }
-            public SaveData Load(string path)
+            //public SaveData Load(string path) //セーブデータを複数取り扱う場合はDictionary
+            //{
+            //    StreamReader rd = new StreamReader(path);
+            //    _json = rd.ReadToEnd();
+            //    rd.Close();
+
+            //    return JsonUtility.FromJson<SaveData>(_json);
+            //}
+            public SaveData Load()
             {
-                StreamReader rd = new StreamReader(path);
+                StreamReader rd = new StreamReader(_filepath);
                 _json = rd.ReadToEnd();
                 rd.Close();
 
@@ -71,7 +79,7 @@ namespace TeamB_TD
             }
             public void Reset()
             {
-                SaveData memory = Load(_filepath);
+                SaveData memory = Load();
                 for (int i = 0; i < memory._isClear.Length; i++)
                 {
                     memory._isClear[i] = false;
@@ -84,7 +92,7 @@ namespace TeamB_TD
             // TODO:機能整い次第削除
             public void OverWrite(int stagenum) //特定のステージのクリア状況を変更する
             {
-                SaveData memory = Load(_filepath);
+                SaveData memory = Load();
                 for (int i = 0; i < stagenum; i++)
                 {
                     memory._isClear[i] = true;
@@ -93,7 +101,7 @@ namespace TeamB_TD
             }
             public void OverWriteAll()
             {
-                SaveData memory = Load(_filepath);
+                SaveData memory = Load();
                 for (int i = 0; i < memory._isClear.Length; i++)
                 {
                     memory._isClear[i] = true;
@@ -102,7 +110,7 @@ namespace TeamB_TD
             }
             public void ChangeFavchar(int num)
             {
-                SaveData memory = Load(_filepath);
+                SaveData memory = Load();
                 memory._favoriteUnitId = num;
                 Save(memory);
             }          
