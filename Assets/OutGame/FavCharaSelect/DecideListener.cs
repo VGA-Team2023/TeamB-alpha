@@ -1,6 +1,9 @@
 ﻿using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
+using TeamB_TD.UI;
+using TeamB_TD.SaveData;
+using Glib.InspectorExtension;
 namespace TeamB_TD
 {
     namespace OutGame
@@ -9,18 +12,22 @@ namespace TeamB_TD
         {
             [HideInInspector] public SaveData.SaveData _pData;
 
-            [SerializeField] GameObject _imgCanvas;
-            [SerializeField] int _characterNum = 6;
-            [SerializeField] Sprite[] _charImgArray;
-            
+            [SerializeField] 
+            GameObject _imgCanvas;
+            [SerializeField]
+            int _characterNum = 6;
+            [SerializeField]
+            Sprite[] _charImgArray;
+            [SerializeField, SceneName] 
+            private string _nextScene;
+
             string _filepath;            
             int _currentNum = 0;
             public int GetNumber => _currentNum;
 
             public static string _json;
 
-            Sprite _dispImg;
-
+            SaveData.SaveData memory;
 
             public SaveData.SaveData PlayerData => _pData;            
             
@@ -28,6 +35,7 @@ namespace TeamB_TD
             {
                 _filepath = Application.streamingAssetsPath + "/SaveData/SaveData.json";
                 _imgCanvas.gameObject.GetComponent<Image>().sprite = _charImgArray[_currentNum];
+                memory = DataManager.Instance.Load(_filepath);
             }
             private void Start()
             {
@@ -39,29 +47,23 @@ namespace TeamB_TD
             }
             public void FavCharDecide()
             {
-                StreamReader rd = new StreamReader(_filepath);
-                _json = rd.ReadToEnd();
-                rd.Close();
-                SaveData.SaveData memory = JsonUtility.FromJson<SaveData.SaveData>(_json);
-                memory._favoriteUnitId = _currentNum;
-                _json = JsonUtility.ToJson(memory);
-                StreamWriter wr = new StreamWriter(_filepath, false);
-                wr.WriteLine(_json);
-                wr.Close();
-                Debug.Log("上書きは正常に動作しています");
+                memory._favoriteUnitId = _currentNum + 1;
+                DataManager.Instance.Save(memory);
+                //Debug.Log("上書きは正常に動作しています");
+                SceneTransition.instance.SceneTrans(_nextScene);
             }
 
             public void SlideRight()
             {
                 _currentNum++;
                 _currentNum %= _characterNum;
-                Debug.Log($"currentNum：{_currentNum}");
+                //Debug.Log($"currentNum：{_currentNum}");
             }
             public void SlideLeft()
             {
                 _currentNum--;
                 if(_currentNum < 0) _currentNum += _characterNum;
-                Debug.Log($"currentNum：{_currentNum}");
+                //Debug.Log($"currentNum：{_currentNum}");
             }
         }
     }

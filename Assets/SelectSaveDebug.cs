@@ -19,4 +19,9 @@ public class SelectSaveDebug : MonoBehaviour
     {
         DataManager.Instance.Reset();
     }
+
+    public void FavCharSet(int unitID)
+    {
+        DataManager.Instance.ChangeFavchar(unitID);
+    }
 }
