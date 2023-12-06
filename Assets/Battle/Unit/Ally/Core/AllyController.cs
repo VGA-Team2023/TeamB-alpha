@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using TeamB_TD.Battle.StageManagement;
 using UnityEngine;
 
 namespace TeamB_TD
@@ -10,7 +11,7 @@ namespace TeamB_TD
         {
             namespace Ally
             {
-                public class AllyController : MonoBehaviour, IDamageable
+                public class AllyController : MonoBehaviour, IAllyDamageable
                 {
                     [SerializeField]
                     private AllyConstantParameter _constantParam = default;
@@ -36,6 +37,7 @@ namespace TeamB_TD
                     public List<AllyBattleParameter> MultiplierParams => _multiplierParams;
                     public SpriteRenderer[] Renderers => _myRenderers;
                     public int[] RenderersOrder => _myRenderersOrder;
+                    public IStageCell GroundCell { get; set; }
 
                     public event Action<AllyController> OnDeadAlly;
                     public event Action<IDamageable> OnDead;
