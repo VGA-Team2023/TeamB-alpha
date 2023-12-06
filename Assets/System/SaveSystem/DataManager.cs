@@ -55,9 +55,11 @@ namespace TeamB_TD
             {
                 _json = JsonUtility.ToJson(data);
                 StreamWriter wr = new StreamWriter(_filepath, false);
+                Debug.Log(_json);
                 wr.WriteLine(_json);
                 wr.Flush();
                 wr.Close();
+                _pData = Load(_filepath);
             }
             public SaveData Load(string path)
             {
@@ -69,74 +71,42 @@ namespace TeamB_TD
             }
             public void Reset()
             {
-                StreamReader rd = new StreamReader(_filepath);
-                _json = rd.ReadToEnd();
-                rd.Close();
-                SaveData memory = JsonUtility.FromJson<SaveData>(_json);
+                SaveData memory = Load(_filepath);
                 for (int i = 0; i < memory._isClear.Length; i++)
                 {
                     memory._isClear[i] = false;
                 }
-                _json = JsonUtility.ToJson(memory);
-                StreamWriter wr = new StreamWriter(_filepath, false);
-                Debug.Log(_json);
-                wr.WriteLine(_json);
-                wr.Close();
+                memory._favoriteUnitId = 0;
+                Save(memory);
             }
 
             // 以下デバッグ用
             // TODO:機能整い次第削除
             public void OverWrite(int stagenum) //特定のステージのクリア状況を変更する
             {
-                StreamReader rd = new StreamReader(_filepath);
-                _json = rd.ReadToEnd();
-                rd.Close();
-                SaveData memory = JsonUtility.FromJson<SaveData>(_json);
+                SaveData memory = Load(_filepath);
                 for (int i = 0; i < stagenum; i++)
                 {
                     memory._isClear[i] = true;
                 }
-                _json = JsonUtility.ToJson(memory);
-                StreamWriter wr = new StreamWriter(_filepath, false);
-                wr.WriteLine(_json);
-                wr.Close();
+                Save(memory);
             }
             public void OverWriteAll()
             {
-                StreamReader rd = new StreamReader(_filepath);
-                _json = rd.ReadToEnd();
-                rd.Close();
-                SaveData memory = JsonUtility.FromJson<SaveData>(_json);
+                SaveData memory = Load(_filepath);
                 for (int i = 0; i < memory._isClear.Length; i++)
                 {
                     memory._isClear[i] = true;
                 }
-                _json = JsonUtility.ToJson(memory);
-                StreamWriter wr = new StreamWriter(_filepath, false);
-                Debug.Log(_json);
-                wr.WriteLine(_json);
-                wr.Close();
+                Save(memory);
             }
-            public void Clearzero()
+            public void ChangeFavchar(int num)
             {
-                int num = 0;
-                OverWrite(num);
-            }
-            public void Clear1st()
-            {
-                int num = 1;
-                OverWrite(num);
-            }
-            public void Clear2nd()
-            {
-                int num = 2;
-                OverWrite(num);
-            }
-            public void Clear3rd()
-            {
-                int num = 3;
-                OverWrite(num);
-            }
+                SaveData memory = Load(_filepath);
+                memory._favoriteUnitId = num;
+                Save(memory);
+            }          
+            
         }
     }
 }
