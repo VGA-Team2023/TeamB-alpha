@@ -34,7 +34,7 @@ namespace TeamB_TD
 
                         if (TryGetComponent(out Image myImage))
                         {
-                            myImage.sprite = _allyPrefab.ConstantParams.AllySprite;
+                            myImage.sprite = _allyPrefab.ConstantParams.AllyUiSprite;
                         }
                     }
 

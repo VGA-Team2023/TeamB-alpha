@@ -57,7 +57,7 @@ namespace TeamB_TD
                         {
                             Vector3 mouseWorldPos = GetMouseWorldPosition();
                             _dragItem.transform.position = mouseWorldPos;
-                            _dragItem.Renderer.sortingOrder = (int)(-mouseWorldPos.y * 5f + 100f);
+                            _dragItem.UpdateOrderInLayer((int)(-mouseWorldPos.y * 5f + 100f));
                         }
                         AllyPlaceableManager.Instance.CalcRevivingTime();
                     }
@@ -104,7 +104,7 @@ namespace TeamB_TD
                         var instance = Instantiate(allyPrefab, position, Quaternion.identity);
                         var cell = stageCell as StageCell;
                         AllyPlaceableManager.Instance.PlaceAlly(instance);
-                        instance.Renderer.sortingOrder = _dragItem.Renderer.sortingOrder;
+                        instance.UpdateOrderInLayer(_dragItem.RenderersOrder);
                         instance.OnDeadAlly += AllyPlaceableManager.Instance.OnDeadAlly;
                         _resourceManager.TryUseResource(allyPrefab.ConstantParams.Cost);
                         OnPlacedAlly?.Invoke(instance);
