@@ -79,7 +79,7 @@ namespace TeamB_TD
                         $"攻撃間隔：{ally.ConstantParams.AttackInterval}\n" +
                         $"体力    ：{ally.LifeController.CurrentLife} / {ally.ConstantParams.MaxLife}\n";
 
-                    _allyImage.sprite = ally.ConstantParams.AllySprite ?? null;
+                    _allyImage.sprite = ally.ConstantParams.AllyStandingSprite ?? null;
                 }
 
                 private IEnumerator ChangeActivateAsync()
