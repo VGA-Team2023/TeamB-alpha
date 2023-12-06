@@ -105,6 +105,7 @@ namespace TeamB_TD
                         var cell = stageCell as StageCell;
                         AllyPlaceableManager.Instance.PlaceAlly(instance);
                         instance.UpdateOrderInLayer(_dragItem.RenderersOrder);
+                        instance.GroundCell = stageCell;
                         instance.OnDeadAlly += AllyPlaceableManager.Instance.OnDeadAlly;
                         _resourceManager.TryUseResource(allyPrefab.ConstantParams.Cost);
                         OnPlacedAlly?.Invoke(instance);

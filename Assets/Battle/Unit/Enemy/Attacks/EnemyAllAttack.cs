@@ -16,13 +16,13 @@ namespace TeamB_TD
 
                     public bool IsAnyObjectInTrigger()
                     {
-                        var allies = _multiObjectInTriggerFinder.GetAllObjectsInTrigger<AllyController>();
+                        var allies = _multiObjectInTriggerFinder.GetAllObjectsInTrigger<IAllyDamageable>();
                         return allies != null && allies.Count > 0;
                     }
 
                     public void Fire(float attackPower)
                     {
-                        var allies = _multiObjectInTriggerFinder.GetAllObjectsInTrigger<AllyController>();
+                        var allies = _multiObjectInTriggerFinder.GetAllObjectsInTrigger<IAllyDamageable>();
                         foreach (var ally in allies)
                         {
                             ally.Damge(attackPower);

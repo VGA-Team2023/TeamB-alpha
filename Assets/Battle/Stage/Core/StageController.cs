@@ -52,6 +52,34 @@ namespace TeamB_TD
                 {
                     return _stage.GetNearestSpawnerCellLength(startNode);
                 }
+
+                public IStageCell GetNearestSpawnerCell(IStageCell startNode) // 四近傍の中で最もスポナーに近いセルを取得する。
+                {
+                    int minLength = int.MaxValue;
+                    IStageCell nearestSpawnerCell = null;
+                    if (Stage.TryGetCell(out IStageCell top, startNode.YPos + 1, startNode.XPos))
+                    {
+                        var len = GetNearestSpawnerCellLength(top);
+                        if (len != -1 && minLength > len) { minLength = len; nearestSpawnerCell = top; }
+                    }
+                    if (Stage.TryGetCell(out IStageCell bottom, startNode.YPos - 1, startNode.XPos))
+                    {
+                        var len = GetNearestSpawnerCellLength(bottom);
+                        if (len != -1 && minLength > len) { minLength = len; nearestSpawnerCell = bottom; }
+                    }
+                    if (Stage.TryGetCell(out IStageCell right, startNode.YPos, startNode.XPos + 1))
+                    {
+                        var len = GetNearestSpawnerCellLength(right);
+                        if (len != -1 && minLength > len) { minLength = len; nearestSpawnerCell = right; }
+                    }
+                    if (Stage.TryGetCell(out IStageCell left, startNode.YPos, startNode.XPos - 1))
+                    {
+                        var len = GetNearestSpawnerCellLength(left);
+                        if (len != -1 && minLength > len) { minLength = len; nearestSpawnerCell = left; }
+                    }
+
+                    return nearestSpawnerCell;
+                }
             }
         }
     }

@@ -364,6 +364,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4937868877780654387, guid: 0a4f8900c9f71b24a83bc9001d7a1ea3, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7197360511988772718, guid: 0a4f8900c9f71b24a83bc9001d7a1ea3, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

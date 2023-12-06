@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Wall Param 3
   m_EditorClassIdentifier: 
   _name: 
-  _wallUnitPrefab: {fileID: 0}
+  _wallUnitPrefab: {fileID: 6641270683454392564, guid: a3a9e60d26fa5fc4994fdef790c50e7a, type: 3}
   _wallLife: 600
