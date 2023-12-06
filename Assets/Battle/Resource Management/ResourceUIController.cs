@@ -26,7 +26,7 @@ namespace TeamB_TD
 
                 private void ApplyResourceView(float changedResource)
                 {
-                    _resourceView.text = $"マナ : {((int)changedResource).ToString()} / {_resourceManager.MaxResource.ToString(".")}";
+                    _resourceView.text = $"{((int)changedResource).ToString()} / {_resourceManager.MaxResource.ToString(".")}";
                 }
                 
                 private void ApplyResourceSlider(float changedResource)
