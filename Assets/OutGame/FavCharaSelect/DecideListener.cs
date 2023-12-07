@@ -35,7 +35,7 @@ namespace TeamB_TD
             {
                 _filepath = Application.streamingAssetsPath + "/SaveData/SaveData.json";
                 _imgCanvas.gameObject.GetComponent<Image>().sprite = _charImgArray[_currentNum];
-                memory = DataManager.Instance.Load(_filepath);
+                memory = DataManager.Instance.Load();
             }
             private void Start()
             {
