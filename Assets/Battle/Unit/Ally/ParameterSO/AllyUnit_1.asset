@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weaponType: 3
   _id: 1
-  _maxLife: 30
+  _maxLife: 60
   _attackPower: 30
   _maxTargetCount: 2
   _cost: 4
