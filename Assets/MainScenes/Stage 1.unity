@@ -704,7 +704,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7510134250144166954, guid: 2a838d92754b5134c8de5a628b973788, type: 3}
       propertyPath: _stageID
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7510134250144166954, guid: 2a838d92754b5134c8de5a628b973788, type: 3}
       propertyPath: _spawnerBlueprint
