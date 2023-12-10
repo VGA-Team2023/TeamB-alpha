@@ -1,4 +1,5 @@
-// 日本語対応
+﻿// 日本語対応
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -34,6 +35,16 @@ namespace TeamB_TD
             private SelectView _selectViewPrefab;
             [SerializeField, Range(0.8f, 2f)]
             private float _autoDuration = 1f;
+            [SerializeField, Header("話しているActorのサイズ")]
+            private Vector3 _talkingActorSize = new Vector3(0.5f, 0.5f, 0.5f);
+            [SerializeField, Header("話していないActorのサイズ")]
+            private Vector3 _notTalkingActorSize = new Vector3(0.45f, 0.45f, 0.45f);
+            [SerializeField, Header("話していないActorの暗さ加減")]
+            private Color _darkColor = new Color32(144, 144, 144, 246);
+            [SerializeField, Header("ActorのImage配列")]
+            private Image[] _activeActor = new Image[3];
+            [SerializeField, Header("Unit立ち絵の配列")]
+            private Sprite[] _allyUnitSprite;
 
             public TextMeshProUGUI Text => _text;
             public TextMeshProUGUI Caption => _caption;
@@ -41,6 +52,11 @@ namespace TeamB_TD
             public Transform SelectViewPrefabParent => _selectViewPrefabParent;
             public SelectView SelectViewPrefab => _selectViewPrefab;
             public float AutoDuration => _autoDuration;
+            public Vector3 TalkingActorSize => _talkingActorSize;
+            public Vector3 NotTalkingActorSize => _notTalkingActorSize;
+            public Color DarkColor => _darkColor;
+            public Image[] ActiveActor => _activeActor;
+            public Sprite[] AllyUnitSprite => _allyUnitSprite;
         }
     }
 }
