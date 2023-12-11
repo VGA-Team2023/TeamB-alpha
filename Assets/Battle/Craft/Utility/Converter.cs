@@ -16,7 +16,7 @@ namespace TeamB_TD
                         case CraftType.Invalid: return AllyType.Invalid;
                         case CraftType.Flag: return AllyType.Flag;
                         case CraftType.Bomb: return AllyType.Bomb;
-                        case CraftType.Horn: return AllyType.Horn;
+                        case CraftType.Makibisi: return AllyType.Makibisi;
                         case CraftType.Wall: return AllyType.Wall;
                         case CraftType.Portion: return AllyType.Portion;
                         case CraftType.Cannon: return AllyType.Cannon;

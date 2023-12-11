@@ -19,7 +19,7 @@ namespace TeamB_TD
                 [SerializeField]
                 private BombEffect _bombEffect;
                 [SerializeField]
-                private HornEffect _hornEffect;
+                private MakibisiEffect _makibisiEffect;
                 [SerializeField]
                 private WallEffect _wallEffect;
                 [SerializeField]
@@ -37,7 +37,7 @@ namespace TeamB_TD
 
                     _effects.Add(CraftType.Flag, _flagEffect);
                     _effects.Add(CraftType.Bomb, _bombEffect);
-                    _effects.Add(CraftType.Horn, _hornEffect);
+                    _effects.Add(CraftType.Makibisi, _makibisiEffect);
                     _effects.Add(CraftType.Wall, _wallEffect);
                     _effects.Add(CraftType.Portion, _portionEffect);
                     _effects.Add(CraftType.Cannon, _cannonEffect);

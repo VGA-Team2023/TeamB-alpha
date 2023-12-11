@@ -10,8 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 11accf79d4be5f84894a424dc0f49334, type: 3}
-  m_Name: Horn Param 3
+  m_Name: Makibisi Param 1
   m_EditorClassIdentifier: 
   _name: 
-  _cost: 0
-  _smallAllyPrefab: {fileID: 0}
+  _makibisiPrefab: {fileID: 7028045526188941808, guid: 956546772b8d7034ab87c63fd52ddcd7, type: 3}

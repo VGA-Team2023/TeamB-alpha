@@ -50,13 +50,13 @@ namespace TeamB_TD
                         StartMove();
                     }
 
-                    public void Update(Transform transform)
+                    public void Update(Transform transform, float moveSpeedDecelerationRate)
                     {
                         _scanner.SetDir(_moveDir);
                         if (!IsMovable) return;
 
                         var gameSpeed = GameSpeedController.CurretGameSpeed;
-                        transform.Translate(_moveDir.normalized * Time.deltaTime * _controller.Param.MoveSpeed * gameSpeed);
+                        transform.Translate(_moveDir.normalized * Time.deltaTime * _controller.Param.MoveSpeed * gameSpeed * moveSpeedDecelerationRate);
 
                         // 左右の補正（行き過ぎた場合、目標地点に強制移動する。）
                         if (_moveDir.x >= 0f && transform.position.x > _currentTargetPosition.x ||

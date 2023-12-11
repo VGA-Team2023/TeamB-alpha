@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: abde7ddf710cf0f41b2005e4ba8b56a2, type: 3}
-  m_Name: Horn Effect
+  m_Name: Makibisi Effect
   m_EditorClassIdentifier: 
-  _hornParams:
+  _makibisiParams:
   - {fileID: 11400000, guid: 215d255d76fb67f49af11ac26cc36227, type: 2}
   - {fileID: 11400000, guid: 298f5d7f32c77194a87fa546176e2cfb, type: 2}
   - {fileID: 11400000, guid: 205ef408ac2b53941a830fd80b0a61ee, type: 2}

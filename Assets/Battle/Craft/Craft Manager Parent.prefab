@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _flagEffect: {fileID: 11400000, guid: a4b453d83a9fa7042be6c6a97813fe44, type: 2}
   _bombEffect: {fileID: 11400000, guid: ae722876323e0c8498a54c9151b35fbb, type: 2}
-  _hornEffect: {fileID: 11400000, guid: c4e9bd743db169b4dbe6096a10b078b6, type: 2}
+  _makibisiEffect: {fileID: 11400000, guid: c4e9bd743db169b4dbe6096a10b078b6, type: 2}
   _wallEffect: {fileID: 11400000, guid: 316dcf271c9a7e54086c548d38e94cd7, type: 2}
   _portionEffect: {fileID: 11400000, guid: 2cc5949850d630c41b7daca6c940ae6f, type: 2}
   _cannonEffect: {fileID: 11400000, guid: bc8c1759d1377ae46929b9b97137dab6, type: 2}
@@ -227,7 +227,7 @@ MonoBehaviour:
   _menuParent: {fileID: 0}
   _flagMenuPrefab: {fileID: 4810663707413253892, guid: c72b1070a440d394a955c6eec8e9b18f, type: 3}
   _bombMenuPrefab: {fileID: 4810663707413253892, guid: 3f3cbe76a117a294a8d274c804115ecc, type: 3}
-  _hornMenuPrefab: {fileID: 4810663707413253892, guid: 0111f8b5ff8f2df449881f4ea30b0328, type: 3}
+  _MakibisiMenuPrefab: {fileID: 4810663707413253892, guid: 0111f8b5ff8f2df449881f4ea30b0328, type: 3}
   _wallMenuPrefab: {fileID: 4810663707413253892, guid: 9d41f6207c569d445a950f0b6a1270ec, type: 3}
   _portionMenuPrefab: {fileID: 4810663707413253892, guid: b2bbec16a84338546ae2aa014d8db38a, type: 3}
   _cannonMenuPrefab: {fileID: 4810663707413253892, guid: b9e8c45a293142e43add4c8d766ddcdb, type: 3}
