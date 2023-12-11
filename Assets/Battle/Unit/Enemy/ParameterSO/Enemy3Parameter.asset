@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Enemy3Parameter
   m_EditorClassIdentifier: 
   _id: 3
-  _maxLife: 100
+  _maxLife: 1000
   _attackPower: 3
   _moveSpeed: 0.8
   _attackInterval: 1

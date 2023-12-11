@@ -49,7 +49,7 @@ namespace TeamB_TD
                     public void Update()
                     {
                         _attackController.Update();
-                        _moveController.Update(transform);
+                        _moveController.Update(transform, _moveSpeedDecelerationRate);
                     }
 
                     private void OnDestroy()
@@ -64,6 +64,16 @@ namespace TeamB_TD
 
                         var screenPos = Camera.main.WorldToScreenPoint(transform.position);
                         VFXManager.Current.RequestDamageVFX(value, screenPos);
+                    }
+
+
+                    private float _moveSpeedDecelerationRate = 1f;
+
+                    public float MoveSpeedDecelerationRate => _moveSpeedDecelerationRate;
+
+                    public void ChangeMoveSpeedDecelerationRate(float value)
+                    {
+                        _moveSpeedDecelerationRate = value;
                     }
                 }
             }
