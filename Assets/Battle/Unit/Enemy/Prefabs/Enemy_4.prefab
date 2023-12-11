@@ -113,6 +113,7 @@ MonoBehaviour:
   _moveController:
     _scanner: {fileID: -4029579060976327445}
   _spriteRenderer: {fileID: 4262996832153941316}
+  _fadeoutDuration: 0.8
   references:
     version: 2
     RefIds:

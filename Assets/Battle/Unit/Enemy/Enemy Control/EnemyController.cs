@@ -88,7 +88,7 @@ namespace TeamB_TD
                         var endCol = _spriteRenderer.color;
                         endCol.a = 0f;
 
-                        for (var t = 0f; t < _fadeoutDuration; t += Time.deltaTime)
+                        for (var t = 0f; t < _fadeoutDuration; t += Time.deltaTime * GameSpeedController.CurretGameSpeed)
                         {
                             _spriteRenderer.color = Color.Lerp(startCol, endCol, t / _fadeoutDuration);
                             await UniTask.Yield(this.GetCancellationTokenOnDestroy());
