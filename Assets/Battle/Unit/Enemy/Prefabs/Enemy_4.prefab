@@ -112,6 +112,7 @@ MonoBehaviour:
     _droppedResourceAmount: 1
   _moveController:
     _scanner: {fileID: -4029579060976327445}
+  _spriteRenderer: {fileID: 4262996832153941316}
   references:
     version: 2
     RefIds:

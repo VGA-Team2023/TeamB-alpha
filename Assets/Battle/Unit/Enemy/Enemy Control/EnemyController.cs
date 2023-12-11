@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Cysharp.Threading.Tasks;
+using System;
 using TeamB_TD.Battle.StageManagement;
+using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 
 namespace TeamB_TD
@@ -22,6 +24,10 @@ namespace TeamB_TD
                     private EnemyLifeController _lifeController;
                     [SerializeField]
                     private EnemyMove _moveController;
+                    [SerializeField]
+                    private SpriteRenderer _spriteRenderer;
+                    [SerializeField]
+                    private float _fadeoutDuration = 1f;
 
                     public EnemyParameter Param => _param;
                     public string Name => _name;
@@ -74,6 +80,21 @@ namespace TeamB_TD
                     public void ChangeMoveSpeedDecelerationRate(float value)
                     {
                         _moveSpeedDecelerationRate = value;
+                    }
+
+                    public async UniTask PlayFadeOutAsync()
+                    {
+                        var startCol = _spriteRenderer.color;
+                        var endCol = _spriteRenderer.color;
+                        endCol.a = 0f;
+
+                        for (var t = 0f; t < _fadeoutDuration; t += Time.deltaTime)
+                        {
+                            _spriteRenderer.color = Color.Lerp(startCol, endCol, t / _fadeoutDuration);
+                            await UniTask.Yield(this.GetCancellationTokenOnDestroy());
+                        }
+
+                        _spriteRenderer.color = endCol;
                     }
                 }
             }

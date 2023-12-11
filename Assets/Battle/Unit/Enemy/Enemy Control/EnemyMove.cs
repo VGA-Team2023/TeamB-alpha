@@ -1,6 +1,7 @@
 ﻿using Cysharp.Threading.Tasks;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using TeamB_TD.Battle.StageManagement;
 using UnityEngine;
@@ -92,6 +93,10 @@ namespace TeamB_TD
                         {
                             try
                             {
+                                if (_positions.Count - 1 == i)
+                                {
+                                    _controller.PlayFadeOutAsync().Forget();
+                                }
                                 // 現在の目的地を取得する。WaitMove等の関数内で現在の目的地を利用するため。
                                 _currentTargetPosition = _positions[i];
                                 // 目的地への方向ベクトルを取得。Update関数内で移動に使用する。
