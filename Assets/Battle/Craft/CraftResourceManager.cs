@@ -17,6 +17,8 @@ namespace TeamB_TD
                 private float _maxResource = 3f;
                 [SerializeField]
                 private float _currentResource = 0f;
+                [SerializeField]
+                private bool _isDebugMode = false;
 
                 public float MaxResource => _maxResource;
                 public float CurrentResource => _currentResource;
@@ -28,11 +30,9 @@ namespace TeamB_TD
                     _current = this;
                 }
 
-                public void Update()
+                private void OnDestroy()
                 {
-                    // 時間でクラフトリソースを加算する。（テスト用）
-                    //var gameSpeed = GameSpeedController.CurretGameSpeed;
-                    //AddResource(Time.deltaTime * gameSpeed);
+                    _current = null;
                 }
 
                 public void AddResource(float value)
@@ -61,6 +61,8 @@ namespace TeamB_TD
 
                 public bool TryUseResource(float value)
                 {
+                    if (_isDebugMode) return true;
+
                     if (_currentResource < value)
                     {
                         return false;
