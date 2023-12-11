@@ -37,7 +37,15 @@ namespace TeamB_TD
                     {
                         var level = i + 1;
                         var view = GameObject.Instantiate(_prefab, transform);
-                        view.Initialize(effect.name, level, () => effect.RequestEffect(_ally, level, this.GetCancellationTokenOnDestroy()));
+                        view.Initialize(effect.name, level, () => OnClicked(level, effect));
+                    }
+                }
+                public void OnClicked(int level, CraftableEffect effect)
+                {
+                    if (CraftResourceManager.Current &&
+                        CraftResourceManager.Current.TryUseResource(level))
+                    {
+                        effect.RequestEffect(_ally, level, this.GetCancellationTokenOnDestroy());
                     }
                 }
             }
