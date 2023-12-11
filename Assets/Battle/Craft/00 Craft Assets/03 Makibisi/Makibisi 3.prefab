@@ -301,7 +301,7 @@ MonoBehaviour:
   _targetGetter:
     _colliderTriggerHandler: {fileID: 535088614735539687}
   _duration: 24
-  _decelerationRate: 0.7
+  _decelerationRate: 0.5
   _fireInterval: 1
   _attackPower: 30
 --- !u!1 &7486587090478761377

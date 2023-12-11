@@ -21,6 +21,7 @@ namespace TeamB_TD.Battle.Craft
         [SerializeField, Range(1f, 50f)]
         private float _attackPower = 10f;
 
+        private List<EnemyController> _old = new List<EnemyController>();
         public IReadOnlyList<EnemyController> TargetEnemies => _targetGetter.GetAllObjectsInTrigger<EnemyController>();
 
         private float _durationTimer = 0f;
@@ -28,19 +29,42 @@ namespace TeamB_TD.Battle.Craft
 
         private void Update()
         {
+            foreach (var oldEnemy in _old)
+            {
+                if (oldEnemy != null) oldEnemy.ChangeMoveSpeedDecelerationRate(1f);
+            }
+            _old.Clear();
+
+            var targets = TargetEnemies;
+
             _fireIntervalTimer += Time.deltaTime * GameSpeedController.CurretGameSpeed;
             _durationTimer += Time.deltaTime * GameSpeedController.CurretGameSpeed;
             if (_fireIntervalTimer > _fireInterval)
             {
                 _fireIntervalTimer -= _fireInterval;
-                foreach (EnemyController enemy in TargetEnemies)
+                foreach (var enemy in targets)
                 {
                     enemy.Damge(_attackPower);
                 }
             }
+
+            foreach (var enemy in targets)
+            {
+                enemy.ChangeMoveSpeedDecelerationRate(_decelerationRate);
+            }
+            _old.AddRange(targets);
+
             if (_durationTimer > _duration)
             {
                 Destroy(gameObject);
+            }
+        }
+
+        private void OnDestroy()
+        {
+            foreach (var oldEnemy in _old)
+            {
+                if (oldEnemy != null) oldEnemy.ChangeMoveSpeedDecelerationRate(1f);
             }
         }
     }
