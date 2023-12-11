@@ -13,7 +13,7 @@ namespace TeamB_TD
                     Invalid,
                     Flag,
                     Bomb,
-                    Horn,
+                    Makibisi,
                     Wall,
                     Portion,
                     Cannon,
