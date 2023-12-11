@@ -1904,6 +1904,22 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -5168809724053188006, guid: 9d68288220998ce4d85ae93c4d0e6c1b, type: 3}
+      propertyPath: _dispImgPos.x
+      value: -215
+      objectReference: {fileID: 0}
+    - target: {fileID: -5168809724053188006, guid: 9d68288220998ce4d85ae93c4d0e6c1b, type: 3}
+      propertyPath: _dispImgPos.y
+      value: -235
+      objectReference: {fileID: 0}
+    - target: {fileID: -5168809724053188006, guid: 9d68288220998ce4d85ae93c4d0e6c1b, type: 3}
+      propertyPath: _dispImgSizeWidth
+      value: 165
+      objectReference: {fileID: 0}
+    - target: {fileID: -5168809724053188006, guid: 9d68288220998ce4d85ae93c4d0e6c1b, type: 3}
+      propertyPath: _dispImgSizeHeight
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: -5168809724053188006, guid: 9d68288220998ce4d85ae93c4d0e6c1b, type: 3}
       propertyPath: _charSpriteArray.Array.size
       value: 6
       objectReference: {fileID: 0}
@@ -3003,6 +3019,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _resourceManager: {fileID: 1645668482}
   _slider: {fileID: 1370658425}
+  _duration: 0.4
 --- !u!114 &1370658425
 MonoBehaviour:
   m_ObjectHideFlags: 0
