@@ -92,8 +92,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dragHandler: {fileID: 0}
   _allyParameterText: {fileID: 3634535022593805064}
-  _allyImage: {fileID: 868233434218211415}
-  _isPausedGameSpeed: 0.33333334
+  _allyStandingImage: {fileID: 868233434218211415}
+  _isPausedGameSpeed: 0.3333333
 --- !u!1 &8446694714049709412
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,8 +207,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -384, y: 16}
-  m_SizeDelta: {x: 724, y: 1024}
+  m_AnchoredPosition: {x: -400, y: -10}
+  m_SizeDelta: {x: 1050, y: 1050}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8782239805901015935
 CanvasRenderer:
@@ -231,7 +231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.29803923}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
