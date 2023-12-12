@@ -20,7 +20,7 @@ namespace TeamB_TD
                 [SerializeField, Header("ユニットのパラメータを表示するテキスト")]
                 private Text _allyParameterText = null;
                 [SerializeField, Header("ユニットの立ち絵を表示するイメージ")]
-                private Image _allyImage = null;
+                private Image _allyStandingImage = null;
                 [SerializeField, Header("パラメータ表示時のゲームスピード")]
                 private float _isPausedGameSpeed = 1f / 3f;
 
@@ -49,6 +49,7 @@ namespace TeamB_TD
                         _childrenList.Add(transform.GetChild(i).gameObject);
                     }
                     _saveGameSpeed = GameSpeedController.CurrentSpeed;
+                    _allyStandingImage.color = Color.white;
                     StartCoroutine(ChangeActivateAsync());
                 }
 
@@ -79,7 +80,7 @@ namespace TeamB_TD
                         $"攻撃間隔：{ally.ConstantParams.AttackInterval}\n" +
                         $"体力    ：{ally.LifeController.CurrentLife} / {ally.ConstantParams.MaxLife}\n";
 
-                    _allyImage.sprite = ally.ConstantParams.AllyStandingSprite ?? null;
+                    _allyStandingImage.sprite = ally.ConstantParams.AllyStandingSprite ?? null;
                 }
 
                 private IEnumerator ChangeActivateAsync()

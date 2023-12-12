@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.3, y: 3.3, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6403338907966280952}
@@ -197,7 +197,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8653719598885068355, guid: 4148fe04cea638b4eb622d0a3f163af6, type: 3}
       propertyPath: m_Name
-      value: unit4-SD
+      value: Ally4_SD
       objectReference: {fileID: 0}
     - target: {fileID: -8653719598885068355, guid: 4148fe04cea638b4eb622d0a3f163af6, type: 3}
       propertyPath: m_Layer
