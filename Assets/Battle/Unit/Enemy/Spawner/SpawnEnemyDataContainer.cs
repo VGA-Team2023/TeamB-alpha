@@ -43,7 +43,7 @@ namespace TeamB_TD
                         return _spawnData[id];
                     }
 
-                    private static bool _isUseGoogleSheet = false;
+                    private static bool _isUseGoogleSheet = true;
                     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
                     public static async void Initialize()
                     {
