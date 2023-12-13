@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TeamB_TD.Battle.Unit.Enemy;
 using UnityEngine;
 
 
@@ -33,6 +34,8 @@ namespace TeamB_TD
                 void Start()
                 {
                     _currentLife = _maxLife;
+
+                    EnemyCounter.Current.OnTowerInvasionCountChanged += _ => Damage();
                 }
 
                 public void Damage()
@@ -41,22 +44,6 @@ namespace TeamB_TD
                     OnLifeChanged?.Invoke(_currentLife);
                     if (_currentLife == 0)
                         OnDead?.Invoke();
-                }
-                public void Damage(int x)
-                {
-                    var old = _currentLife;
-                    _currentLife -= x;
-                    OnLifeChanged?.Invoke(_currentLife);
-
-                    if (old > 0 && _currentLife <= 0)
-                        OnDead?.Invoke();
-                }
-                public void Heal(int x)
-                {
-                    if (_currentLife <= 0) return; // 既にこのタワーが死亡しているときは回復しない。
-
-                    _currentLife += x;
-                    OnLifeChanged?.Invoke(_currentLife);
                 }
             }
         }
