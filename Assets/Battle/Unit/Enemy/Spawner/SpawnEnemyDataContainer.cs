@@ -47,9 +47,13 @@ namespace TeamB_TD
                     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
                     public static async void Initialize()
                     {
+                        if (!_isUseGoogleSheet) return;
+
                         var oldSceneName = SceneManager.GetActiveScene().name;
 
-                        if (!_isUseGoogleSheet) return;
+                        var initializeSceneName = "LoadScene";
+                        SceneManager.LoadScene(initializeSceneName);
+
                         _spawnData = null;
                         var sheetID = "1AXejdAP8NIDD7g9WwsFJ0UVyeUCqJSvRw_YN-4CkyLw";
                         var sheetNames = new string[]
