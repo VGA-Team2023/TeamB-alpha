@@ -22,8 +22,8 @@ namespace TeamB_TD
                 {
                     Destroy(this.gameObject);
                 }
-
             }
+
             public void SceneTrans(string sceneName)
             {
                 SceneManager.LoadScene(sceneName);

@@ -21,7 +21,7 @@ namespace TeamB_TD
                 [SerializeField]
                 private CraftMenu _bombMenuPrefab;
                 [SerializeField]
-                private CraftMenu _hornMenuPrefab;
+                private CraftMenu _MakibisiMenuPrefab;
                 [SerializeField]
                 private CraftMenu _wallMenuPrefab;
                 [SerializeField]
@@ -36,7 +36,7 @@ namespace TeamB_TD
                 {
                     CreateMenu(_flagMenuPrefab, CraftType.Flag);
                     CreateMenu(_bombMenuPrefab, CraftType.Bomb);
-                    CreateMenu(_hornMenuPrefab, CraftType.Horn);
+                    CreateMenu(_MakibisiMenuPrefab, CraftType.Makibisi);
                     CreateMenu(_wallMenuPrefab, CraftType.Wall);
                     CreateMenu(_portionMenuPrefab, CraftType.Portion);
                     CreateMenu(_cannonMenuPrefab, CraftType.Cannon);

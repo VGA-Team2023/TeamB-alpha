@@ -26,14 +26,17 @@ namespace TeamB_TD
         public float AttackRange => _attackRange;
         public float AttackInterval => _attackInterval;
         public float RevivalInterval => _revivalInterval;
-        public Sprite AllyUiSprite => _allyUiSprite;
+        public Sprite AllyActiveUiSprite => _allyActiveUiSprite;
+        public Sprite AllyNonActiveUiSprite => _allyNonActiveUiSprite;
         public Sprite AllyStandingSprite => _allyStandingSprite;
 
         [Header("====================")]
         [SerializeField]
         private GameObject _allyPrefab; // 対応する味方ユニットのプレハブ。
         [SerializeField]
-        private Sprite _allyUiSprite; // 対応する味方ユニットのイメージ
+        private Sprite _allyActiveUiSprite; // 対応する味方ユニットが配置可能時に表示するUI
+        [SerializeField]
+        private Sprite _allyNonActiveUiSprite; // 対応する味方ユニットが配置不可能時に表示するUI
         [SerializeField]
         private Sprite _allyStandingSprite; // 対応する味方ユニットの立ち絵
 

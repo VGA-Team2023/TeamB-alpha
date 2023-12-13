@@ -30,11 +30,12 @@ namespace TeamB_TD
                     {
                         _allyPrefab = allyPrefab;
                         _costText.text = $"{allyPrefab.ConstantParams.Cost}";
+                        _revivingImage.sprite = allyPrefab.ConstantParams.AllyNonActiveUiSprite;
                         ToggleRevivalUiActivate(false);
 
                         if (TryGetComponent(out Image myImage))
                         {
-                            myImage.sprite = _allyPrefab.ConstantParams.AllyUiSprite;
+                            myImage.sprite = _allyPrefab.ConstantParams.AllyActiveUiSprite;
                         }
                     }
 

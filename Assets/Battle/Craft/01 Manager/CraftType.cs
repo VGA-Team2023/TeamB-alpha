@@ -11,7 +11,7 @@ namespace TeamB_TD
                 Invalid = -1,
                 Flag,
                 Bomb,
-                Horn,
+                Makibisi,
                 Wall,
                 Portion,
                 Cannon
