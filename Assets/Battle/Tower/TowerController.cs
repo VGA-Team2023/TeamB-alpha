@@ -21,7 +21,8 @@ namespace TeamB_TD
                 private int _currentLife = 0;
 
                 public static TowerController Instance => _instance;
-                public int Life => _currentLife;
+                public int CurrentLife => _currentLife;
+                public int MaxLife => _maxLife;
 
                 public Action<int> OnLifeChanged; //ライフ変化時に発火するイベント
                 public Action OnDead; //死亡時に発火するイベント
