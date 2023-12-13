@@ -46,9 +46,9 @@ namespace TeamB_TD
                 _gameResultViewer.GameOverPanelChangeActive(true);
             }
 
-            public void TransitionButton(string sceneName)
+            public void TransitionButton()
             {
-                SceneTransition.instance.SceneTrans(sceneName);
+                SceneTransition.instance.SceneTrans("Scenario 1");
             }
         }
     }
