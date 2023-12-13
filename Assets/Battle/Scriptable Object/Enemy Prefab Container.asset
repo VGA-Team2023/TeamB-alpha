@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Enemy Prefab Container
   m_EditorClassIdentifier: 
   _enemyPrefabs:
-  - {fileID: 3443492554357308191, guid: 57a9806d32090d24d964d52b11817c34, type: 3}
+  - {fileID: 3443492554357308191, guid: 7b18ec9166112c74d9ca0a6e0c2bb1be, type: 3}
   - {fileID: 3443492554357308191, guid: 85caa9ac20f69a5408ecf1daf4295244, type: 3}
   - {fileID: 3443492554357308191, guid: 8124a7785a29c1f4994b747765ce31a2, type: 3}
   - {fileID: 3443492554357308191, guid: 0ff09328580a9e04ba62dafcd79942dd, type: 3}
