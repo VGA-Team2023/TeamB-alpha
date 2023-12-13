@@ -2372,7 +2372,7 @@ PrefabInstance:
     - target: {fileID: 7589937647822875755, guid: 178a7b3bbb77f9b4cb64868d4a87b206, type: 3}
       propertyPath: _allyPrefabs.Array.data[0]
       value: 
-      objectReference: {fileID: 4905667602534317014, guid: 5e0ff3ad60cb2484090419f565f3531f, type: 3}
+      objectReference: {fileID: 6829548103556407966, guid: 5a12911c7f23f1745af111dd691abebd, type: 3}
     - target: {fileID: 7589937647822875755, guid: 178a7b3bbb77f9b4cb64868d4a87b206, type: 3}
       propertyPath: _allyPrefabs.Array.data[1]
       value: 
