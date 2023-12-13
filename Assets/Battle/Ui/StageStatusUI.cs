@@ -34,7 +34,7 @@ namespace TeamB_TD
             {
                 _totalEnemyCount = EnemyCounter.Current.TotalEnemyCount;
                 ApplyDeadEnemyCount(EnemyCounter.Current.DeadEnemyCount);
-                ApplyTowerLife(TowerController.Instance.Life);
+                ApplyTowerLife(TowerController.Instance.CurrentLife);
             }
 
             private void OnDisable()
