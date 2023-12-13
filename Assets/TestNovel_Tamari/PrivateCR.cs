@@ -63,16 +63,8 @@ namespace TeamB_TD
                     [DarkenActor,0] 
                     [DarkenActor,2]
                     [ChangeCaption,Unit1]
-                    [PrintText,どうもどうも,0.1]
-
-                    [BeginSelectGroup]
-                    [Selectable,AAA]
-                    [LoadScene,Stage 1]
-                    [Selectable,BBB]
+                    [PrintText,Stage2も頑張ってね,0.1]
                     [LoadScene,Stage 2]
-                    [Selectable,CCC]
-                    [LoadScene,Stage 3]
-                    [EndSelectGroup]
                     ");
 
                 var executable = MakeExecutable(commands);
