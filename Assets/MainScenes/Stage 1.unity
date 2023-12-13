@@ -2338,11 +2338,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 805721042539158783, guid: 529f39b4d40e2fb419a7ece21b986141, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 916
+      value: 794
       objectReference: {fileID: 0}
     - target: {fileID: 805721042539158783, guid: 529f39b4d40e2fb419a7ece21b986141, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -444
+      value: -419
       objectReference: {fileID: 0}
     - target: {fileID: 805721042539158783, guid: 529f39b4d40e2fb419a7ece21b986141, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2359,6 +2359,14 @@ PrefabInstance:
     - target: {fileID: 1431905791883953717, guid: 529f39b4d40e2fb419a7ece21b986141, type: 3}
       propertyPath: m_Name
       value: Craft gage
+      objectReference: {fileID: 0}
+    - target: {fileID: 4986546749862237412, guid: 529f39b4d40e2fb419a7ece21b986141, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4986546749862237412, guid: 529f39b4d40e2fb419a7ece21b986141, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5514756990354372981, guid: 529f39b4d40e2fb419a7ece21b986141, type: 3}
       propertyPath: _resourceManager
