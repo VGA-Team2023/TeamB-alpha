@@ -64,7 +64,13 @@ namespace TeamB_TD
                     [DarkenActor,2]
                     [ChangeCaption,Unit1]
                     [PrintText,Stage2も頑張ってね,0.1]
+
+                    [BeginSelectGroup]
+                    [Selectable,ステージ選択に戻る]
+                    [LoadScene,StageSelect]
+                    [Selectable,ステージ2に進む]
                     [LoadScene,Stage 2]
+                    [EndSelectGroup]
                     ");
 
                 var executable = MakeExecutable(commands);
