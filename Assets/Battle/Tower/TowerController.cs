@@ -40,6 +40,7 @@ namespace TeamB_TD
 
                 public void Damage()
                 {
+                    if (_currentLife <= 0) return;
                     _currentLife--;
                     OnLifeChanged?.Invoke(_currentLife);
                     if (_currentLife == 0)
