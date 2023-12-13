@@ -864,6 +864,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9713d2910914964ab123a401caac11f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _stageNum: 0
   _gameResultViewer: {fileID: -5168809724053188006}
   _gameClearAnimation: {fileID: 2571827220864712581}
 --- !u!114 &-5168809724053188006
@@ -883,7 +884,12 @@ MonoBehaviour:
   _gameclearPanel: {fileID: 1602536570805090294}
   _scorePanel: {fileID: 5863088950773674391}
   _scoreChildPanel: {fileID: 1283433164032187726}
+  _resultClickPanel: {fileID: 6689638236113225603}
   _charaImage: {fileID: 7609710018253892471}
+  _charSpriteArray: []
+  _dispImgPos: {x: 0, y: 0}
+  _dispImgSizeWidth: 0
+  _dispImgSizeHeight: 0
 --- !u!1 &2744674915363498241
 GameObject:
   m_ObjectHideFlags: 0
@@ -1570,7 +1576,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8219648924116591871
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1641,6 +1647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15ddde4ff50b0ca4d8d4e019689ee7b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _nextSceneName: 
 --- !u!1 &7190179585142556443
 GameObject:
   m_ObjectHideFlags: 0
