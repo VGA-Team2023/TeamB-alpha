@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TeamB_TD.Battle.Unit.Enemy;
 using UnityEngine;
 
 
@@ -20,7 +21,8 @@ namespace TeamB_TD
                 private int _currentLife = 0;
 
                 public static TowerController Instance => _instance;
-                public int Life => _currentLife;
+                public int CurrentLife => _currentLife;
+                public int MaxLife => _maxLife;
 
                 public Action<int> OnLifeChanged; //ライフ変化時に発火するイベント
                 public Action OnDead; //死亡時に発火するイベント
@@ -33,30 +35,17 @@ namespace TeamB_TD
                 void Start()
                 {
                     _currentLife = _maxLife;
+
+                    EnemyCounter.Current.OnTowerInvasionCountChanged += _ => Damage();
                 }
 
                 public void Damage()
                 {
+                    if (_currentLife <= 0) return;
                     _currentLife--;
                     OnLifeChanged?.Invoke(_currentLife);
                     if (_currentLife == 0)
                         OnDead?.Invoke();
-                }
-                public void Damage(int x)
-                {
-                    var old = _currentLife;
-                    _currentLife -= x;
-                    OnLifeChanged?.Invoke(_currentLife);
-
-                    if (old > 0 && _currentLife <= 0)
-                        OnDead?.Invoke();
-                }
-                public void Heal(int x)
-                {
-                    if (_currentLife <= 0) return; // 既にこのタワーが死亡しているときは回復しない。
-
-                    _currentLife += x;
-                    OnLifeChanged?.Invoke(_currentLife);
                 }
             }
         }

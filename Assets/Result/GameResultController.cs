@@ -5,7 +5,6 @@ using TeamB_TD.UI;
 using TeamB_TD.SaveData;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using static UnityEngine.Rendering.DebugUI;
 
 namespace TeamB_TD
 {
@@ -20,12 +19,6 @@ namespace TeamB_TD
 
             public GameResultViewer GameResultViewer => _gameResultViewer;
 
-            //test用
-            //private void Start()
-            //{
-            //    StartCoroutine(GameClearResultSet());
-            //}
-
             public IEnumerator GameClearResultSet()
             {
                 //_gameResultViewer.TowerHPSet(_towerController.Life);
@@ -35,6 +28,7 @@ namespace TeamB_TD
                 _gameResultViewer.ScorePanelChangeActive(true);
                 StartCoroutine(_gameResultViewer.ScorePanelSet());
                 yield return _gameClearAnimation.StarImageAnimationStart();
+                _gameResultViewer.ResultClickPanelChangeActive(true);
 
                 SaveData.SaveData instantData = DataManager.Instance.Load();
                 instantData._isClear[_stageNum] = true;
@@ -46,9 +40,9 @@ namespace TeamB_TD
                 _gameResultViewer.GameOverPanelChangeActive(true);
             }
 
-            public void TransitionButton(string sceneName)
+            public void TransitionButton()
             {
-                SceneTransition.instance.SceneTrans(sceneName);
+                SceneTransition.instance.SceneTrans("Scenario 1");
             }
         }
     }

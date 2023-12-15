@@ -1,9 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 using DG.Tweening;
-using Unity.VisualScripting;
 using TeamB_TD.SaveData;
 
 namespace TeamB_TD
@@ -22,6 +20,8 @@ namespace TeamB_TD
             private GameObject _scorePanel;
             [SerializeField]
             private GameObject _scoreChildPanel;
+            [SerializeField]
+            private GameObject _resultClickPanel;
             [SerializeField]
             private Image _charaImage;
             [SerializeField]
@@ -68,6 +68,11 @@ namespace TeamB_TD
             public void ScorePanelChangeActive(bool value)
             {
                 _scorePanel.SetActive(value);
+            }
+
+            public void ResultClickPanelChangeActive(bool value)
+            {
+                _resultClickPanel.SetActive(value);
             }
 
             public IEnumerator ScorePanelSet()

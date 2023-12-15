@@ -53,7 +53,7 @@ namespace TeamB_TD
                     _isGameFinish = true;
                 }
 
-                else if(TowerController.Instance.Life <= 0)
+                else if(TowerController.Instance.CurrentLife <= 0)
                 {
                     _result.GameOverResultSet();
                     _isGameFinish = true;
