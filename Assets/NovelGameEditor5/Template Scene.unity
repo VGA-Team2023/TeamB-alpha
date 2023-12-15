@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -868,6 +868,21 @@ MonoBehaviour:
   _selectViewPrefabParent: {fileID: 1837189563}
   _selectViewPrefab: {fileID: 3976536700486841635, guid: e846b036dc348f34e9c3ef4c702b4ab7, type: 3}
   _autoDuration: 1
+  _talkingActorSize: {x: 0.5, y: 0.5, z: 0.5}
+  _notTalkingActorSize: {x: 0.45, y: 0.45, z: 0.45}
+  _darkColor: {r: 0.5647059, g: 0.5647059, b: 0.5647059, a: 0.9647059}
+  _activeActor:
+  - {fileID: 5086987337956223522, guid: 323f6e58c95879f4795636f670b620ca, type: 3}
+  - {fileID: 5412418026551213791, guid: 4479797dda5ed234a91e164ce6b282d1, type: 3}
+  - {fileID: 7314901439804772758, guid: 4b3e6bde5b25f75468b2b43de0657423, type: 3}
+  _allyUnitSprite:
+  - {fileID: 21300000, guid: 5cb793113ad712740822564c80089f66, type: 3}
+  - {fileID: 21300000, guid: 5cb793113ad712740822564c80089f66, type: 3}
+  - {fileID: 21300000, guid: 5120dbce85231a44fb4081bc5d52a92f, type: 3}
+  - {fileID: 21300000, guid: eec3ec89e5faeab439dca6f6e6487f47, type: 3}
+  - {fileID: 21300000, guid: fb97af3202116af4a98ce7b754844a0b, type: 3}
+  - {fileID: 21300000, guid: 576be79fc75721b4ebfe3a8dae6b61c0, type: 3}
+  - {fileID: 21300000, guid: ba0f96f09c78ff844a996f55d0a8f70c, type: 3}
 --- !u!1 &662692843
 GameObject:
   m_ObjectHideFlags: 0
@@ -3738,6 +3753,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+  m_TaaSettings:
+    quality: 3
+    frameInfluence: 0.1
+    jitterScale: 1
+    mipBias: 0
+    varianceClampScale: 0.9
+    contrastAdaptiveSharpening: 0
 --- !u!1 &2003238888
 GameObject:
   m_ObjectHideFlags: 0
@@ -3820,7 +3867,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2145347090
 RectTransform:
   m_ObjectHideFlags: 0
