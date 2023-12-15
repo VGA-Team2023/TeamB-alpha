@@ -56,6 +56,42 @@ MonoBehaviour:
     acbFile: SE.acb
     awbFile: SE.awb
     loaderStatus: 0
+  - name: ME
+    acbFile: ME.acb
+    awbFile: ME.awb
+    loaderStatus: 0
+  - name: narration
+    acbFile: narration.acb
+    awbFile: narration.awb
+    loaderStatus: 0
+  - name: title
+    acbFile: title.acb
+    awbFile: title.awb
+    loaderStatus: 0
+  - name: unit1
+    acbFile: unit1.acb
+    awbFile: unit1.awb
+    loaderStatus: 0
+  - name: unit2
+    acbFile: unit2.acb
+    awbFile: unit2.awb
+    loaderStatus: 0
+  - name: unit3
+    acbFile: unit3.acb
+    awbFile: unit3.awb
+    loaderStatus: 0
+  - name: unit4
+    acbFile: unit4.acb
+    awbFile: unit4.awb
+    loaderStatus: 0
+  - name: unit5
+    acbFile: unit5.acb
+    awbFile: unit5.awb
+    loaderStatus: 0
+  - name: unit6
+    acbFile: unit6.acb
+    awbFile: unit6.awb
+    loaderStatus: 0
   dspBusSetting: 
   dontDestroyOnLoad: 0
   dontRemoveExistsCueSheet: 0
