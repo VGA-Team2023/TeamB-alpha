@@ -27,6 +27,7 @@ namespace TeamB_TD
                     private List<AllyBattleParameter> _multiplierParams = new List<AllyBattleParameter>(); // バフ、デバフ用、掛け算。
                     private SpriteRenderer[] _myRenderers = null;
                     private int[] _myRenderersOrder = null;
+                    private Animator _anim = null;
 
                     public AllyConstantParameter ConstantParams => _constantParam;
                     public string Name => _name;
@@ -76,17 +77,39 @@ namespace TeamB_TD
                         _baseParam = _constantParam.ToAllyBattleParameter();
                         _lifeController.Initialize(this);
                         _attackController.Initialize(this);
+
+                        if (!TryGetComponent(out _anim)) Debug.LogWarning("Animation is not found");
                     }
 
                     private void Update()
                     {
                         _attackController.Update();
+
+                        if (_anim &&
+                            _attackController.CurrentAttackStyle.IsAnyObjectInTrigger() &&
+                            IsSpendInterval(_constantParam.AttackInterval, Time.deltaTime))
+                        {
+                            _anim.Play(Animator.StringToHash("Attack"));
+                        }
                     }
 
                     private void OnDestroy()
                     {
                         OnDead?.Invoke(this);
                         OnDeadAlly?.Invoke(this);
+                    }
+
+                    private float _timer = 0.0f;
+                    private bool IsSpendInterval(float interval, float additionalValue)
+                    {
+                        _timer += additionalValue;
+
+                        if (_timer > interval)
+                        {
+                            _timer = 0.0f;
+                            return true;
+                        }
+                        return false;
                     }
 
                     public void Damge(float value)
