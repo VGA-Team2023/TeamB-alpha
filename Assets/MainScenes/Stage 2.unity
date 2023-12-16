@@ -2388,11 +2388,11 @@ PrefabInstance:
     - target: {fileID: 7589937647822875755, guid: 178a7b3bbb77f9b4cb64868d4a87b206, type: 3}
       propertyPath: _allyPrefabs.Array.data[4]
       value: 
-      objectReference: {fileID: 3094955111388639120, guid: 0f07123f41b028a408c861b7a3654eae, type: 3}
+      objectReference: {fileID: 3795118132394044360, guid: d85a7a84a491d68499e18788c4f1792b, type: 3}
     - target: {fileID: 7589937647822875755, guid: 178a7b3bbb77f9b4cb64868d4a87b206, type: 3}
       propertyPath: _allyPrefabs.Array.data[5]
       value: 
-      objectReference: {fileID: 2162883985589684283, guid: d4735a7abd4a49d4a8dfda7409ab3f86, type: 3}
+      objectReference: {fileID: 762768604437974830, guid: 72783585de943fb40958d73ccc4d8a03, type: 3}
     - target: {fileID: 7589937647822875755, guid: 178a7b3bbb77f9b4cb64868d4a87b206, type: 3}
       propertyPath: _allyPrefabs.Array.data[6]
       value: 
