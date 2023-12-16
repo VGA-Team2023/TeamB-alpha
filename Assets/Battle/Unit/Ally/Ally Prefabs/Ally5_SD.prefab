@@ -183,6 +183,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ally5_SD
       objectReference: {fileID: 0}
+    - target: {fileID: -8653719598885068355, guid: 7f04675630e09df4c8fc650a9923c2e2, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: -8240511016676918380, guid: 7f04675630e09df4c8fc650a9923c2e2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.013749957
