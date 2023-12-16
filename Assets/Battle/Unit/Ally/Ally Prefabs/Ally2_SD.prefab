@@ -656,7 +656,7 @@ MonoBehaviour:
       data:
         _userTransform: {fileID: 3805297102071512824}
         _fireTargetGetter:
-          _colliderTriggerHandler: {fileID: 5744840947400454358, guid: d83438fce28b1bb43a6d5032a573ef94, type: 3}
+          _colliderTriggerHandler: {fileID: 8173657609764151001}
         _bombPrefab: {fileID: 7939003893573709407, guid: b3d585a1b125aba44b0e56ab0e93e542, type: 3}
 --- !u!95 &-8923490587885217788
 Animator:
