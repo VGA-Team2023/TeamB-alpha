@@ -21,7 +21,7 @@ MonoBehaviour:
   _attackRange: 4
   _attackInterval: 1.2
   _revivalInterval: 4
-  _allyPrefab: {fileID: 5666547340604062880, guid: 0f07123f41b028a408c861b7a3654eae, type: 3}
+  _allyPrefab: {fileID: 5293595357423375178, guid: d85a7a84a491d68499e18788c4f1792b, type: 3}
   _allyActiveUiSprite: {fileID: 21300000, guid: cc22fd01084c12c43ac75ec28f1d22b6, type: 3}
   _allyNonActiveUiSprite: {fileID: 21300000, guid: ce75f2f9ee423814eb56c03c9e565b8c, type: 3}
   _allyStandingSprite: {fileID: 21300000, guid: 576be79fc75721b4ebfe3a8dae6b61c0, type: 3}
