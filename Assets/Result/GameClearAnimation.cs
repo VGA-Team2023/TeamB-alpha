@@ -23,9 +23,9 @@ public class GameClearAnimation : MonoBehaviour
         yield return new WaitForSeconds(1f);
     }
 
-    public IEnumerator StarImageAnimationStart()
+    public IEnumerator StarImageAnimationStart(int starCount)
     {
-        for(int i = 0; i < _starImage.Length; i++)
+        for(int i = 0; i < starCount; i++)
         {
             StartCoroutine(StarImageAnimation(_starImage[i]));
             yield return new WaitForSeconds(_starImageDelaytime);

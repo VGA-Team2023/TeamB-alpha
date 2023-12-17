@@ -15,24 +15,35 @@ namespace TeamB_TD
             [SerializeField] int _stageNum = 0;
             [SerializeField] GameResultViewer _gameResultViewer;
             [SerializeField] GameClearAnimation _gameClearAnimation;
-            //[SerializeField] TowerController _towerController;
+            [SerializeField] TowerController _towerController;
 
             public GameResultViewer GameResultViewer => _gameResultViewer;
 
+            private void Start()
+            {
+                //テスト用
+                //StartCoroutine(GameClearResultSet());
+            }
+
             public IEnumerator GameClearResultSet()
             {
-                //_gameResultViewer.TowerHPSet(_towerController.Life);
+                _gameResultViewer.TowerHPSet(_towerController.CurrentLife);
                 _gameResultViewer.GameClearPanelChangeActive(true);
                 yield return _gameClearAnimation.GameClearTextAnimation();
                 _gameResultViewer.GameClearPanelChangeActive(false);
                 _gameResultViewer.ScorePanelChangeActive(true);
                 StartCoroutine(_gameResultViewer.ScorePanelSet());
-                yield return _gameClearAnimation.StarImageAnimationStart();
+                yield return _gameClearAnimation.StarImageAnimationStart(StarCountCalculation(_towerController.CurrentLife));
                 _gameResultViewer.ResultClickPanelChangeActive(true);
 
                 SaveData.SaveData instantData = DataManager.Instance.Load();
                 instantData._isClear[_stageNum] = true;
                 DataManager.Instance.Save(instantData);
+            }
+
+            private int StarCountCalculation(int current)
+            {
+                return current;
             }
 
             public void GameOverResultSet()
