@@ -23,6 +23,16 @@ namespace TeamB_TD
                 _current = null;
             }
 
+            public void Reset()
+            {
+                _text.text = "";
+                _caption.text = "";
+                for (int i = 0; i < _activeActor.Length; i++)
+                {
+                    _activeActor[i].sprite = _allyUnitSprite[0];
+                }
+            }
+
             [SerializeField]
             private TextMeshProUGUI _text;
             [SerializeField]
@@ -35,6 +45,8 @@ namespace TeamB_TD
             private SelectView _selectViewPrefab;
             [SerializeField, Range(0.8f, 2f)]
             private float _autoDuration = 1f;
+            [SerializeField, Header("デフォルト画像")]
+            private Sprite _defaultSprite = default;
             [SerializeField, Header("話しているActorのサイズ")]
             private Vector3 _talkingActorSize = new Vector3(0.5f, 0.5f, 0.5f);
             [SerializeField, Header("話していないActorのサイズ")]
@@ -52,6 +64,7 @@ namespace TeamB_TD
             public Transform SelectViewPrefabParent => _selectViewPrefabParent;
             public SelectView SelectViewPrefab => _selectViewPrefab;
             public float AutoDuration => _autoDuration;
+            public Sprite DefaultSprite => _defaultSprite;  
             public Vector3 TalkingActorSize => _talkingActorSize;
             public Vector3 NotTalkingActorSize => _notTalkingActorSize;
             public Color DarkColor => _darkColor;

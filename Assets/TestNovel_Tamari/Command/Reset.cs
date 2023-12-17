@@ -1,18 +1,20 @@
+﻿using Cysharp.Threading.Tasks;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
+using TeamB_TD.NovelGameEditor5;
 using UnityEngine;
 
-public class Reset : MonoBehaviour
+public class Reset : ICommand
 {
-    // Start is called before the first frame update
-    void Start()
+    public Reset()
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    }
+    public async UniTask RunCommand(CancellationToken token = default)
     {
-        
+        NovelData.Current.Reset();
+        await UniTask.CompletedTask;
     }
 }
