@@ -12,25 +12,27 @@ namespace TeamB_TD
                 public class AllyUnitPlaceView : MonoBehaviour
                 {
                     [SerializeField]
-                    private Text _nameText;
-                    [SerializeField]
                     private Text _costText;
                     [SerializeField]
                     private Image _revivingImage;
                     [SerializeField]
                     private Text _revivingText;
+                    [SerializeField]
+                    private Image _craftIconImage;
 
                     private AllyController _allyPrefab;
 
                     public AllyController AllyPrefab => _allyPrefab;
                     public Image RevivingImage => _revivingImage;
                     public Text RevivingText => _revivingText;
+                    public Image CraftIconImage => _craftIconImage;
 
                     public void Initialize(AllyController allyPrefab)
                     {
                         _allyPrefab = allyPrefab;
                         _costText.text = $"{allyPrefab.ConstantParams.Cost}";
                         _revivingImage.sprite = allyPrefab.ConstantParams.AllyNonActiveUiSprite;
+                        _craftIconImage.sprite = allyPrefab.ConstantParams.AllyCraftIcon;
                         ToggleRevivalUiActivate(false);
 
                         if (TryGetComponent(out Image myImage))
@@ -50,7 +52,7 @@ namespace TeamB_TD
                     /// <param name="revivalCount">ユニット復活までの時間（カウントダウン）</param>
                     public void UpdateRevivingText(float revivalCount)
                     {
-                        _revivingText.text = 
+                        _revivingText.text =
                             Mathf.Clamp(revivalCount, 0.0f, _allyPrefab.ConstantParams.RevivalInterval).ToString("F2");
                     }
                 }
