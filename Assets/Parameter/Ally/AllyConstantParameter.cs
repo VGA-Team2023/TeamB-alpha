@@ -29,6 +29,7 @@ namespace TeamB_TD
         public Sprite AllyActiveUiSprite => _allyActiveUiSprite;
         public Sprite AllyNonActiveUiSprite => _allyNonActiveUiSprite;
         public Sprite AllyStandingSprite => _allyStandingSprite;
+        public Sprite AllyCraftIcon => _allyCraftIcon;
 
         [Header("====================")]
         [SerializeField]
@@ -39,6 +40,8 @@ namespace TeamB_TD
         private Sprite _allyNonActiveUiSprite; // 対応する味方ユニットが配置不可能時に表示するUI
         [SerializeField]
         private Sprite _allyStandingSprite; // 対応する味方ユニットの立ち絵
+        [SerializeField]
+        private Sprite _allyCraftIcon; // 対応する味方ユニットのクラフトアイコン
 
         private void OnValidate()
         {
