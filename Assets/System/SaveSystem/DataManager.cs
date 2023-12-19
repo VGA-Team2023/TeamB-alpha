@@ -93,7 +93,7 @@ namespace TeamB_TD
             public void OverWrite(int stagenum) //特定のステージのクリア状況を変更する
             {
                 SaveData memory = Load();
-                for (int i = 0; i < stagenum; i++)
+                for (int i = 0; i < stagenum + 1; i++)
                 {
                     memory._isClear[i] = true;
                 }
