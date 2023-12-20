@@ -27,23 +27,23 @@ namespace TeamB_TD
 
             public void OnPointerClick(PointerEventData pointerEventData)
             {
-                
-                if(_sceneDivergence)
-                {
-                    if(DataManager.Instance.PlayerData._favoriteUnitId != 0)
-                    {
-                        SceneTransition.instance.SceneTrans(_anotherNextScene);
-                        return;
-                    }                    
-                }
+                //Debug.Log($"クリックは正常に動作しています：{this.gameObject.name}");
                 if (_isActive)
                 {
-                    SceneTransition.instance.SceneTrans(_nextScene);
+                    if (_sceneDivergence)
+                    {
+                        if (DataManager.Instance.PlayerData._favoriteUnitId != 0)
+                        {
+                            SceneTransition.instance.SceneTrans(_anotherNextScene);
+                            return;
+                        }                        
+                    }
+                    SceneTransition.instance.SceneTrans(_nextScene);                    
                 }
             }
             public void BeUntouchable()
             {
-                this.transform.GetChild(1).gameObject.SetActive(true);
+                this.transform.GetChild(0).gameObject.SetActive(true);
             }
         }
     }
