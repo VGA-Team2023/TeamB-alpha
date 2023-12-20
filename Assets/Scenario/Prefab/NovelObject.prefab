@@ -613,6 +613,7 @@ MonoBehaviour:
   _selectViewPrefabParent: {fileID: 494834495138587227}
   _selectViewPrefab: {fileID: 3976536700486841635, guid: e846b036dc348f34e9c3ef4c702b4ab7, type: 3}
   _autoDuration: 1
+  _defaultSprite: {fileID: 21300000, guid: 1582421103aa93c45b5935aa8f5b2c20, type: 3}
   _talkingActorSize: {x: 0.5, y: 0.5, z: 0.5}
   _notTalkingActorSize: {x: 0.45, y: 0.45, z: 0.45}
   _darkColor: {r: 0.5647059, g: 0.5647059, b: 0.5647059, a: 0.9647059}
