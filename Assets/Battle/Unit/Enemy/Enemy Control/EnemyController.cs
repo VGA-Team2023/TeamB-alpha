@@ -65,7 +65,7 @@ namespace TeamB_TD
 
                     public void Damge(float value)
                     {
-                        CriAudioManager.Instance.BGM.Play("SE", "SE_003_battleUnit4");
+                        
                         _lifeController.Damage(value);
 
                         var screenPos = Camera.main.WorldToScreenPoint(transform.position);

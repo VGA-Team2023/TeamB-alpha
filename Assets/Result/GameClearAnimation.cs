@@ -17,10 +17,10 @@ public class GameClearAnimation : MonoBehaviour
         for (int i = 0; i < _message.Length; i++)
         {
             _text.text += _message[i];
-            //_text.text
             yield return new WaitForSeconds(_gameclearDelaytime);
         }
         yield return new WaitForSeconds(1f);
+        _text.text = null;
     }
 
     public IEnumerator StarImageAnimationStart(int starCount)
