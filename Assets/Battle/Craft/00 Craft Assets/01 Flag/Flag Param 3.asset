@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Flag Param 3
   m_EditorClassIdentifier: 
   _name: 
+  _startDuration: 1
   _effectDuration: 60
-  _powerupAmount: 2
+  _powerupAmount: 1.4

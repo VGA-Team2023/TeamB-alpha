@@ -303,7 +303,7 @@ MonoBehaviour:
   _duration: 16
   _decelerationRate: 0.8
   _fireInterval: 1
-  _attackPower: 14
+  _attackPower: 6
 --- !u!1 &7486587090478761377
 GameObject:
   m_ObjectHideFlags: 0

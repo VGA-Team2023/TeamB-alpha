@@ -15,7 +15,7 @@ MonoBehaviour:
   _id: 1
   _maxLife: 265
   _attackPower: 2
-  _moveSpeed: 0.25
-  _attackInterval: 1
+  _moveSpeed: 0.5
+  _attackInterval: 0.6
   _attackPeriodicTime: 1
   moveCategorize: 1
