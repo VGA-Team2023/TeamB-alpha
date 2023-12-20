@@ -22,6 +22,7 @@ MonoBehaviour:
   _attackInterval: 0.8
   _revivalInterval: 15
   _allyPrefab: {fileID: 1832561005347402151, guid: 5a12911c7f23f1745af111dd691abebd, type: 3}
-  _allyActiveUiSprite: {fileID: 21300000, guid: 0e329a25f5118b2489d0a4b948e7fe43, type: 3}
-  _allyNonActiveUiSprite: {fileID: 21300000, guid: 6efeab1efccc3574db434304dda4379f, type: 3}
-  _allyStandingSprite: {fileID: 21300000, guid: 5cb793113ad712740822564c80089f66, type: 3}
+  _allyActiveUiSprite: {fileID: 21300000, guid: eefcf2dd84bb1fa419a9f2ccfa5e7c38, type: 3}
+  _allyNonActiveUiSprite: {fileID: 21300000, guid: c6157ae4cf369054abad8244b8a5defc, type: 3}
+  _allyStandingSprite: {fileID: 21300000, guid: edec93d1a4d26d24cbb429295f7a730a, type: 3}
+  _allyCraftIcon: {fileID: 21300000, guid: 7e685c0a9f6799143893397a1e99842e, type: 3}
