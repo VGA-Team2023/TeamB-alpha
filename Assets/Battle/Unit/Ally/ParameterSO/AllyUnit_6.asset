@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weaponType: 2
   _id: 6
-  _maxLife: 40
-  _attackPower: 70
+  _maxLife: 30
+  _attackPower: 20
   _maxTargetCount: 0
-  _cost: 8
-  _attackRange: 5.5
-  _attackInterval: 2.8
-  _revivalInterval: 22
+  _cost: 9
+  _attackRange: 3
+  _attackInterval: 2
+  _revivalInterval: 4
   _allyPrefab: {fileID: 2228078843533329079, guid: 72783585de943fb40958d73ccc4d8a03, type: 3}
   _allyActiveUiSprite: {fileID: 21300000, guid: 5fee849b0fe78a449a686f15401d7c5b, type: 3}
   _allyNonActiveUiSprite: {fileID: 21300000, guid: c76d6fab30b00de4cbb7e98cbd8143c8, type: 3}

@@ -15,12 +15,12 @@ MonoBehaviour:
   _weaponType: 2
   _id: 5
   _maxLife: 40
-  _attackPower: 60
+  _attackPower: 30
   _maxTargetCount: 0
-  _cost: 7
-  _attackRange: 5
-  _attackInterval: 1.8
-  _revivalInterval: 20
+  _cost: 8
+  _attackRange: 4
+  _attackInterval: 1.2
+  _revivalInterval: 4
   _allyPrefab: {fileID: 5293595357423375178, guid: d85a7a84a491d68499e18788c4f1792b, type: 3}
   _allyActiveUiSprite: {fileID: 21300000, guid: cc22fd01084c12c43ac75ec28f1d22b6, type: 3}
   _allyNonActiveUiSprite: {fileID: 21300000, guid: ce75f2f9ee423814eb56c03c9e565b8c, type: 3}

@@ -16,11 +16,11 @@ MonoBehaviour:
   _id: 2
   _maxLife: 40
   _attackPower: 30
-  _maxTargetCount: 0
-  _cost: 9
-  _attackRange: 5
-  _attackInterval: 0.5
-  _revivalInterval: 25
+  _maxTargetCount: 1
+  _cost: 10
+  _attackRange: 3
+  _attackInterval: 0.8
+  _revivalInterval: 5
   _allyPrefab: {fileID: 2596105666267506331, guid: 70288b84768654c418ef0d3edf021e94, type: 3}
   _allyActiveUiSprite: {fileID: 21300000, guid: db43f17dd48e7964a95c642ac15c26d2, type: 3}
   _allyNonActiveUiSprite: {fileID: 21300000, guid: 88aae0db01096234dbc238996cd499ec, type: 3}
