@@ -54,7 +54,7 @@ namespace TeamB_TD
                             }
                             Spawn(enemyPrefab);
                             
-                            CriAudioManager.Instance.BGM.Play("SE", "SE_004_enemy1");
+                            
                             _index++;
                         }
                     }
