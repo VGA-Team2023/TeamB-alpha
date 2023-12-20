@@ -27,13 +27,13 @@ EditorBuildSettings:
     path: Assets/NovelGameEditor5/Template Scene.unity
     guid: f027cd3145fd30847b7413561edf04f5
   - enabled: 1
-    path: Assets/MainScenes/Scenario 0.unity
+    path: Assets/MainScenes/Scenario Prologue.unity
     guid: 3fac18b81c011fb4d97a0964e299a981
   - enabled: 1
-    path: Assets/MainScenes/Scenario 1.unity
+    path: Assets/MainScenes/Scenario 1_2.unity
     guid: d6eabc6c9c6aea445a2c57574232c76c
   - enabled: 1
-    path: Assets/MainScenes/Scenario 2.unity
+    path: Assets/MainScenes/Scenario 2_2.unity
     guid: 07b698e62ea0f5b4eb5e7d72232411f2
   - enabled: 1
     path: Assets/MainScenes/Scenario End.unity
