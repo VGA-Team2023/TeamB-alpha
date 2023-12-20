@@ -24,12 +24,15 @@ namespace TeamB_TD
             private GameObject _resultClickPanel;
             [SerializeField]
             private Image _charaImage;
+            public Image CharaImage => _charaImage;
             [SerializeField]
             private Sprite[] _charSpriteArray;
 
             [Header("キャラの立ち絵を表示したい座標")]
             [SerializeField] 
             private Vector2 _dispImgPos;
+            public Vector2 DispImgPos => _dispImgPos;
+
             [Header("表示するキャラの立ち絵の大きさ")]
 
             [Header("横")]
@@ -41,14 +44,16 @@ namespace TeamB_TD
 
             private void Awake()
             {
+                _charaImage.GetComponent<RectTransform>().localPosition =
+                                    new Vector2(_dispImgPos.x + 1000,_dispImgPos.y);
                 Vector2 dispImgSize = new(_dispImgSizeWidth, _dispImgSizeHeight);
                 _charaImage.GetComponent<RectTransform>().sizeDelta = dispImgSize;
             }
             private void Start()
             {
-                Vector3 defaultPos = _charaImage.GetComponent<RectTransform>().localPosition;
-                defaultPos.y = _dispImgPos.y;
-                _charaImage.GetComponent<RectTransform>().localPosition = defaultPos;
+                //Vector3 defaultPos = _charaImage.GetComponent<RectTransform>().localPosition;
+                //defaultPos.y = _dispImgPos.y;
+                //_charaImage.GetComponent<RectTransform>().localPosition = defaultPos;
             }
             public void TowerHPSet(int value)
             {
