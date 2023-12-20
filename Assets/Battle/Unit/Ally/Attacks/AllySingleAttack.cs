@@ -27,7 +27,7 @@ namespace TeamB_TD
                         var enemy = _colliderTriggerHandler.GetFirstEnteredObject<EnemyController>();
                         if (enemy == null) return;
                         enemy.Damge(attackPower);
-                        CriAudioManager.Instance.BGM.Play("SE", "SE_002_attack1");
+                        
                     }
                 }
             }

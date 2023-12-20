@@ -57,7 +57,7 @@ namespace TeamB_TD
             }
             public void TowerHPSet(int value)
             {
-                _towerHP.text = $"タワーHP : {value}";
+                _towerHP.text = value.ToString();
             }
 
             public void GameClearPanelChangeActive(bool value)
