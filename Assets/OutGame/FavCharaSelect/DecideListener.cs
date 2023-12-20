@@ -48,6 +48,7 @@ namespace TeamB_TD
             public void FavCharDecide()
             {
                 memory._favoriteUnitId = _currentNum + 1;
+                memory._isClear[0] = true;
                 DataManager.Instance.Save(memory);
                 //Debug.Log("上書きは正常に動作しています");
                 SceneTransition.instance.SceneTrans(_nextScene);
