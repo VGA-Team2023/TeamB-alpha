@@ -15,7 +15,7 @@ MonoBehaviour:
   _weaponType: 3
   _id: 1
   _maxLife: 80
-  _attackPower: 60
+  _attackPower: 80
   _maxTargetCount: 2
   _cost: 4
   _attackRange: 3.5
@@ -25,3 +25,4 @@ MonoBehaviour:
   _allyActiveUiSprite: {fileID: 21300000, guid: 0e329a25f5118b2489d0a4b948e7fe43, type: 3}
   _allyNonActiveUiSprite: {fileID: 21300000, guid: 6efeab1efccc3574db434304dda4379f, type: 3}
   _allyStandingSprite: {fileID: 21300000, guid: 5cb793113ad712740822564c80089f66, type: 3}
+  _allyCraftIcon: {fileID: 0}
