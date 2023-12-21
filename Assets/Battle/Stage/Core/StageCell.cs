@@ -14,18 +14,11 @@ namespace TeamB_TD
                 private float _xDelta;
 
                 [SerializeField]
-                private Color _multiplePossibleColor = Color.green;
-                [SerializeField]
-                private Color _movableColor = Color.white;
-                [SerializeField]
-                private Color _placeableColor = Color.yellow;
-                [SerializeField]
-                private Color _cantDoAnything = Color.black;
-
-                [SerializeField]
                 private Color _moveableColor;
                 [SerializeField]
-                private SpriteRenderer _selectedUI = null;
+                private Sprite _meleePlaceableUI;
+                [SerializeField]
+                private Sprite _rangePlaceableUI;
                 [SerializeField]
                 private int _orderInLayer = 100;
 
@@ -55,34 +48,13 @@ namespace TeamB_TD
                     transform.position += position;
 
                     var spriteRenderer = GetComponent<SpriteRenderer>();
-                    if (_status.HasFlag(StageCellStatus.Movable) &&
-                        _status.HasFlag(StageCellStatus.UnitPlaceable))
+                    spriteRenderer.sprite = _type switch
                     {
-                        spriteRenderer.color = _multiplePossibleColor;
-                        _selectedUI.color = _multiplePossibleColor;
-                    }
-                    else if (_status.HasFlag(StageCellStatus.Movable))
-                    {
-                        spriteRenderer.color = _movableColor;
-                    }
-                    else if (_status.HasFlag(StageCellStatus.UnitPlaceable))
-                    {
-                        spriteRenderer.color = _placeableColor;
-                        _selectedUI.color = _placeableColor;
-                    }
-                    else
-                    {
-                        spriteRenderer.color = _cantDoAnything;
-                    }
-
-                    if (_status.HasFlag(StageCellStatus.UnitPlaceable))
-                    {
-                        _selectedUI.sortingOrder = _orderInLayer;
-                    }
-                    else
-                    {
-                        _selectedUI.enabled = false;
-                    }
+                        WeaponType.None => null,
+                        WeaponType.Range => _rangePlaceableUI,
+                        WeaponType.Melee => _meleePlaceableUI,
+                        _ => null
+                    };
                 }
             }
         }

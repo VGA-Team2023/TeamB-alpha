@@ -19,6 +19,12 @@ namespace TeamB_TD
                     private Text _revivingText;
                     [SerializeField]
                     private Image _craftIconImage;
+                    [SerializeField]
+                    private Image _WeaponTypeImage;
+                    [SerializeField]
+                    private Sprite _rangeIcon;
+                    [SerializeField]
+                    private Sprite _meleeIcon;
 
                     private AllyController _allyPrefab;
 
@@ -33,6 +39,13 @@ namespace TeamB_TD
                         _costText.text = $"{allyPrefab.ConstantParams.Cost}";
                         _revivingImage.sprite = allyPrefab.ConstantParams.AllyNonActiveUiSprite;
                         _craftIconImage.sprite = allyPrefab.ConstantParams.AllyCraftIcon;
+                        _WeaponTypeImage.sprite = AllyPrefab.ConstantParams.WeaponType switch
+                        {
+                            WeaponType.None => null,
+                            WeaponType.Range => _rangeIcon,
+                            WeaponType.Melee => _meleeIcon,
+                            _ => null,
+                        };
                         ToggleRevivalUiActivate(false);
 
                         if (TryGetComponent(out Image myImage))
@@ -45,7 +58,6 @@ namespace TeamB_TD
                     {
                         _revivingImage.gameObject.SetActive(isActive);
                         _revivingText.gameObject.SetActive(isActive);
-
                     }
 
                     /// <summary>ユニットが再配置出来るまでの間、表示する時間を更新する</summary>
