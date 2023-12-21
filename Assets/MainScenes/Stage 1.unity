@@ -728,11 +728,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7510134250144166954, guid: 2a838d92754b5134c8de5a628b973788, type: 3}
       propertyPath: _spawnerData.Array.data[0]._spawnEnemyDataID
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7510134250144166954, guid: 2a838d92754b5134c8de5a628b973788, type: 3}
       propertyPath: _spawnerData.Array.data[1]._spawnEnemyDataID
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7510134250144166954, guid: 2a838d92754b5134c8de5a628b973788, type: 3}
       propertyPath: _spawnerData.Array.data[2]._spawnEnemyDataID

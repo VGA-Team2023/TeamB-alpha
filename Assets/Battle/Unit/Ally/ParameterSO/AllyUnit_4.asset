@@ -15,7 +15,7 @@ MonoBehaviour:
   _weaponType: 3
   _id: 4
   _maxLife: 120
-  _attackPower: 60
+  _attackPower: 50
   _maxTargetCount: 3
   _cost: 6
   _attackRange: 3.8

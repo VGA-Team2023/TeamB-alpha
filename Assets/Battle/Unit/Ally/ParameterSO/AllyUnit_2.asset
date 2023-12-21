@@ -15,10 +15,10 @@ MonoBehaviour:
   _weaponType: 2
   _id: 2
   _maxLife: 40
-  _attackPower: 40
+  _attackPower: 35
   _maxTargetCount: 0
-  _cost: 8
-  _attackRange: 4
+  _cost: 7
+  _attackRange: 5
   _attackInterval: 0.5
   _revivalInterval: 18
   _allyPrefab: {fileID: 2596105666267506331, guid: 70288b84768654c418ef0d3edf021e94, type: 3}
