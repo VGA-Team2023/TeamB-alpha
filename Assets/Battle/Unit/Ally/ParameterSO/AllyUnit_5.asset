@@ -17,7 +17,7 @@ MonoBehaviour:
   _maxLife: 80
   _attackPower: 60
   _maxTargetCount: 0
-  _cost: 7
+  _cost: 8
   _attackRange: 6
   _attackInterval: 1.8
   _revivalInterval: 20

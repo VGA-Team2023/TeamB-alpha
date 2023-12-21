@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Enemy2Parameter
   m_EditorClassIdentifier: 
   _id: 2
-  _maxLife: 285
+  _maxLife: 400
   _attackPower: 10
   _moveSpeed: 0.3
   _attackInterval: 2.5
