@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Portion Param 2
   m_EditorClassIdentifier: 
   _name: 
-  _healAmount: 60
+  _healAmount: 40

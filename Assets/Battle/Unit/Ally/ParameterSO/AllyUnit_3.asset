@@ -15,14 +15,15 @@ MonoBehaviour:
   _weaponType: 3
   _id: 3
   _maxLife: 50
-  _attackPower: 35
+  _attackPower: 20
   _maxTargetCount: 1
   _cost: 2
   _attackRange: 3.5
-  _attackInterval: 0.5
+  _attackInterval: 0.7
   _revivalInterval: 13
   _allyPrefab: {fileID: 1171702711852265958, guid: 19bd8a9c99314ed40922427d751ee540, type: 3}
   _allyActiveUiSprite: {fileID: 21300000, guid: 68fb68ab9a9ee0e4e817e3a8e57831f6, type: 3}
   _allyNonActiveUiSprite: {fileID: 21300000, guid: 8c6e14dbf684d554d987db0282d675c7, type: 3}
   _allyStandingSprite: {fileID: 21300000, guid: eec3ec89e5faeab439dca6f6e6487f47, type: 3}
   _allyCraftIcon: {fileID: 21300000, guid: 4e5538521f5d0ca469011b2b92a7777f, type: 3}
+
