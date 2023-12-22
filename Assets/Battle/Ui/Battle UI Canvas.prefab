@@ -1892,8 +1892,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: bf559cd321867414da337b09f71b8b63, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1959,7 +1959,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _button: {fileID: 1480367575487555860}
-  _text: {fileID: 8943350287975972651}
+  _myImage: {fileID: 2725095953135846974}
+  _speedx1Sprite: {fileID: 21300000, guid: bf55e4518a1edad45ab11d0eb0000199, type: 3}
+  _speedx2Sprite: {fileID: 21300000, guid: bae340c1e334f404289386b4f3d8e142, type: 3}
+  _speedx3Sprite: {fileID: 21300000, guid: e4d22facd73e4b9419ddbd5c72f24911, type: 3}
 --- !u!1 &8016122560704008621
 GameObject:
   m_ObjectHideFlags: 0
@@ -2095,7 +2098,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _button: {fileID: 4348108912920454884}
-  _text: {fileID: 613909171284038170}
+  _pauseSprite: {fileID: 0}
+  _resumeSprite: {fileID: 0}
   _pausePanel: {fileID: 4096892829591631193}
 --- !u!1 &8298698823302286099
 GameObject:
@@ -2305,7 +2309,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4266591319375458682
 RectTransform:
   m_ObjectHideFlags: 0

@@ -655,6 +655,14 @@ PrefabInstance:
       propertyPath: _resourceManager
       value: 
       objectReference: {fileID: 1645668482}
+    - target: {fileID: 2725095953135846974, guid: 04034391b31179b43b8a57dadf736e6d, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2725095953135846974, guid: 04034391b31179b43b8a57dadf736e6d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bf559cd321867414da337b09f71b8b63, type: 3}
     - target: {fileID: 4067326800657725318, guid: 04034391b31179b43b8a57dadf736e6d, type: 3}
       propertyPath: m_Name
       value: Battle UI Canvas
@@ -663,6 +671,22 @@ PrefabInstance:
       propertyPath: _resourceManager
       value: 
       objectReference: {fileID: 1289484552}
+    - target: {fileID: 6876091330073907399, guid: 04034391b31179b43b8a57dadf736e6d, type: 3}
+      propertyPath: _myImage
+      value: 
+      objectReference: {fileID: 1863827258}
+    - target: {fileID: 6876091330073907399, guid: 04034391b31179b43b8a57dadf736e6d, type: 3}
+      propertyPath: _speedx1Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bf55e4518a1edad45ab11d0eb0000199, type: 3}
+    - target: {fileID: 6876091330073907399, guid: 04034391b31179b43b8a57dadf736e6d, type: 3}
+      propertyPath: _speedx2Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bae340c1e334f404289386b4f3d8e142, type: 3}
+    - target: {fileID: 6876091330073907399, guid: 04034391b31179b43b8a57dadf736e6d, type: 3}
+      propertyPath: _speedx3Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e4d22facd73e4b9419ddbd5c72f24911, type: 3}
     - target: {fileID: 7455452414443368606, guid: 04034391b31179b43b8a57dadf736e6d, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -745,6 +769,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8428120915545119734, guid: 04034391b31179b43b8a57dadf736e6d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8855243294673013533, guid: 04034391b31179b43b8a57dadf736e6d, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9091092790078460525, guid: 04034391b31179b43b8a57dadf736e6d, type: 3}
@@ -1899,6 +1927,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d910578c97c7a54aab75f5060b94d4b, type: 3}
+--- !u!114 &1863827258 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2725095953135846974, guid: 04034391b31179b43b8a57dadf736e6d, type: 3}
+  m_PrefabInstance: {fileID: 416911700}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1896391841
 GameObject:
   m_ObjectHideFlags: 0
