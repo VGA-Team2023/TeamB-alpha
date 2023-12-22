@@ -161,11 +161,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4716660000856562475, guid: db627c16ce7e0b940b613beb30e0fb05, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 540
+      value: 480
       objectReference: {fileID: 0}
     - target: {fileID: 4716660000856562475, guid: db627c16ce7e0b940b613beb30e0fb05, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 720
+      value: 640
       objectReference: {fileID: 0}
     - target: {fileID: 4716660000856562475, guid: db627c16ce7e0b940b613beb30e0fb05, type: 3}
       propertyPath: m_LocalPosition.x
@@ -215,6 +215,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8423492288550390831, guid: db627c16ce7e0b940b613beb30e0fb05, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 676bec9b9af5abd478a81459d6381496, type: 3}
+    - target: {fileID: 8915169806950480991, guid: db627c16ce7e0b940b613beb30e0fb05, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0a1d7bd800a1fc140afdc3024af6a088, type: 3}
     m_RemovedComponents:
     - {fileID: 0}
     m_RemovedGameObjects: []
@@ -343,11 +351,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4204682538149761495, guid: 5ff9248bab74b2f4ebdbb7f8f4a58fc0, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 119.8
+      value: 320
       objectReference: {fileID: 0}
     - target: {fileID: 4204682538149761495, guid: 5ff9248bab74b2f4ebdbb7f8f4a58fc0, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 81.9
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4204682538149761495, guid: 5ff9248bab74b2f4ebdbb7f8f4a58fc0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -379,7 +387,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4204682538149761495, guid: 5ff9248bab74b2f4ebdbb7f8f4a58fc0, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 110
+      value: 1700
       objectReference: {fileID: 0}
     - target: {fileID: 4204682538149761495, guid: 5ff9248bab74b2f4ebdbb7f8f4a58fc0, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -449,8 +457,13 @@ PrefabInstance:
       propertyPath: m_FontData.m_FontSize
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 8609883965120294408, guid: 5ff9248bab74b2f4ebdbb7f8f4a58fc0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 751a6315764c233438a4e04102e9387b, type: 3}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7220607230757310821, guid: 5ff9248bab74b2f4ebdbb7f8f4a58fc0, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ff9248bab74b2f4ebdbb7f8f4a58fc0, type: 3}
@@ -497,11 +510,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4716660000856562475, guid: db627c16ce7e0b940b613beb30e0fb05, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 540
+      value: 480
       objectReference: {fileID: 0}
     - target: {fileID: 4716660000856562475, guid: db627c16ce7e0b940b613beb30e0fb05, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 720
+      value: 640
       objectReference: {fileID: 0}
     - target: {fileID: 4716660000856562475, guid: db627c16ce7e0b940b613beb30e0fb05, type: 3}
       propertyPath: m_LocalPosition.x
@@ -558,11 +571,11 @@ PrefabInstance:
     - target: {fileID: 8423492288550390831, guid: db627c16ce7e0b940b613beb30e0fb05, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: e2844c494eeec864598d323963f65a45, type: 3}
+      objectReference: {fileID: 21300000, guid: 8371ffa546b136446a776293162fa913, type: 3}
     - target: {fileID: 8915169806950480991, guid: db627c16ce7e0b940b613beb30e0fb05, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: b43ef59a012bd8f48af921c337eac111, type: 3}
+      objectReference: {fileID: 21300000, guid: 31edba77490c162469befe3f8bcc85eb, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -857,7 +870,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: -160
   m_ChildAlignment: 4
-  m_Spacing: 0
+  m_Spacing: -480
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
