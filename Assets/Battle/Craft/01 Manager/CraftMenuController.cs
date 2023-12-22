@@ -47,7 +47,9 @@ namespace TeamB_TD
                         _lastShowedType = craftable.CraftType;
 
                         if (craftable.CraftType == CraftType.Invalid) return;
-                        if (!craftable.TryGetComponent(out AllyController ally)) return;
+
+                        AllyController ally = craftable.Ally;
+                        if (ally == null) return;
 
                         _manager.ShowMenu(ally, craftable.CraftType, MousePosition);
                     }

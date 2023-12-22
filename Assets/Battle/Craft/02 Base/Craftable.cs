@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using TeamB_TD.Battle.Unit.Ally;
+using UnityEngine;
 
 namespace TeamB_TD
 {
@@ -10,8 +11,11 @@ namespace TeamB_TD
             {
                 [SerializeField]
                 private CraftType _craftType;
+                [SerializeField]
+                private AllyController _ally;
 
                 public CraftType CraftType => _craftType;
+                public AllyController Ally => _ally;
             }
         }
     }
