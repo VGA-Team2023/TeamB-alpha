@@ -10,15 +10,19 @@ namespace TeamB_TD
             [SerializeField]
             private Button _button;
             [SerializeField]
-            private Text _text;
+            private Sprite _pauseSprite;
+            [SerializeField]
+            private Sprite _resumeSprite;
             [SerializeField]
             private Image _pausePanel;
+
+            private Image _myImage;
 
             private void Start()
             {
                 _button.onClick.AddListener(OnButtonClicked);
                 SetActiveController(GameSpeedController.IsPaused);
-                ApplyText();
+                ApplyImage();
             }
 
             private void OnButtonClicked()
@@ -32,7 +36,7 @@ namespace TeamB_TD
                     Pause();
                 }
                 SetActiveController(GameSpeedController.IsPaused);
-                ApplyText();
+                ApplyImage();
             }
 
             private void Pause()
@@ -45,16 +49,11 @@ namespace TeamB_TD
                 GameSpeedController.Resume();
             }
 
-            private void ApplyText()
+            private void ApplyImage()
             {
-                if (GameSpeedController.IsPaused)
-                {
-                    _text.text = "||";
-                }
-                else
-                {
-                    _text.text = "▶";
-                }
+                if (_myImage == null && TryGetComponent(out Image image)) _myImage = image;
+
+                _myImage.sprite = GameSpeedController.IsPaused ? _pauseSprite : _resumeSprite;
             }
 
             private void SetActiveController(bool activeFrag)
