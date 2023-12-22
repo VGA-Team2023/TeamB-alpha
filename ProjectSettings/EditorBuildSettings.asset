@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/OutGame/Title/TitleScene.unity
     guid: 06c695a173044cc418733659ed246bfb
   - enabled: 1
+    path: Assets/OutGame/Credit/Credit Scene.unity
+    guid: 809c6d3c8e8f42c42a2e118f3ed274a9
+  - enabled: 1
+    path: Assets/OutGame/OathScene/OathScene.unity
+    guid: ce30ff58d770e9744bb2bcd505b0dd66
+  - enabled: 1
     path: Assets/MainScenes/LoadScene.unity
     guid: d2a1c7f2b7a68054ca6fbbac15756e36
   - enabled: 1
@@ -38,7 +44,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/MainScenes/Scenario End.unity
     guid: 5f08f2922183ae5478115e5b39a69d13
-  - enabled: 1
-    path: Assets/OutGame/FavCharaSelect/OathScene.unity
-    guid: ce30ff58d770e9744bb2bcd505b0dd66
   m_configObjects: {}
