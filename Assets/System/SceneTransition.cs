@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace TeamB_TD
@@ -26,6 +27,17 @@ namespace TeamB_TD
 
             public void SceneTrans(string sceneName)
             {
+                SceneManager.LoadScene(sceneName);
+            }
+
+            public void SceneTrans(string sceneName,float second)
+            {
+                StartCoroutine(Wait(sceneName,second));                
+            }
+
+            private IEnumerator Wait(string sceneName,float second)
+            {
+                yield return new WaitForSeconds(second);
                 SceneManager.LoadScene(sceneName);
             }
         }

@@ -14,6 +14,7 @@ namespace TeamB_TD
             private void Start()
             {
                 SaveData instantData = DataManager.Instance.Load();
+               
                 for (int i = 0; i < _buttons.Length - 1; i++)
                 {
                     if (!instantData._isClear[i])
@@ -22,7 +23,7 @@ namespace TeamB_TD
                         _buttons[i + 1].BeUntouchable();
                     }
                 }                
-            }
+            }           
         }
     }
 }
