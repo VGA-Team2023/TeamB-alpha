@@ -456,6 +456,9 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: -7552582706839291426, guid: a4e5c3d0f198ebb4f87480b3990ffb9c, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 5421041575073362438}
+    - targetCorrespondingSourceObject: {fileID: -7552582706839291426, guid: a4e5c3d0f198ebb4f87480b3990ffb9c, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 726738856018475959}
     - targetCorrespondingSourceObject: {fileID: -7552582706839291426, guid: a4e5c3d0f198ebb4f87480b3990ffb9c, type: 3}
       insertIndex: -1
@@ -576,6 +579,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _craftType: 0
+  _ally: {fileID: 0}
 --- !u!95 &5502692883814069708
 Animator:
   serializedVersion: 5
@@ -597,6 +601,72 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1001 &7219335843411614345
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 695394180917995972}
+    m_Modifications:
+    - target: {fileID: 2587312482213606026, guid: 9f436a5c768864e44a9380237a3cf132, type: 3}
+      propertyPath: m_Name
+      value: Craft Menu Shower
+      objectReference: {fileID: 0}
+    - target: {fileID: 3364592489584818459, guid: 9f436a5c768864e44a9380237a3cf132, type: 3}
+      propertyPath: _ally
+      value: 
+      objectReference: {fileID: 6829548103556407966}
+    - target: {fileID: 3389894559115012239, guid: 9f436a5c768864e44a9380237a3cf132, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3389894559115012239, guid: 9f436a5c768864e44a9380237a3cf132, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3389894559115012239, guid: 9f436a5c768864e44a9380237a3cf132, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3389894559115012239, guid: 9f436a5c768864e44a9380237a3cf132, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3389894559115012239, guid: 9f436a5c768864e44a9380237a3cf132, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3389894559115012239, guid: 9f436a5c768864e44a9380237a3cf132, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3389894559115012239, guid: 9f436a5c768864e44a9380237a3cf132, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3389894559115012239, guid: 9f436a5c768864e44a9380237a3cf132, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3389894559115012239, guid: 9f436a5c768864e44a9380237a3cf132, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3389894559115012239, guid: 9f436a5c768864e44a9380237a3cf132, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9f436a5c768864e44a9380237a3cf132, type: 3}
+--- !u!4 &5421041575073362438 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3389894559115012239, guid: 9f436a5c768864e44a9380237a3cf132, type: 3}
+  m_PrefabInstance: {fileID: 7219335843411614345}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8302760241396163662
 PrefabInstance:
   m_ObjectHideFlags: 0

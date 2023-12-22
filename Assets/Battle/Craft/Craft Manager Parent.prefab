@@ -96,6 +96,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxResource: 3
   _currentResource: 0
+  _isDebugMode: 0
 --- !u!1 &6378565787534774514
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,7 +179,7 @@ MonoBehaviour:
   _manager: {fileID: 5685591380839369890}
   _layerMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 512
 --- !u!1 &8986502808725694221
 GameObject:
   m_ObjectHideFlags: 0
