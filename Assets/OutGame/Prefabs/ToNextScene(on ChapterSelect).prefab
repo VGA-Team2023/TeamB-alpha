@@ -167,6 +167,9 @@ MonoBehaviour:
   _nextScene: Stage 1
   _anotherNextScene: TitleScene
   _sceneDivergence: 0
+  _transitionDelay: 1
+  _delayTime: 5
+  _playSound: 1
 --- !u!1 &8511867960540737362
 GameObject:
   m_ObjectHideFlags: 0

@@ -215,6 +215,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5411216195139793384, guid: db627c16ce7e0b940b613beb30e0fb05, type: 3}
+      propertyPath: _delayTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5411216195139793384, guid: db627c16ce7e0b940b613beb30e0fb05, type: 3}
+      propertyPath: _transitionDelay
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8423492288550390831, guid: db627c16ce7e0b940b613beb30e0fb05, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -409,6 +417,10 @@ PrefabInstance:
       propertyPath: _nextScene
       value: TitleScene
       objectReference: {fileID: 0}
+    - target: {fileID: 6193404630159636774, guid: 5ff9248bab74b2f4ebdbb7f8f4a58fc0, type: 3}
+      propertyPath: _playSound
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6695400851224256235, guid: 5ff9248bab74b2f4ebdbb7f8f4a58fc0, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
@@ -565,8 +577,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5411216195139793384, guid: db627c16ce7e0b940b613beb30e0fb05, type: 3}
+      propertyPath: _delayTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5411216195139793384, guid: db627c16ce7e0b940b613beb30e0fb05, type: 3}
       propertyPath: _nextScene
       value: Stage 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5411216195139793384, guid: db627c16ce7e0b940b613beb30e0fb05, type: 3}
+      propertyPath: _transitionDelay
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8423492288550390831, guid: db627c16ce7e0b940b613beb30e0fb05, type: 3}
       propertyPath: m_Sprite
@@ -1155,6 +1175,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1940359204}
   - component: {fileID: 1940359203}
+  - component: {fileID: 1940359205}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -1239,6 +1260,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &1940359205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1940359202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1001 &2113536636
 PrefabInstance:
   m_ObjectHideFlags: 0
