@@ -46,7 +46,6 @@ namespace TeamB_TD
 
                 if (!File.Exists(_filepath))
                 {
-                    Debug.Log(_filepath);
                     Save(_pData);
                 }
                 _pData = Load();
@@ -54,8 +53,8 @@ namespace TeamB_TD
             public void Save(SaveData data)
             {
                 _json = JsonUtility.ToJson(data);
-                StreamWriter wr = new StreamWriter(_filepath, false);
-                Debug.Log(_json);
+
+                StreamWriter wr = new StreamWriter(_filepath, false);                
                 wr.WriteLine(_json);
                 wr.Flush();
                 wr.Close();

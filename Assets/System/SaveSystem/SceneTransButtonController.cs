@@ -52,21 +52,19 @@ namespace TeamB_TD
                     {
                         _voiceNum %= 6;
                     }
-                    Debug.Log($"Playing Sound is {_myFavUnit}_{_voiceNum}!");
+                    //Debug.Log($"Playing Sound is {_myFavUnit}_{_voiceNum}!");
                 }
                 
             }
             private void Update() 
             {
-                if(instantData._favoriteUnitId == DataManager.Instance.PlayerData._favoriteUnitId)return;
+                if(instantData._favoriteUnitId == DataManager.Instance.PlayerData._favoriteUnitId) return;
                 
-                instantData._favoriteUnitId = DataManager.Instance.PlayerData._favoriteUnitId;
-                Debug.Log($"{instantData._favoriteUnitId}");
+                instantData._favoriteUnitId = DataManager.Instance.PlayerData._favoriteUnitId;                
             }
             
             public void OnPointerClick(PointerEventData pointerEventData)
             {
-                //Debug.Log($"クリックは正常に動作しています：{this.gameObject.name}");
                 if (_isActive)
                 {
                     if (_sceneDivergence)
@@ -84,13 +82,10 @@ namespace TeamB_TD
 
                         if (_transitionDelay)
                         {
-                            Debug.Log("コルーチンを含む関数が実行されています");
-                            SceneTransition.instance.SceneTrans(_nextScene, _delayTime);
-                            
+                            SceneTransition.instance.SceneTrans(_nextScene, _delayTime);                            
                         }
                         else
                         {
-                            Debug.Log("コルーチンを含まない関数が実行されています");
                             SceneTransition.instance.SceneTrans(_nextScene);
                         }
                         return;
