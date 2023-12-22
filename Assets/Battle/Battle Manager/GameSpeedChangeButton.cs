@@ -11,18 +11,24 @@ namespace TeamB_TD
             [SerializeField]
             private Button _button;
             [SerializeField]
-            private Text _text;
+            private Image _myImage;
+            [SerializeField]
+            private Sprite _speedx1Sprite;
+            [SerializeField]
+            private Sprite _speedx2Sprite;
+            [SerializeField]
+            private Sprite _speedx3Sprite;
 
             private void Start()
             {
                 _button.onClick.AddListener(OnClicked);
-                UpdateText(GameSpeedController.CurrentSpeed);
+                UpdateImage(GameSpeedController.CurrentSpeed);
             }
 
             private void OnClicked()
             {
                 UpdateSpeed(GameSpeedController.CurrentSpeed);
-                UpdateText(GameSpeedController.CurrentSpeed);
+                UpdateImage(GameSpeedController.CurrentSpeed);
             }
 
             private void UpdateSpeed(float gameSpeed)
@@ -45,19 +51,19 @@ namespace TeamB_TD
                 }
             }
 
-            private void UpdateText(float gameSpeed)
+            private void UpdateImage(float gameSpeed)
             {
                 if (Mathf.Approximately(gameSpeed, 1f))
                 {
-                    _text.text = ">";
+                    _myImage.sprite = _speedx1Sprite;
                 }
                 else if (Mathf.Approximately(gameSpeed, 2f))
                 {
-                    _text.text = ">>";
+                    _myImage.sprite = _speedx2Sprite;
                 }
                 else if (Mathf.Approximately(gameSpeed, 3f))
                 {
-                    _text.text = ">>>";
+                    _myImage.sprite = _speedx3Sprite;
                 }
                 else
                 {
