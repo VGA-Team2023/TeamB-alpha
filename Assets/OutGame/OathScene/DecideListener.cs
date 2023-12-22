@@ -10,32 +10,26 @@ namespace TeamB_TD
     {
         public class DecideListener: MonoBehaviour
         {
-            [HideInInspector] public SaveData.SaveData _pData;
-
             [SerializeField] 
-            GameObject _imgCanvas;
+            private GameObject _imgCanvas;
             [SerializeField]
-            int _characterNum = 6;
+            private int _characterNum = 6;
             [SerializeField]
-            Sprite[] _charImgArray;
+            private Sprite[] _charImgArray;
             [SerializeField, SceneName] 
             private string _nextScene;
 
-            string _filepath;            
-            int _currentNum = 0;
+            private int _currentNum = 0;
+            private int _memoryNum = 0;
+            private bool _isChanged = false;
             public int GetNumber => _currentNum;
 
-            public static string _json;
-
-            SaveData.SaveData memory;
-
-            public SaveData.SaveData PlayerData => _pData;            
+            SaveData.SaveData _instantdData; 
             
             private void Awake()
             {
-                _filepath = Application.streamingAssetsPath + "/SaveData/SaveData.json";
                 _imgCanvas.gameObject.GetComponent<Image>().sprite = _charImgArray[_currentNum];
-                memory = DataManager.Instance.Load();
+                _instantdData = DataManager.Instance.Load();
             }
             private void Start()
             {
@@ -43,13 +37,20 @@ namespace TeamB_TD
             }
             private void Update()
             {
-                _imgCanvas.gameObject.GetComponent<Image>().sprite = _charImgArray[_currentNum];
+                if (_currentNum != _memoryNum) _isChanged = true;
+                if(_isChanged)
+                {
+                    _imgCanvas.gameObject.GetComponent<Image>().sprite = _charImgArray[_currentNum];
+                    //CriAudioManager.Instance.BGM.Play(",", 2f);
+                }
+                
+                _memoryNum = _currentNum;
             }
             public void FavCharDecide()
             {
-                memory._favoriteUnitId = _currentNum + 1;
-                memory._isClear[0] = true;
-                DataManager.Instance.Save(memory);
+                _instantdData._favoriteUnitId = _currentNum + 1;
+                _instantdData._isClear[0] = true;
+                DataManager.Instance.Save(_instantdData);
                 //Debug.Log("上書きは正常に動作しています");
                 SceneTransition.instance.SceneTrans(_nextScene);
             }
