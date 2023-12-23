@@ -15,7 +15,7 @@ public class GameClearAnimation : MonoBehaviour
     public IEnumerator GameClearImageAnimation()
     {
         image.enabled = true;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(3f);
     }
 
     public IEnumerator StarImageAnimationStart(int starCount)
