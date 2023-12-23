@@ -23,16 +23,6 @@ namespace TeamB_TD
                 _current = null;
             }
 
-            public void Reset()
-            {
-                _text.text = "";
-                _caption.text = "";
-                for (int i = 0; i < _activeActor.Length; i++)
-                {
-                    _activeActor[i].sprite = _allyUnitSprite[0];
-                }
-            }
-
             [SerializeField]
             private TextMeshProUGUI _text;
             [SerializeField]
@@ -43,10 +33,10 @@ namespace TeamB_TD
             private Transform _selectViewPrefabParent;
             [SerializeField]
             private SelectView _selectViewPrefab;
+            [SerializeField]
+            private Image _bgImage;
             [SerializeField, Range(0.8f, 2f)]
             private float _autoDuration = 1f;
-            [SerializeField, Header("デフォルト画像")]
-            private Sprite _defaultSprite = default;
             [SerializeField, Header("話しているActorのサイズ")]
             private Vector3 _talkingActorSize = new Vector3(0.5f, 0.5f, 0.5f);
             [SerializeField, Header("話していないActorのサイズ")]
@@ -56,20 +46,23 @@ namespace TeamB_TD
             [SerializeField, Header("ActorのImage配列")]
             private Image[] _activeActor = new Image[3];
             [SerializeField, Header("Unit立ち絵の配列")]
-            private Sprite[] _allyUnitSprite;
+            private Sprite[] _allyUnitSprites;
+            [SerializeField, Header("背景イラストの配列")]
+            private Sprite[] _bgSprites;
 
             public TextMeshProUGUI Text => _text;
             public TextMeshProUGUI Caption => _caption;
             public Image ScreenImage => _screenImage;
+            public Image BG => _bgImage;
             public Transform SelectViewPrefabParent => _selectViewPrefabParent;
             public SelectView SelectViewPrefab => _selectViewPrefab;
             public float AutoDuration => _autoDuration;
-            public Sprite DefaultSprite => _defaultSprite;  
             public Vector3 TalkingActorSize => _talkingActorSize;
             public Vector3 NotTalkingActorSize => _notTalkingActorSize;
             public Color DarkColor => _darkColor;
             public Image[] ActiveActor => _activeActor;
-            public Sprite[] AllyUnitSprite => _allyUnitSprite;
+            public Sprite[] AllyUnitSprites => _allyUnitSprites;
+            public Sprite[] BGSprites => _bgSprites;
         }
     }
 }
