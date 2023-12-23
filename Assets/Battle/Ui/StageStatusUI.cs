@@ -13,11 +13,7 @@ namespace TeamB_TD
             [SerializeField]
             private Text _enemyCountText = null;
             [SerializeField]
-            private string _enemyUiText = "敵";
-            [SerializeField]
             private Text _towerLifeText = null;
-            [SerializeField]
-            private string _towerHealthText = "塔";
 
             private int _totalEnemyCount = -1;
 
@@ -48,12 +44,12 @@ namespace TeamB_TD
 
             private void ApplyDeadEnemyCount(int count)
             {
-                _enemyCountText.text = $"{_enemyUiText}：{count} / {_totalEnemyCount}";
+                _enemyCountText.text = $"{count} / {_totalEnemyCount}";
             }
 
             private void ApplyTowerLife(int life)
             {
-                _towerLifeText.text = $"{_towerHealthText}：{life}";
+                _towerLifeText.text = $"{life}";
             }
         }
     }

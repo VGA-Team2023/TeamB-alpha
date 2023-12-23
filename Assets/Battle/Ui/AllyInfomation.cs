@@ -13,13 +13,11 @@ namespace TeamB_TD
     {
         namespace Unit
         {
-            public class UnitInfomation : MonoBehaviour, IPointerClickHandler
+            public class AllyInfomation : MonoBehaviour, IPointerClickHandler
             {
                 [SerializeField, Header("ドラッグハンドラー")]
                 private DragHandler _dragHandler = null;
-                [SerializeField, Header("ユニットのパラメータを表示するテキスト")]
-                private Text _allyParameterText = null;
-                [SerializeField, Header("ユニットの立ち絵を表示するイメージ")]
+                [SerializeField, Header("ユニットのステータスを表示するイメージ")]
                 private Image _allyStandingImage = null;
                 [SerializeField, Header("パラメータ表示時のゲームスピード")]
                 private float _isPausedGameSpeed = 1f / 3f;
@@ -41,7 +39,6 @@ namespace TeamB_TD
 
                 private void Start()
                 {
-                    if (_allyParameterText == null) { Debug.LogError("AllyParameterText is not found"); }
                     if (TryGetComponent(out Image image)) { _myPanel = image; }
 
                     for(int i = 0; i < transform.childCount; i++)
@@ -74,13 +71,7 @@ namespace TeamB_TD
                     _isShowInfo = true;
 
                     var ally = allyView.AllyPrefab;
-                    _allyParameterText.text =
-                        $"名前    ：{ally.ConstantParams.name}\n" +
-                        $"攻撃力  ：{ally.ConstantParams.AttackPower}\n" +
-                        $"攻撃間隔：{ally.ConstantParams.AttackInterval}\n" +
-                        $"体力    ：{ally.LifeController.CurrentLife} / {ally.ConstantParams.MaxLife}\n";
-
-                    _allyStandingImage.sprite = ally.ConstantParams.AllyStandingSprite ?? null;
+                    _allyStandingImage.sprite = ally.ConstantParams.AllyStatusSprite ?? null;
                 }
 
                 private IEnumerator ChangeActivateAsync()
