@@ -27,7 +27,7 @@ namespace TeamB_TD
                         var enemies = _multiObjectInTriggerFinder.GetAllObjectsInTrigger<EnemyController>();
                         foreach (var enemy in enemies)
                         {
-                            enemy.Damge(attackPower);
+                            enemy.Damage(attackPower);
                         }
                     }
                 }

@@ -25,7 +25,7 @@ namespace TeamB_TD
                         var allies = _multiObjectInTriggerFinder.GetAllObjectsInTrigger<IAllyDamageable>();
                         foreach (var ally in allies)
                         {
-                            ally.Damge(attackPower);
+                            ally.Damage(attackPower);
                         }
                     }
                 }

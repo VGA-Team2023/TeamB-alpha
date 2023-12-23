@@ -63,7 +63,7 @@ namespace TeamB_TD
                         OnDead?.Invoke(this);
                     }
 
-                    public void Damge(float value)
+                    public void Damage(float value)
                     {
                         
                         _lifeController.Damage(value);

@@ -15,7 +15,7 @@ public class WallController : MonoBehaviour, IAllyDamageable
     public Vector3 WorldPosition => this.transform.position;
     public event Action<IDamageable> OnDead;
 
-    public void Damge(float value)
+    public void Damage(float value)
     {
         _life -= value;
         OnChangedDamage?.Invoke(value);

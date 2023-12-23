@@ -36,8 +36,8 @@ namespace TeamB_TD
                     for (int i = 0; i < effect.Parameters.Length; i++)
                     {
                         var level = i + 1;
-                        var view = GameObject.Instantiate(_prefab, transform);
-                        view.Initialize(effect.name, level, () => OnClicked(level, effect));
+                        var view = Instantiate(_prefab, transform);
+                        view.Initialize(level, () => OnClicked(level, effect));
                     }
                 }
                 public void OnClicked(int level, CraftableEffect effect)
@@ -47,6 +47,7 @@ namespace TeamB_TD
                     {
                         effect.RequestEffect(_ally, level, this.GetCancellationTokenOnDestroy());
                     }
+                    _ally.OnCraft();
                 }
             }
         }

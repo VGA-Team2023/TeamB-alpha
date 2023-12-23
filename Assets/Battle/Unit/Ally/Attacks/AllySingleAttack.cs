@@ -26,7 +26,7 @@ namespace TeamB_TD
                     {
                         var enemy = _colliderTriggerHandler.GetFirstEnteredObject<EnemyController>();
                         if (enemy == null) return;
-                        enemy.Damge(attackPower);
+                        enemy.Damage(attackPower);
                         
                     }
                 }

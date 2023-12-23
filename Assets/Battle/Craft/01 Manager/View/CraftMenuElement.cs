@@ -11,17 +11,21 @@ namespace TeamB_TD
         {
             public class CraftMenuElement : MonoBehaviour, IPointerClickHandler
             {
+                //[SerializeField]
+                //private Text _name;
+                //[SerializeField]
+                //private Text _level;
                 [SerializeField]
-                private Text _name;
-                [SerializeField]
-                private Text _level;
+                private Sprite[] _levelSprite;
 
                 private Action OnClicked;
 
-                public void Initialize(string name, int level, Action onClicked)
+                public void Initialize(int level, Action onClicked)
                 {
-                    _name.text = name;
-                    _level.text = level.ToString();
+                    if (gameObject.TryGetComponent(out Image myImage))
+                    {
+                        myImage.sprite = _levelSprite[level % 3];
+                    }
                     OnClicked = onClicked;
                 }
 

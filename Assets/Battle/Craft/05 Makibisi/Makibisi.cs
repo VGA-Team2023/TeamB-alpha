@@ -44,7 +44,7 @@ namespace TeamB_TD.Battle.Craft
                 _fireIntervalTimer -= _fireInterval;
                 foreach (var enemy in targets)
                 {
-                    enemy.Damge(_attackPower);
+                    enemy.Damage(_attackPower);
                 }
             }
 

@@ -24,7 +24,7 @@ namespace TeamB_TD
                     {
                         var ally = _colliderTriggerHandler.GetFirstEnteredObject<IAllyDamageable>();
                         if (ally == null) return;
-                        ally.Damge(attackPower);
+                        ally.Damage(attackPower);
                         // CriAudioManager.Instance.SE.Play("SE", "SE_004_enemy1", 0.5f);
                     }
                 }
