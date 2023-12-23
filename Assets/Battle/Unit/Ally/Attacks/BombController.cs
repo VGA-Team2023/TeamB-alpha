@@ -28,7 +28,7 @@ namespace TeamB_TD.Battle.Unit.Ally
                 }
             }
 
-            if (targetInfo) targetInfo.Damge(attackPower);
+            if (targetInfo) targetInfo.Damage(attackPower);
             VFXManager.Current.RequestBombVFX(transform.position);
             GameObject.Destroy(gameObject);
         }

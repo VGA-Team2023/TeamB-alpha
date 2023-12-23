@@ -35,7 +35,7 @@ namespace TeamB_TD.Battle.Unit.Ally
 
             foreach (var enemy in enemies)
             {
-                enemy.Damge(attackPower);
+                enemy.Damage(attackPower);
             }
             VFXManager.Current.RequestBombVFX(transform.position);
             GameObject.Destroy(gameObject);

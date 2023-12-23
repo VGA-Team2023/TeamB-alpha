@@ -10,7 +10,7 @@ namespace TeamB_TD
             public interface IDamageable
             {
                 Vector3 WorldPosition { get; }
-                void Damge(float value);
+                void Damage(float value);
                 event Action<IDamageable> OnDead;
             }
         }

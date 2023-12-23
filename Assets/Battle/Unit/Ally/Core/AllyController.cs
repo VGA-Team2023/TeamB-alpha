@@ -91,6 +91,7 @@ namespace TeamB_TD
                         {
                             _anim.Play(Animator.StringToHash("Attack"));
                         }
+                        _anim.speed = GameSpeedController.CurretGameSpeed;
                     }
 
                     private void OnDestroy()
@@ -112,12 +113,17 @@ namespace TeamB_TD
                         return false;
                     }
 
-                    public void Damge(float value)
+                    public void Damage(float value)
                     {
                         _lifeController.Damge(value);
 
                         var screenPos = Camera.main.WorldToScreenPoint(transform.position);
                         VFXManager.Current.RequestDamageVFX(value, screenPos);
+                    }
+
+                    public void OnCraft()
+                    {
+                        _anim.Play(Animator.StringToHash("Craft"));
                     }
 
                     public void UpdateOrderInLayer(int order)
