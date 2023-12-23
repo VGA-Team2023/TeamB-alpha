@@ -15,8 +15,6 @@ namespace TeamB_TD
                 private float _xDelta;
 
                 [SerializeField]
-                private Color _moveableColor;
-                [SerializeField]
                 private Sprite _meleePlaceableUI;
                 [SerializeField]
                 private Sprite _rangePlaceableUI;
