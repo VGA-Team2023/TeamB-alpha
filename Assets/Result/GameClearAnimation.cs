@@ -6,21 +6,16 @@ using TMPro;
 
 public class GameClearAnimation : MonoBehaviour
 {
-    [SerializeField] private TMP_Text _text;
+    [SerializeField] private Image image;
     [SerializeField] private string _message;
     [SerializeField] private float _gameclearDelaytime;
     [SerializeField] private float _starImageDelaytime;
     [SerializeField] private Image[] _starImage;
 
-    public IEnumerator GameClearTextAnimation()
+    public IEnumerator GameClearImageAnimation()
     {
-        for (int i = 0; i < _message.Length; i++)
-        {
-            _text.text += _message[i];
-            yield return new WaitForSeconds(_gameclearDelaytime);
-        }
+        image.enabled = true;
         yield return new WaitForSeconds(1f);
-        _text.text = null;
     }
 
     public IEnumerator StarImageAnimationStart(int starCount)

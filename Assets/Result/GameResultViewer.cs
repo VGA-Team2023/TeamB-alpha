@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 using TeamB_TD.SaveData;
+using Unity.VisualScripting;
 
 namespace TeamB_TD
 {
@@ -49,12 +50,7 @@ namespace TeamB_TD
                 Vector2 dispImgSize = new(_dispImgSizeWidth, _dispImgSizeHeight);
                 _charaImage.GetComponent<RectTransform>().sizeDelta = dispImgSize;
             }
-            private void Start()
-            {
-                //Vector3 defaultPos = _charaImage.GetComponent<RectTransform>().localPosition;
-                //defaultPos.y = _dispImgPos.y;
-                //_charaImage.GetComponent<RectTransform>().localPosition = defaultPos;
-            }
+            
             public void TowerHPSet(int value)
             {
                 _towerHP.text = value.ToString();
@@ -85,10 +81,7 @@ namespace TeamB_TD
                 SaveData.SaveData instantData = DataManager.Instance.Load();
                 _charaImage.sprite = _charSpriteArray[instantData._favoriteUnitId - 1];
                 _scoreChildPanel.SetActive(true);
-                _scoreChildPanel.transform.DOScale(new Vector3(0.5f, 0.6f, 1), 1f);
-                yield return new WaitForSeconds(1f);
-                //_charaImage.gameObject.GetComponent<RectTransform>().DOAnchorPos(new Vector2(-285f, 0), 0.5f);
-                _charaImage.gameObject.GetComponent<RectTransform>().DOAnchorPos(new Vector2(-215f, -235f), 0.5f);
+                yield return null;
             }
         }
     }
