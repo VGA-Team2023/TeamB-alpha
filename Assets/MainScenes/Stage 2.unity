@@ -560,7 +560,7 @@ PrefabInstance:
       objectReference: {fileID: 1487156847}
     - target: {fileID: 8514763190251402600, guid: 0deddbd3a0b08c2469a5cee31e519a14, type: 3}
       propertyPath: _isDebugGameClear
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8880909980842448383, guid: 0deddbd3a0b08c2469a5cee31e519a14, type: 3}
       propertyPath: m_RootOrder
