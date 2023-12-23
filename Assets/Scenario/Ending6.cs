@@ -8,7 +8,7 @@ namespace TeamB_TD
 {
     namespace NovelGameEditor5
     {
-        public class Ending6 : MonoBehaviour
+        public class Ending6 : EndingBase
         {
             public void Start()
             {

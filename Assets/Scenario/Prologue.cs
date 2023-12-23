@@ -24,7 +24,7 @@ namespace TeamB_TD
 
                     [EndGroup]
 
-　　　　　　　　　　[DisplayActor,1,1]
+　　　　　　　　　　  [DisplayActor,1,1]
 
                     [ChangeCaption,ナレーション]
                     [PrintText,その魔石は不思議な力でエネルギーを生み出し、人々の生活を豊かにしたのであった。,0.1]
@@ -147,7 +147,7 @@ namespace TeamB_TD
                     [PrintText,「何が入っているんだろう？」,0.1]
 
                     [ChangeCaption, ]
-                    [PrintText,ガサッ.1]
+                    [PrintText,ガサッ,1]
 
 
                     [ChangeCaption,プレイヤー]
