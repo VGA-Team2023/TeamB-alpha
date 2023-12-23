@@ -28,7 +28,7 @@ namespace TeamB_TD
         public float RevivalInterval => _revivalInterval;
         public Sprite AllyActiveUiSprite => _allyActiveUiSprite;
         public Sprite AllyNonActiveUiSprite => _allyNonActiveUiSprite;
-        public Sprite AllyStandingSprite => _allyStandingSprite;
+        public Sprite AllyStatusSprite => _allyStatusSprite;
         public Sprite AllyCraftIcon => _allyCraftIcon;
 
         [Header("====================")]
@@ -39,7 +39,7 @@ namespace TeamB_TD
         [SerializeField]
         private Sprite _allyNonActiveUiSprite; // 対応する味方ユニットが配置不可能時に表示するUI
         [SerializeField]
-        private Sprite _allyStandingSprite; // 対応する味方ユニットの立ち絵
+        private Sprite _allyStatusSprite; // 対応する味方ユニットの立ち絵
         [SerializeField]
         private Sprite _allyCraftIcon; // 対応する味方ユニットのクラフトアイコン
 
