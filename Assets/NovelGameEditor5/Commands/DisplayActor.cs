@@ -39,7 +39,7 @@ namespace TeamB_TD
 
                 NovelData.Current.ActiveActor[actorPos].transform.localScale = talkingActorSize;
                 NovelData.Current.ActiveActor[actorPos].color = talkingActorColor;
-                NovelData.Current.ActiveActor[actorPos].sprite = NovelData.Current.AllyUnitSprite[actorId];
+                NovelData.Current.ActiveActor[actorPos].sprite = NovelData.Current.AllyUnitSprites[actorId];
 
                 await UniTask.CompletedTask;
             }
