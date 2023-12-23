@@ -68,7 +68,7 @@ namespace TeamB_TD
                             mouseOverlappingObject.TryGetComponent(out AllyUnitPlaceView placeView) &&
                             AllyPlaceableManager.Instance.IsAllyPlaceable(placeView.AllyPrefab))
                         {
-                            _dragItem = GameObject.Instantiate(placeView.AllyPrefab);
+                            _dragItem = Instantiate(placeView.AllyPrefab);
                             _dragItem.enabled = false;
                             _dragItem.GetComponent<Collider2D>().enabled = false;
 
@@ -103,6 +103,7 @@ namespace TeamB_TD
                         var position = stageCell.WorldPosition + _placeOffset;
                         var instance = Instantiate(allyPrefab, position, Quaternion.identity);
                         var cell = stageCell as StageCell;
+                        if (cell) { cell.PlacedAlly = instance; }
                         AllyPlaceableManager.Instance.PlaceAlly(instance);
                         instance.UpdateOrderInLayer(_dragItem.RenderersOrder);
                         instance.GroundCell = stageCell;
@@ -123,8 +124,10 @@ namespace TeamB_TD
                         if (!prefab) return false;
                         if (!cell.Status.HasFlag(StageCellStatus.UnitPlaceable)) return false;
                         if (resource.CurrentResource - _dragItem.ConstantParams.Cost < 0) return false;
-                        if ((cell as StageCell).WeaponType != prefab.ConstantParams.WeaponType) return false;
-
+                        var stageCell = cell as StageCell;
+                        if (stageCell == null) return false;
+                        if (stageCell.WeaponType != prefab.ConstantParams.WeaponType) return false;
+                        if (stageCell.PlacedAlly != null) return false;
                         return true;
                     }
 

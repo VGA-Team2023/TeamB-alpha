@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using TeamB_TD.Battle.Unit.Ally;
+using UnityEngine;
 
 namespace TeamB_TD
 {
@@ -37,6 +38,7 @@ namespace TeamB_TD
                 public Vector3 WorldPosition => transform.position;
                 public GameObject GameObject => gameObject;
                 public IStageCell Parent { get; set; }
+                public AllyController PlacedAlly { get; set; }
 
                 public void Initialize(int cellStatus, int yPos, int xPos)
                 {

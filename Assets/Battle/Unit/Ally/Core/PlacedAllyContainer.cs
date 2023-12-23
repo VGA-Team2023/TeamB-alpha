@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using TeamB_TD.Battle.StageManagement;
 using UnityEngine;
 
 namespace TeamB_TD
@@ -37,6 +38,7 @@ namespace TeamB_TD
                     private void OnDeadAlly(AllyController allyController)
                     {
                         allyController.OnDeadAlly -= OnDeadAlly;
+                        (allyController.GroundCell as StageCell).PlacedAlly = null;
                         _placedAllies.Remove(allyController);
                     }
                 }
