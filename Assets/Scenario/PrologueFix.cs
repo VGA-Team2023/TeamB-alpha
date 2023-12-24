@@ -8,7 +8,7 @@ namespace TeamB_TD
 {
     namespace NovelGameEditor5
     {
-        public class Prologue : MonoBehaviour
+        public class PrologueFix : MonoBehaviour
         {
             public void Start()
             {
