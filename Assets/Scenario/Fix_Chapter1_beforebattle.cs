@@ -1240,6 +1240,7 @@ namespace TeamB_TD
                     [PrintText,「何はともあれ助かりましたよ。良かったら、次もどこから魔獣が来るのか教えてください」,0.1]
                     [EndGroup]
 
+                    [LoadScene,Stage 1]
                     ");
 
                 var executable = MakeExecutable(commands);
