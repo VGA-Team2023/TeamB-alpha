@@ -196,6 +196,8 @@ namespace TeamB_TD
 
                     [ChangeCaption,ルナ]
                     [PrintText,そうして彼ら錬金術師たちと拠点とする場所へ向かっていった。 ,0.1]
+
+                    [LoadScene,StageSelect]
                     ");
 
                 var executable = MakeExecutable(commands);

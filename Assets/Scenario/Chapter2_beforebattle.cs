@@ -709,6 +709,8 @@ namespace TeamB_TD
                     [ChangeCaption,リアム]
                     [PrintText,「しゃきっと歩いてください！」,0.1]
                     [EndGroup]
+
+                    [LoadScene,Stage 2]
                     ");
 
                 var executable = MakeExecutable(commands);

@@ -207,6 +207,8 @@ namespace TeamB_TD
 
                     [ChangeCaption,ルナ]
                     [PrintText,私は、見慣れた月を眺めながら、元の世界へと思いを馳せた。,0.1]
+
+                    [LoadScene,Scenario End]
                     ");
 
                 var executable = MakeExecutable(commands);
