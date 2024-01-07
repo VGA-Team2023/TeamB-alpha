@@ -249,6 +249,8 @@ namespace TeamB_TD
 
                     [ChangeCaption,]
                     [PrintText,To be continued…,0.1]
+
+                    [LoadScene,TitleScene]
                     ");
 
                 var executable = MakeExecutable(commands);

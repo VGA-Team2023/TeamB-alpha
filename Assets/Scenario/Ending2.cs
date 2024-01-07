@@ -1,7 +1,6 @@
 ﻿// 日本語対応
 using Cysharp.Threading.Tasks;
 using System.Collections.Generic;
-using UnityEngine;
 using TeamB_TD.NovelGameEditor5.Commands;
 
 namespace TeamB_TD
@@ -244,6 +243,8 @@ namespace TeamB_TD
 　　　　　　　　　　　
 　　　　　　　　　　[ChangeCaption,]
                     [PrintText,To be continued…,0.1]
+
+                    [LoadScene,TitleScene]      
                     ");
 
                 var executable = MakeExecutable(commands);
