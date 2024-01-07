@@ -178,7 +178,7 @@ namespace TeamB_TD
                     [PrintText,「え、ちょ、ちょっと！」,0.1]
 
 　　　　　　　　　　[ChangeCaption,ルナ]
-                    [PrintText,いきなり引っ張られるように連れていく彼を止めようと声をかけるも、止まる気配は全くなかった。0.1]
+                    [PrintText,いきなり引っ張られるように連れていく彼を止めようと声をかけるも、止まる気配は全くなかった。,0.1]
 
 　　　　　　　　　　[ChangeCaption,ルナ]
                     [PrintText,（…これも、フェリなりの励ましなのかな…。）,0.1]
@@ -258,6 +258,7 @@ namespace TeamB_TD
 　　　　　　　　　　[ChangeCaption,]
                     [PrintText,To be continued…,0.1]
 
+                    [LoadScene,TitleScene]
 
                     ");
 
