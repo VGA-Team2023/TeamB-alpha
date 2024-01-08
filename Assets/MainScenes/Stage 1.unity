@@ -765,6 +765,10 @@ PrefabInstance:
       propertyPath: _towerController
       value: 
       objectReference: {fileID: 2075028635}
+    - target: {fileID: 895993177229295899, guid: 9d68288220998ce4d85ae93c4d0e6c1b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Stage 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2565510613168053622, guid: 9d68288220998ce4d85ae93c4d0e6c1b, type: 3}
       propertyPath: m_Name
       value: ResultCanvas
