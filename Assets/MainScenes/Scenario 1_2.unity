@@ -206,6 +206,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: NovelObject
       objectReference: {fileID: 0}
+    - target: {fileID: 6556338228280993970, guid: 33b2709c8841fd344977b15b328f187f, type: 3}
+      propertyPath: _nextScene
+      value: StageSelect
+      objectReference: {fileID: 0}
+    - target: {fileID: 6556338228280993970, guid: 33b2709c8841fd344977b15b328f187f, type: 3}
+      propertyPath: _anotherNextScene
+      value: StageSelect
+      objectReference: {fileID: 0}
     - target: {fileID: 8172923830876936603, guid: 33b2709c8841fd344977b15b328f187f, type: 3}
       propertyPath: m_Sprite
       value: 
