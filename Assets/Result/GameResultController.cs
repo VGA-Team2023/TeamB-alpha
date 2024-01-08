@@ -33,12 +33,12 @@ namespace TeamB_TD
                 _gameResultViewer.TowerHPSet(_towerController.CurrentLife);
                 _gameResultViewer.GameClearPanelChangeActive(true);
                 yield return _gameClearAnimation.GameClearImageAnimation();
-                _gameResultViewer.ScorePanelChangeActive(true);
                 StartCoroutine(_gameResultViewer.ScorePanelSet());
                 yield return _gameClearAnimation.
                     StarImageAnimationStart(StarCountCalculation(_towerController.CurrentLife));
                 yield return _gameClearAnimation.
                     CharaImageAnimation(_gameResultViewer.CharaImage, _gameResultViewer.DispImgPos);
+                _gameResultViewer.ScorePanelChangeActive(true);
                 SaveData.SaveData instantData = DataManager.Instance.Load();
                 _soundManager.ClearVoiceSelect(instantData._favoriteUnitId,_towerController.CurrentLife);
                 _gameResultViewer.ResultClickPanelChangeActive(true);
