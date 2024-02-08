@@ -24,8 +24,6 @@ namespace TeamB_TD
 
                     [EndGroup]
 
-　　　　　　　　　　  [DisplayActor,1,1]
-
                     [ChangeCaption,ナレーション]
                     [PrintText,その魔石は不思議な力でエネルギーを生み出し、人々の生活を豊かにしたのであった。,0.1]
 
@@ -70,6 +68,8 @@ namespace TeamB_TD
 
                     [ChangeCaption, ]
                     [PrintText,深夜２時、世間では草木も眠る丑三つ時…,0.1]
+
+                    [ChangeBG,7]
 
                     [ChangeCaption,プレイヤー]
                     [PrintText,「…んぅ。」,0.1]
@@ -271,12 +271,7 @@ namespace TeamB_TD
                     [PrintText,「目を閉じて、想像してみてください。」,0.1]
 
                     [BeginSelectGroup]
-                    [Selectable,Selectable 1]
-                    [LoadScene,SampleScene1]
-                    [Selectable,Selectable2]
-                    [LoadScene,SampleScene2]
-                    [Selectable,Selectable3]
-                    [LoadScene,SampleScene3]
+                    [LoadScene,StageSelect]
                     [EndSelectGroup]
                     ");
 

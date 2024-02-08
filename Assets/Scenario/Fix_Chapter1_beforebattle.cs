@@ -33,8 +33,10 @@ namespace TeamB_TD
                     [SoundVoice,unit1,VOICE04_attack1,1.0]
                     [EndGroup]
 
+                    [BeginGroup]  
                     [ChangeCaption,ルナ]
                     [PrintText,（…何か声が聞こえる。),0.1]
+                    [EndGroup]
 
                     [BeginGroup]
                     [ChangeCaption,？？？]
@@ -48,23 +50,35 @@ namespace TeamB_TD
                     [SoundVoice,unit3,VOICE04_attack3,1.0]
                     [EndGroup]
 
+[BeginGroup]
                     [ChangeCaption,ルナ]
                     [PrintText,（誰かが戦っている…？）,0.1]
+[EndGroup]
 
+[BeginGroup]
                     [ChangeCaption,ルナ]
                     [PrintText,（うーん……。）,0.1]
+[EndGroup]
 
+[BeginGroup]
                     [ChangeCaption,ルナ]
                     [PrintText,燦々とした日差しが目をつむっている瞼の隙間に入る。,0.1]
+[EndGroup]
 
+[BeginGroup]
                     [ChangeCaption,ルナ]
                     [PrintText,（眩しい…。） ,0.1]
+[EndGroup]
 
+[BeginGroup]
                     [ChangeCaption,ルナ]
                     [PrintText,時間帯は昼間あたりだろうか。,0.1]
+[EndGroup]
 
+[BeginGroup]
                     [ChangeCaption,ルナ]
                     [PrintText,ぽかぽかとした日光が浴びているせいか、体は温かい。,0.1]
+[EndGroup]
 
                     [BeginGroup]
                     [ChangeCaption,？？？]
@@ -72,11 +86,15 @@ namespace TeamB_TD
                     [SoundVoice,unit3,VOICE11_scenario3_9,1.0]
                     [EndGroup]  
 
+[BeginGroup]
                     [ChangeCaption,ルナ]
                     [PrintText,先ほどよりもはっきりとした形で耳に入ってくる。,0.1]
+[EndGroup]
 
+[BeginGroup]
                     [ChangeCaption,ルナ]
                     [PrintText,（やっぱりどこかで誰かが戦っている…？）,0.1]
+[EndGroup]
 
                     [BeginGroup]
                     [ChangeCaption,？？？]
@@ -129,8 +147,10 @@ namespace TeamB_TD
                     [PrintText,「はあっ！！」,0.1]
                     [EndGroup]
 
+                    [BeginGroup]
                     [ChangeCaption,ルナ]
                     [PrintText,先ほどよりも近くで声が聞こえた。 草の間から顔を出し、声がした方向を見る… ,0.1]
+                    [EndGroup]
 
                     [BeginGroup]
                     [SoundVoice,unit2,VOICE03_craft2,1.0]
@@ -140,8 +160,10 @@ namespace TeamB_TD
                     [DarkenActor,1]
                     [EndGroup]
 
+                    [BeginGroup]
                     [ChangeCaption,獣]
                     [PrintText,「グルル…」,0.1]
+                    [EndGroup]
 
                     [BeginGroup]
                     [DisplayActor,3,0]
@@ -559,8 +581,10 @@ namespace TeamB_TD
                     [ChangeCaption,ルナ]
                     [PrintText,「…あの…それは。」,0.1]
 
+                    [BeginGroup]
                     [ChangeCaption,ルナ]
                     [PrintText,「気づいたらここにいて…。」,0.1]
+                    [EndGroup]
 
                     [BeginGroup]
 　　　　　　　　　　[DisplayActor,3,0]
@@ -578,8 +602,10 @@ namespace TeamB_TD
                     [PrintText,「自分ではここに来ていないということですか？」,0.1]
                     [EndGroup]
 
+                    [BeginGroup]
                     [ChangeCaption,ルナ]
                     [PrintText,「…そうです。」,0.1]
+                    [EndGroup]
 
                     [BeginGroup]
                     [SoundVoice,unit4,VOICE11_scenario4_8,1.0]
@@ -619,11 +645,16 @@ namespace TeamB_TD
                     [PrintText,「あなたはどちらに住まれているのですか？」,0.1]
                     [EndGroup]
 
+[BeginGroup]
                     [ChangeCaption,ルナ]
                     [PrintText,「えーと…。」,0.1]
+[EndGroup]
 
+
+[BeginGroup]
                     [ChangeCaption,ルナ]
                     [PrintText,「…その……。」,0.1]
+[EndGroup]
 
                     [BeginGroup]
 　　　　　　　　　  [DisplayActor,1,1]
@@ -633,8 +664,10 @@ namespace TeamB_TD
                     [PrintText,「…もしかして、記憶がないのか？」 ,0.1]
                     [EndGroup]
 
+[BeginGroup]
                     [ChangeCaption,ルナ]
                     [PrintText,「あ…。」,0.1]
+[EndGroup]
 
                     [BeginGroup]
                     [DisplayActor,2,2]
